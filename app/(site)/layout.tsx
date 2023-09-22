@@ -1,8 +1,10 @@
-import { getPages } from "@/sanity/sanity.utils";
-import "../globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/react';
+
+import "../globals.css";
+import { getPages } from "@/sanity/sanity.utils";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,7 +42,9 @@ export default async function RootLayout({
 						))}
 					</div>
 				</header>
-				<main className="py-20">{children}</main>
+				<main className="py-20">{children}
+				<Analytics />
+				</main>
 			</body>
 		</html>
 	);
