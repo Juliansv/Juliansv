@@ -8,12 +8,9 @@ I'm a passionate JavaScript developer, currently diving deep into the world of N
 - 🔍 With a QA background, I have a keen eye for detail and a strong commitment to delivering high-quality code.
 - 🏀 Basketball enthusiast - I love shooting hoops and watching NBA games in my spare time.
 
-Feel free to explore my repositories to see more of my work!
-
 ## Contact Me
 
-- 📫 You can reach me via email at [juliansv22@gmail.com](mailto:juliansv22@gmail.com).
--
+- 📫 You can reach me via email at [juliansv22@gmail.com](mailto:juliansv22@gmail.com)
 
 
 
