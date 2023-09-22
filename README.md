@@ -10,6 +10,7 @@ I'm a passionate JavaScript developer, currently diving deep into the world of N
 
 ## Contact Me
 
+- 🌐 Visit my [personal website](https://www.julisv.com) to learn more about me and my projects
 - 📫 You can reach me via email at [juliansv22@gmail.com](mailto:juliansv22@gmail.com)
 
 
