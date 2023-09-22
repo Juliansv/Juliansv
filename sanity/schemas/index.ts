@@ -1,5 +1,7 @@
 import project from "./project-schema";
 
-const schemas = [project]
+import page from "./page-schema";
+
+const schemas = [project, page]
 
 export default schemas;

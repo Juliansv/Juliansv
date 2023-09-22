@@ -12,7 +12,7 @@ export default async function Home() {
 	};
 
 	return (
-		<div className="max-w-5xl mx-auto py-20 px-6">
+		<div>
 			<h1 className="text-7xl font-extrabold">
 				Hello I&apos;m
 				<span
