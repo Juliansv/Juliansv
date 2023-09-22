@@ -24,9 +24,9 @@ export default async function RootLayout({
 				<header className="flex items-center justify-between">
 					<Link
 						href="/"
-						className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 font-bold text-transparent bg-clip-text text-lg"
+						className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 font-bold text-transparent bg-clip-text text-3xl"
 					>
-						Julian
+						JSV
 					</Link>
 					<div className="flex items-center gap-5 text-sm text-gray-600">
 						{pages.map((page) => (
