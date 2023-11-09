@@ -4,7 +4,7 @@ I'm a passionate JavaScript developer, currently diving deep into the world of N
 
 ## About Me
 
-- 🌱 I'm currently learning **React & Next.js** to build blazing-fast web applications.
+- 🌱 I'm currently learning **React & Next.js** to build full-stack web applications.
 - 🔍 QA background - I have a keen eye for detail and a strong commitment to delivering high-quality code.
 - 🏀 Basketball enthusiast - I love shooting hoops and watching NBA games in my spare time.
 
