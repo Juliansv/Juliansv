@@ -22,14 +22,13 @@ export default async function Home() {
 					Julian!
 				</span>
 			</h1>
-			<p className="mt-3 text-xl text-gray-600">I&apos;m an Argentinian Web Developer <br/>
-			¡Checkout my projects!</p>
-			<h2 className="mt-10 font-bold text-gray-700 text-3xl">My projects</h2>
+			<p className="mt-3 text-xl text-gray-600">I&apos;m an Argentinian Web Developer</p>
+			<h2 className="mt-5 font-bold text-gray-700 text-3xl">Some of my projects</h2>
 			<div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				{projects.map((project) => (
 					<Link
 						key={project._id}
-						className="border-2 border-gray-500 rounded-lg p-1 flex flex-col items-center max-h-45 hover:scale-105 hover:border-blue-500 transition"
+						className="border-2 border-gray-500 rounded-lg p-1 flex flex-col items-center hover:scale-105 hover:border-blue-500 transition"
             href={project.url}
 					>
 						<div
@@ -42,8 +41,8 @@ export default async function Home() {
 							<Image
 								src={project.image}
 								alt={project.name}
-								width={750}
-								height={300}
+								width={200}
+								height={80}
 								className="object-cover rounder-lg m-auto"
 							/>
 						)}
