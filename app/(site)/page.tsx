@@ -7,7 +7,7 @@ export const revalidate = 0;
 export default async function Home() {
 	const projects = await getProjects();
 
-	console.log(projects[0].name);
+	console.log('image: ', projects[0].image);
 	
 
 	return (

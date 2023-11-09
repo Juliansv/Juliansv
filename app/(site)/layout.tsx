@@ -42,7 +42,7 @@ export default async function RootLayout({
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
               <a href="/" className="flex items-center">
                 <Image
-                  src="/../favicon.ico"
+                  src="https://w7.pngwing.com/pngs/118/204/png-transparent-yellow-sun-illustration-flag-of-argentina-inca-empire-sun-of-may-inti-sol-miscellaneous-flag-food-thumbnail.png"
                   className="mr-3"
                   alt="Sol De Mayo Logo"
                   width={32}
