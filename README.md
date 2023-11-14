@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm a passionate JavaScript developer, currently diving deep into the world of Next.js. My programming journey has led me to a fascination for cryptocurrencies, especially Ethereum. I'm always eager to learn new things and expand my knowledge. 
+I'm a passionate JavaScript developer. My programming journey has led me to a fascination for cryptocurrencies, especially Ethereum. I'm always eager to learn new things and expand my knowledge. 
 
 ## About Me
 
