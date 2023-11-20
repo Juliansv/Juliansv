@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
 import "../globals.css";
-import { getPages } from "@/sanity/sanity.utils";
 import { Inter } from "next/font/google";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Socials from "./components/socials";
+import { ThemeProvider } from "./theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -37,15 +37,17 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto px-6 ${inter.className}`}>
-        <Header />
-        <main className="py-10">
-          {children}
-          <Analytics />
-        </main>
-        <Socials />
-        <Footer />
-      </body>
-    </html>
+        <body className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto px-6 ${inter.className}`}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem> 
+            <Header />
+            <main className="py-8">
+              {children}
+              <Analytics />
+            </main>
+            <Socials />
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
   );
 }
