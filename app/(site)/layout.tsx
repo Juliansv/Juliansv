@@ -37,7 +37,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-        <body className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto px-6 ${inter.className} dark:bg-gray-900`}>
+        <body className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto px-6 ${inter.className}`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem> 
             <Header />
             <main className="py-8">

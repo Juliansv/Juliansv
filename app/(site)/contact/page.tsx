@@ -2,7 +2,6 @@ const Page = () => {
   return (
     <div className="container flex flex-col gap-4 items-center">
       <div className="">
-      add-contact-form
         <h2 className="text-2xl font-bold text-sky-700">
           Let&apos;s connect!
         </h2>
