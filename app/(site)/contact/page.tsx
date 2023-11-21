@@ -2,10 +2,11 @@ const Page = () => {
   return (
     <div className="container flex flex-col gap-4 items-center">
       <div className="">
-        <h2 className="text-2xl font-bold text-blue-900">
+      add-contact-form
+        <h2 className="text-2xl font-bold text-sky-700">
           Let&apos;s connect!
         </h2>
-        <p>Feel free to reach out to me</p>
+        <p>Feel free to reach out</p>
       </div>
       <div className="max-w-md w-2/3">
         <form>
