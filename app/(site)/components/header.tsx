@@ -9,14 +9,14 @@ const Header = () => {
       <nav className="bg-white border-gray-200 w-full dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
           <a href="/" className="flex items-center">
-            <Image
+            {/* <Image
               src="/../../icon.png"
               sizes="any"
               className="mr-3"
               alt="Sol De Mayo Logo"
               width={32}
               height={32}
-            />
+            /> */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-sky-50">
               JSV
             </span>
