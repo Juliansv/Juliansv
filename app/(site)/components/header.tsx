@@ -10,7 +10,8 @@ const Header = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
           <a href="/" className="flex items-center">
             <Image
-              src="/../../favicon.ico"
+              src="/../../icon.png"
+              sizes="any"
               className="mr-3"
               alt="Sol De Mayo Logo"
               width={32}
