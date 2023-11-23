@@ -1,4 +1,4 @@
-const Page = () => {
+const Contact = () => {
   return (
     <div className="container flex flex-col gap-4 items-center">
       <div className="">
@@ -64,4 +64,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Contact;
