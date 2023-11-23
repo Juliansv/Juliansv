@@ -1,21 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import DarkButton from "./dark-button";
+import logo from "@/app/icon.png"
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between ">
+    <header className="flex items-center justify-between">
       <nav className="bg-transparent border-gray-200 w-full">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
           <a href="/" className="flex items-center">
-            {/* <Image
-              src="/../../icon.png"
+            <Image
+              src={logo}
               sizes="any"
               className="mr-3"
               alt="Sol De Mayo Logo"
               width={32}
               height={32}
-            /> */}
+            />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-sky-50">
               JSV
             </span>
@@ -35,7 +36,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/projects"
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-white border-gray-700 dark:text-sky-50 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Projects
