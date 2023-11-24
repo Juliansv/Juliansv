@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Socials from "./components/socials";
-import { ThemeProvider } from "./theme-provider";
+import { ThemeProvider } from "./(providers)/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
