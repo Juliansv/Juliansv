@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/types/Project";
-import ProjectCard from "./project-card";
+// import ProjectCard from "./project-card";
 
 interface ProjectsListProps {
   data: Project[];
