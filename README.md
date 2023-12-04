@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm a passionate JavaScript developer
+I'm a web developer interested in javascript
 
 ## About Me
 
