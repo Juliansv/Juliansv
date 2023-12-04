@@ -20,21 +20,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const pages = await getPages();
-
   return (
     <html lang="en">
-        <body className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto px-6 ${inter.className}`}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem> 
-            <Header />
-            <main className="py-8">
-              {children}
-              <Analytics />
-            </main>
-            <Socials />
-            <Footer />
-          </ThemeProvider>
-        </body>
-      </html>
+      <body
+        className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto px-6 ${inter.className}`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Header />
+          <main className="py-8">
+            {children}
+            <Analytics />
+          </main>
+          <Socials />
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

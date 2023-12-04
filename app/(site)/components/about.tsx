@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <h1 className=" font-extrabold text-4xl">
         <span
           className="bg-gradient-to-r from-sky-700 via-sky-600 to-sky-500 dark:bg-gradient-to-br dark:from-sky-700 dark:via-sky-100 dark:to-sky-700
