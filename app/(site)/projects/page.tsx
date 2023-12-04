@@ -1,8 +1,8 @@
-import { getProjects } from "@/sanity/sanity.utils";
 import ProjectsList from "../components/projects-list";
+import projects from "@/public/projects"
+
 
 const ProjectsPage = async () => {
-  const projects = await getProjects();
 
   return (
     <>

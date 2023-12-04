@@ -10,12 +10,16 @@ const Header = () => {
       href: '/'
     },
     {
+      name: 'Experience',
+      href: '/'
+    },
+    {
       name: 'Projects',
-      href: '/projects'
+      href: '/'
     },
     {
       name: 'About Me',
-      href: '/about'
+      href: '/'
     }
   ]
   return (
@@ -55,8 +59,8 @@ const Header = () => {
           <div className="flex md:order-2">
             <DarkButton />
             <Link
-              href="/contact"
-              className="text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:bg-blue-950 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0"
+              href="/"
+              className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 focus:outline-none focus:bg-blue-950 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0"
             >
               Contact Me
             </Link>
