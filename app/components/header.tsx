@@ -32,7 +32,7 @@ const Header = () => {
             to="HeroSection"
             smooth={true}
             offset={-80}
-            className="flex cursor-pointer items-center hover:text-sky-700 dark:hover:text-red-600"
+            className="flex z-10 cursor-pointer items-center hover:text-sky-700 dark:hover:text-red-600"
           >
             <Image
               src={logo}
@@ -75,7 +75,7 @@ const Header = () => {
               to="Contact"
               offset={-80}
               smooth={true}
-              className="before:ease relative cursor-pointer overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-4 py-2 text-white shadow-sm transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-blue-700 hover:before:-translate-x-40"
+              className="before:ease z-10 relative cursor-pointer overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-4 py-2 text-white shadow-sm transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-blue-700 hover:before:-translate-x-40"
             >
               Contact Me
             </Link>
