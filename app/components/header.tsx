@@ -17,11 +17,11 @@ const Header = () => {
       href: "ExperienceSection",
       offset: -80,
     },
-    {
-      name: "About Me",
-      href: "About",
-      offset: -80,
-    },
+    // {
+    //   name: "About Me",
+    //   href: "About",
+    //   offset: -80,
+    // },
   ];
 
   return (
@@ -70,7 +70,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="flex md:order-2">
-            <DarkButton />
+            {/* <DarkButton /> */}
             <Link
               to="Contact"
               offset={-80}
