@@ -25,7 +25,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-10 px-4 backdrop-blur-sm md:px-0">
+    <header className="sticky top-0 z-10 px-4 backdrop-blur-sm">
       <nav className="w-full border-gray-200">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between py-4">
           <Link
@@ -47,10 +47,10 @@ const Header = () => {
             </span>
           </Link>
           <div
-            className="hidden w-auto items-center justify-between md:order-1 md:flex md:w-auto"
+            className="hidden w-auto items-center justify-between md:order-1 md:flex md:absolute md:w-full"
             id="navbar-cta"
           >
-            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-transparent p-4 font-medium dark:border-gray-700 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0">
+            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-transparent p-4 font-medium dark:border-gray-700 md:m-auto md:flex-row md:space-x-8 md:border-0 md:p-0">
               {pages.map((item, index) => (
                 <li key={index}>
                   <Link
