@@ -6,4 +6,5 @@ export type Project = {
     image: string;
     url: string,
     content: string;
+    stack: string;
 }

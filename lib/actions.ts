@@ -1,6 +1,6 @@
 "use server";
 
-import { EmailTemplate } from "@/app/(site)/components/email-template";
+import { EmailTemplate } from "@/app/components/email-template";
 import { Resend } from "resend";
 
 import {z} from "zod"
@@ -29,7 +29,7 @@ const SendEmail = (data: Inputs) => {
       text: "",
     });
 
-    return { success: true, emailData };
+    return { success: true, emailData};
   } catch (error) {
     return { success: false, error: error };
   }
