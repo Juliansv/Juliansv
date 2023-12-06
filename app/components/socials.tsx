@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Socials = () => {
   return (
-    <div className="mt-10 grid md:grid-cols-4">
+    <div className="mt-10 grid grid-col-1 gap-2 md:grid-cols-4">
       {/* Discord */}
       <button
         type="button"
@@ -28,7 +28,7 @@ const Socials = () => {
         type="button"
         data-te-ripple-init=""
         data-te-ripple-color="light"
-        className="m-auto mb-2 w-1/2 rounded bg-[#333] py-2.5 text-white shadow-md transition-all duration-300 before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-[#333] hover:shadow-[#333] hover:before:border-[25px]"
+        className="m-auto w-1/2 rounded bg-[#333] py-2.5 text-white shadow-md transition-all duration-300 before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-[#333] hover:shadow-[#333] hover:before:border-[25px]"
       >
         <Link href="https://github.com/juliansv">
           <svg
@@ -46,7 +46,7 @@ const Socials = () => {
         type="button"
         data-te-ripple-init=""
         data-te-ripple-color="light"
-        className="m-auto mb-2 w-1/2 rounded bg-[#ea4335] py-2.5 text-white shadow-md transition-all duration-300 before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-[#ea4335] hover:shadow-[#ea4335] hover:before:border-[25px]"
+        className="m-auto w-1/2 rounded bg-[#ea4335] py-2.5 text-white shadow-md transition-all duration-300 before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-[#ea4335] hover:shadow-[#ea4335] hover:before:border-[25px]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

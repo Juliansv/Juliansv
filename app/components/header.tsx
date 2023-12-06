@@ -25,7 +25,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky z-10 top-0 flex items-center justify-between backdrop-blur-sm">
+    <header className="sticky top-0 z-10 px-4 backdrop-blur-sm md:px-0">
       <nav className="w-full border-gray-200">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between py-4">
           <Link
@@ -75,7 +75,7 @@ const Header = () => {
               to="Contact"
               offset={-80}
               smooth={true}
-              className="before:ease relative mr-3 cursor-pointer overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-4 py-2 text-white shadow-sm transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-blue-700 hover:before:-translate-x-40"
+              className="before:ease relative cursor-pointer overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-4 py-2 text-white shadow-sm transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:shadow-blue-700 hover:before:-translate-x-40"
             >
               Contact Me
             </Link>
