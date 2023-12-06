@@ -2,7 +2,7 @@ import Socials from "./socials";
 
 const HeroSection = () => {
   return (
-    <div className="min-h-screen pt-20 text-center">
+    <div className="min-h-screen pt-6 md:pt-20 text-center">
       <h1 className="text-8xl font-extrabold dark:text-sky-50">
         Hello, I&apos;m
         <span

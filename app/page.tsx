@@ -20,7 +20,7 @@ export default function Home() {
       <Element name="ExperienceSection" className="min-h-screen">
         <ExperienceSection />
       </Element>
-      <Element name="About">
+      <Element name="About" className="hidden">
         <About />
       </Element>
       <Element name="Contact">

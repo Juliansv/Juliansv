@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           alt="blog"
         />
         <div className=" p-6">
-          <h2 className="title-font mb-1 text-xs font-medium tracking-widest text-gray-900">
+          <h2 className="title-font mb-1 text-xs font-extrabold tracking-widest text-gray-900">
             {project.stack}
           </h2>
           <h1 className="title-font mb-3 text-3xl font-bold text-gray-900">
