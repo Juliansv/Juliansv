@@ -22,11 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`flex flex-col justify-between max-w-5xl min-h-screen mx-auto ${inter.className}`}
+        className={`px-40 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main className="px-6">
+          <main>
             {children}
             <Analytics />
           </main>

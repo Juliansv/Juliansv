@@ -10,8 +10,8 @@ import { Element } from "react-scroll";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen gap-4">
-      <Element name="HeroSection">
+    <div>
+      <Element name="HeroSection" className="min-h-screen">
         <HeroSection />
       </Element>
       <Element name="ProjectList" className="min-h-screen">
@@ -23,7 +23,7 @@ export default function Home() {
       <Element name="About" className="hidden">
         <About />
       </Element>
-      <Element name="Contact">
+      <Element name="Contact" className="min-h-screen">
         <Contact />
       </Element>
     </div>
