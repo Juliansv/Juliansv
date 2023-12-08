@@ -21,15 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`px-40 ${inter.className}`}
-      >
+      <body className={`${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main>
-            {children}
-            <Analytics />
-          </main>
+          {children}
+          <Analytics />
           <Footer />
         </ThemeProvider>
       </body>

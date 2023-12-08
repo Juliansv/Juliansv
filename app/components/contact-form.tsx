@@ -46,7 +46,7 @@ const ContactForm = ({ setEmail }: ContactFormProps) => {
   };
 
   return (
-    <div className={isLoading ? "opacity-40 w-2/3 md:w-1/2" : "w-2/3 md:w-1/2"}>
+    <div className={isLoading ? "opacity-40 w-2/3 md:w-1/2 pt-8" : "w-2/3 md:w-1/2 py-8"}>
       <div className="pb-10 text-center">
         <h2 className="text-4xl font-bold text-sky-700">
           <span
