@@ -6,7 +6,7 @@ const projects = [
     slug: "la-chalita",
     image:
       "/images/chalita-logo-color.png",
-    url: "https://github.com/Juliansv/ecommerce-store",
+    url: "https://ecommerce-store-six-gamma.vercel.app/",
     content: "E-commerce store for a small business. This was built using React.js, TailwindCSS, Typescript, and Zustand for global state, among others.",
     stack: "NEXT.JS - TYPESCRIPT"
   },
@@ -17,7 +17,7 @@ const projects = [
     slug: "cms-for-ecommerce-stores",
     image:
       "/images/chalita-logo-mono.png",
-    url: "https://github.com/Juliansv/ecommerce-admin",
+    url: "https://ecommerce-admin-bay-ten.vercel.app/",
     content: "Headless CMS for E-commerce stores. Here I worked with React.js, Typescript and TailwindCSS, Zustand, PrismaDB to manage the database, and integrated Mercado Pago for payment",
     stack: "NEXT.JS - MYSQL - NODE.JS"
   },

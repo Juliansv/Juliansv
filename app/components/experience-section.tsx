@@ -21,7 +21,7 @@ const ExperienceSection = () => {
               </svg>
               <div className="ml-6">
                 <h4 className="font-bold text-sky-500">Freelancing</h4>
-                <p className="mt-2 max-w-screen-sm text-sm text-white leading-relaxed">
+                <p className="mt-2 max-w-screen-sm text-sm leading-relaxed text-white">
                   Last year I started to work as a freelancer. I have worked
                   with small businesses and solo entrepreneurs, building a
                   variety of things like landing pages and web scrappers.
@@ -46,7 +46,7 @@ const ExperienceSection = () => {
               </svg>
               <div className="ml-6">
                 <h4 className="font-bold text-sky-500">QA Analyst</h4>
-                <p className="mt-2 max-w-screen-sm text-sm text-white leading-relaxed">
+                <p className="mt-2 max-w-screen-sm text-sm leading-relaxed text-white">
                   My main responsibilities were implementing test strategies,
                   analyze and develop system and integration tests, and research
                   competition and market.
@@ -71,10 +71,10 @@ const ExperienceSection = () => {
               </svg>
               <div className="ml-6">
                 <h4 className="font-bold text-sky-500">QA Manual</h4>
-                <p className="mt-2 max-w-screen-sm text-sm text-white leading-relaxed">
+                <p className="mt-2 max-w-screen-sm text-sm leading-relaxed text-white">
                   This was my first approach to QA roles. It was for an IA
-                  company based in the US. I was performing manual QA on
-                  web scrappers.
+                  company based in the US. I was performing manual QA on web
+                  scrappers.
                 </p>
                 <span className="mt-1 block text-sm font-semibold text-sky-500">
                   November 2021 - February 2022
@@ -96,7 +96,7 @@ const ExperienceSection = () => {
               </svg>
               <div className="ml-6">
                 <h4 className="font-bold text-sky-500">Frontend Developer</h4>
-                <p className="mt-2 max-w-screen-sm text-sm text-white leading-relaxed">
+                <p className="mt-2 max-w-screen-sm text-sm leading-relaxed text-white">
                   The company was called Snappler, it was my first job in tech.
                   They taught me the basics of web development using Ruby On
                   Rails.
@@ -107,8 +107,8 @@ const ExperienceSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex h-full flex-col justify-center gap-6 shadow-lg rounded-lg bg-[#00a8e60d]/[.05] p-8">
-            <h1 className="text-white-400 mb-4 text-6xl font-bold leading">
+          <div className="flex h-full flex-col justify-center gap-6 rounded-lg bg-[#00a8e60d]/[.05] p-8 shadow-lg ">
+            <h1 className="text-white-400 leading mb-4 text-6xl font-bold">
               Some of my previous jobs
             </h1>
             <div className="flex flex-col gap-4">
