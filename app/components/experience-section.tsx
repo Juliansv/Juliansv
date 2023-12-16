@@ -3,9 +3,53 @@ import { Element } from "react-scroll";
 const ExperienceSection = () => {
   return (
     <section aria-labelledby="Experience">
-      <Element name="ExperienceSection" className="min-h-screen md:px-40">
-        <div className="grid items-center justify-center gap-20 md:grid-cols-2">
-          <div className="space-y-6 border-l-2 border-dashed border-l-sky-950 p-6">
+      <Element name="ExperienceSection" className="min-h-screen mt-10 md:px-40">
+        <div className="grid items-center justify-center gap-10 md:grid-cols-2">
+        <div className="flex h-full flex-col justify-center gap-6 rounded-lg bg-[#00a8e60d]/[.05] p-8 shadow-lg ">
+            <h1 className="text-white-400 leading mb-4 text-6xl font-bold">
+              Some of my previous jobs
+            </h1>
+            <div className="flex flex-col gap-4">
+              <p className="leading-relaxed">
+                <span className="text-sky-500">
+                  These are a few of the jobs I had in the past.
+                </span>{" "}
+                Being over 10 years since I had my first one, it would be an
+                extensive section if I put all of them here.{" "}
+                <span className="text-sky-500">
+                  I&apos;ve selected what I believe were the most relevant
+                  positions
+                </span>{" "}
+                taking into account the roles I&apos;m aiming for.
+              </p>
+              <p className="leading-relaxed">
+                <span className="text-sky-500">
+                  You may notice there&apos;s a big gap between my first job in
+                  tech and my first role as a QA.
+                </span>{" "}
+                If you want to learn more about my journey I wrote a blog post
+                about it.{" "}
+              </p>
+              <a className="text-white-500 mt-4 inline-flex cursor-pointer items-center">
+                <p className="group relative flex items-center">
+                  <span>Go to post</span>
+                  <span className="absolute -bottom-1 left-0 z-10 h-1 w-0 bg-red-600 duration-500 group-hover:w-full group-hover:transition-all"></span>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="ml-2 h-4 w-4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </p>
+              </a>
+            </div>
+          </div>
+          <div className="space-y-6 border-l-2 border-dashed border-l-sky-950 m-6">
             <div className="relative w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,50 +149,6 @@ const ExperienceSection = () => {
                   2016 - 2018
                 </span>
               </div>
-            </div>
-          </div>
-          <div className="flex h-full flex-col justify-center gap-6 rounded-lg bg-[#00a8e60d]/[.05] p-8 shadow-lg ">
-            <h1 className="text-white-400 leading mb-4 text-6xl font-bold">
-              Some of my previous jobs
-            </h1>
-            <div className="flex flex-col gap-4">
-              <p className="leading-relaxed">
-                <span className="text-sky-500">
-                  These are a few of the jobs I had in the past.
-                </span>{" "}
-                Being over 10 years since I had my first one, it would be an
-                extensive section if I put all of them here.{" "}
-                <span className="text-sky-500">
-                  I&apos;ve selected what I believe were the most relevant
-                  positions
-                </span>{" "}
-                taking into account the roles I&apos;m aiming for.
-              </p>
-              <p className="leading-relaxed">
-                <span className="text-sky-500">
-                  You may notice there&apos;s a big gap between my first job in
-                  tech and my first role as a QA.
-                </span>{" "}
-                If you want to learn more about my journey I wrote a blog post
-                about it.{" "}
-              </p>
-              <a className="text-white-500 mt-4 inline-flex cursor-pointer items-center">
-                <p className="group relative flex items-center">
-                  <span>Go to post</span>
-                  <span className="absolute -bottom-1 left-0 z-10 h-1 w-0 bg-red-600 duration-500 group-hover:w-full group-hover:transition-all"></span>
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="ml-2 h-4 w-4"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </p>
-              </a>
             </div>
           </div>
         </div>

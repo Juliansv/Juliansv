@@ -4,8 +4,8 @@ import { Element } from "react-scroll";
 const HeroSection = () => {
   return (
     <section aria-labelledby="Hero Section">
-      <Element name="HeroSection" className="min-h-screen md:px-40 md:pt-10">
-        <div className="pt-6 text-center ">
+      <Element name="HeroSection" className="min-h-screen md:px-20 md:pt-10">
+        <div className="pt-6 text-center md:text-left md:w-2/3">
           <h1 className="text-8xl font-extrabold dark:text-sky-50">
             Hello, I&apos;m
             <span

@@ -10,8 +10,11 @@ const Contact = () => {
 
   return (
     <section aria-labelledby="Contact">
-      <Element name="Contact" className="min-h-screen md:px-40">
-        <div className="container m-auto flex w-1/2 flex-col items-center gap-4 rounded-lg bg-[#00a8e60d]/[.1] shadow-md shadow-sky-500">
+      <Element
+        name="Contact"
+        className="mt-10 min-h-screen px-10 md:m-auto md:w-1/2"
+      >
+        <div className="container m-auto flex flex-col items-center gap-4 rounded-lg bg-[#00a8e60d]/[.1] shadow-md hover:shadow-md hover:shadow-sky-500 md:mt-10">
           {!isEmailSent ? (
             <ContactForm setEmail={setIsEmailSent} />
           ) : (
