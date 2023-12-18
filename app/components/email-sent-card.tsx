@@ -1,6 +1,6 @@
 const EmailSentCard = () => {
   return (
-    <div>Email sent</div>
+    <div>Message sent</div>
   );
 };
 
