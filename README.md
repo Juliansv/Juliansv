@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm a web developer interested in javascript
+I'm a web developer working within the javascript ecosystem
 
 ## About Me
 
