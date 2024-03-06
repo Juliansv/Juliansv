@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm a web developer working within the javascript ecosystem
+I'm an Argentinian web developer currently based in Malta
 
 ## About Me
 
