@@ -4,7 +4,7 @@ I'm an Argentinian web developer currently based in Malta
 
 ## About Me
 
-- 🌱 I'm using **React & Next.js** to build full-stack web applications.
+- 🔨 I'm using **React & Next.js** to build full-stack web applications.
 - 🔍 QA background - I have a keen eye for detail and a strong commitment to delivering high-quality code.
 - 🏀 Basketball enthusiast - I love shooting hoops and watching NBA games in my spare time.
 
