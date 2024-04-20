@@ -1,0 +1,70 @@
+{
+  "experience": [
+    {
+      "period": "2023 - PRESENT",
+      "position": "Posición 1",
+      "company": "Empresa 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
+      "skills": ["Skill 1", "Skill 2", "Skill 3"]
+    },
+    {
+      "period": "2021 - 2023",
+      "position": "Posición 2",
+      "company": "Empresa 2",
+      "description": "Descripción de la posición 2",
+      "skills": ["Skill 1", "Skill 2", "Skill 3"]
+    },
+    {
+      "period": "2019 - 2021",
+      "position": "Posición 3",
+      "company": "Empresa 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
+      "skills": ["Skill 1", "Skill 2", "Skill 3", "Skill 4"]
+    },
+    {
+      "period": "2017 - 2019",
+      "position": "Posición 4",
+      "company": "Empresa 4",
+      "description": "Descripción de la posición 4",
+      "skills": [
+        "Skill 1",
+        "Skill 2",
+        "Skill 3",
+        "Skill 4",
+        "Skill 5",
+        "Skill 6",
+        "Skill 7",
+        "Skill 8",
+        "Skill 9"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Proyecto 1",
+      "description": "Descripción del proyecto 1. Un poco mas larga para ver como se ve en la página.",
+      "image": "https://via.placeholder.com/150",
+      "url": "/"
+    },
+    {
+      "title": "Proyecto 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
+      "image": "https://via.placeholder.com/150",
+      "stack": ["Stack 1", "Stack 2", "Stack 3"],
+      "url": "/"
+    },
+    {
+      "title": "Proyecto 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
+      "image": "https://via.placeholder.com/150",
+      "url": "/"
+    },
+    {
+      "title": "Proyecto 4",
+      "description": "Descripción del proyecto 4",
+      "image": "https://via.placeholder.com/150",
+      "stack": ["Stack 1", "Stack 2", "Stack 3", "Stack 4"],
+      "url": "/"
+    }
+  ]
+}
