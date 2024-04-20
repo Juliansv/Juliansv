@@ -1,69 +1,80 @@
 {
   "experience": [
     {
-      "period": "2023 - PRESENT",
-      "position": "Posición 1",
-      "company": "Empresa 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
-      "skills": ["Skill 1", "Skill 2", "Skill 3"]
+      "period": "10/2022 - PRESENT",
+      "position": "Frontend Developer",
+      "company": "Freelance",
+      "description": "Building web apps within the Javascript ecosystem.",
+      "skills": ["Next.js", "Tailwind CSS", "TypeScript"]
     },
     {
-      "period": "2021 - 2023",
-      "position": "Posición 2",
-      "company": "Empresa 2",
-      "description": "Descripción de la posición 2",
-      "skills": ["Skill 1", "Skill 2", "Skill 3"]
+      "period": "03/2022 - 09/2022",
+      "position": "QA Analyst",
+      "company": "Composable Finance",
+      "description": "Create and set up tests to check how well different parts of web3 applications work together",
+      "skills": ["Automated Testing", "Mocha.js", "TestRails"]
     },
     {
-      "period": "2019 - 2021",
-      "position": "Posición 3",
-      "company": "Empresa 3",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
-      "skills": ["Skill 1", "Skill 2", "Skill 3", "Skill 4"]
+      "period": "11/2021 - 02/2022",
+      "position": "QA Analyst",
+      "company": "Scale IA",
+      "description": "Conducting hands-on evaluation and verification of Intelligent Automation (IA) data gathering tools through manual testingConducting hands-on evaluation and verification of Intelligent Automation (IA) data gathering tools through manual testing",
+      "skills": ["Manual QA", "Web Scrapping", "Agile Methodologies"]
     },
     {
-      "period": "2017 - 2019",
-      "position": "Posición 4",
-      "company": "Empresa 4",
-      "description": "Descripción de la posición 4",
+      "period": "05/2018 - 12/2018",
+      "position": "Junior Frontend Developer",
+      "company": "Aero",
+      "description": "Maintain and improve the company's website and internal tools",
       "skills": [
-        "Skill 1",
-        "Skill 2",
-        "Skill 3",
-        "Skill 4",
-        "Skill 5",
-        "Skill 6",
-        "Skill 7",
-        "Skill 8",
-        "Skill 9"
+        "Ruby On Rails",
+        "Javascript",
+        "HTML5",
+        "CSS",
+        "React.js",
+        "Redux"
+      ]
+    },
+    {
+      "period": "11/2017 - 04/2018",
+      "position": "Trainee Frontend Developer",
+      "company": "Snappler",
+      "description": "Building web apps within the Ruby on Rails ecosystem.",
+      "skills": [
+        "Ruby On Rails",
+        "Javascript",
+        "HTML5",
+        "CSS"
       ]
     }
   ],
   "projects": [
     {
-      "title": "Proyecto 1",
-      "description": "Descripción del proyecto 1. Un poco mas larga para ver como se ve en la página.",
+      "title": "Photo Gallery",
+      "description": "This is a photo gallery that I build for a photographer. It's a simple website that showcases his work. Uses Contentful for the media management. It's built with Next.js and Tailwind CSS. Hosted on Vercel.",
       "image": "https://via.placeholder.com/150",
-      "url": "/"
+      "stack": ["Next.js", "Contentful", "Typescript", "Tailwind CSS"],
+      "url": "https://photo-gallery-mati.vercel.app/"
     },
     {
-      "title": "Proyecto 2",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
+      "title": "News Website",
+      "description": "A news website focusing on political events in the province of Buenos Aires, Argentina. Built and maintained with Wordpress.",
       "image": "https://via.placeholder.com/150",
-      "stack": ["Stack 1", "Stack 2", "Stack 3"],
-      "url": "/"
+      "stack": ["Wordpress", "Custom Plugins", "CSS"],
+      "url": "https://eltableroinfo.com/"
     },
     {
-      "title": "Proyecto 3",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.",
+      "title": "Ecommerce Store",
+      "description": "Ecommerce website for a local store. Built with Next.js and Tailwind CSS. Using Zustand for state management.",
       "image": "https://via.placeholder.com/150",
-      "url": "/"
+      "stack": ["Next.js", "Zustand", "Axios"],
+      "url": "https://github.com/Juliansv/ecommerce-store"
     },
     {
-      "title": "Proyecto 4",
-      "description": "Descripción del proyecto 4",
+      "title": "Portfolio V1",
+      "description": "First attempt for portfolio website.",
       "image": "https://via.placeholder.com/150",
-      "stack": ["Stack 1", "Stack 2", "Stack 3", "Stack 4"],
+      "stack": ["Next.js", "Tailwind CSS", "Zod", "Resend"],
       "url": "/"
     }
   ]
