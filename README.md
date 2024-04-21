@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm an Argentinian web developer currently based in Malta
+I'm an Argentinian web developer
 
 ## About Me
 
