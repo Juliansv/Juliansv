@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm an Argentinian web developer. I build websites and web applications using Next.js, Tailwind CSS, and other technologies. I'm currently working as a freelance developer.
+I'm an Argentinian web developer.
 
 ## About Me
 
