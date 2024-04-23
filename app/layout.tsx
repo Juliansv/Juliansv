@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth` + montserrat.className}>
-      <body className="bg-slate-900 leading-relaxed selection:bg-rose-300 antialiased text-slate-400 selection:text-rose-900">{children}</body>
+    <html lang="en" className={`scroll-smooth ` + montserrat.className}>
+      <body className="bg-dark-purple leading-relaxed selection:bg-teal-300 antialiased text-slate-400 selection:text-teal-900">{children}</body>
     </html>
   );
 }

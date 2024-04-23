@@ -4,7 +4,7 @@
       "period": "10/2022 - PRESENT",
       "position": "Frontend Developer",
       "company": "Freelance",
-      "description": "Building web apps within the Javascript ecosystem.",
+      "description": "Working on different projects for clients. Building websites and web applications using Next.js, Tailwind CSS, and other technologies.",
       "skills": ["Next.js", "Tailwind CSS", "TypeScript"]
     },
     {
@@ -18,7 +18,7 @@
       "period": "11/2021 - 02/2022",
       "position": "QA Analyst",
       "company": "Scale IA",
-      "description": "Conducting hands-on evaluation and verification of Intelligent Automation (IA) data gathering tools through manual testingConducting hands-on evaluation and verification of Intelligent Automation (IA) data gathering tools through manual testing",
+      "description": "Conducting hands-on evaluation and verification of Intelligent Automation (IA) data gathering tools through manual testing.",
       "skills": ["Manual QA", "Web Scrapping", "Agile Methodologies"]
     },
     {
@@ -34,18 +34,6 @@
         "React.js",
         "Redux"
       ]
-    },
-    {
-      "period": "11/2017 - 04/2018",
-      "position": "Trainee Frontend Developer",
-      "company": "Snappler",
-      "description": "Building web apps within the Ruby on Rails ecosystem.",
-      "skills": [
-        "Ruby On Rails",
-        "Javascript",
-        "HTML5",
-        "CSS"
-      ]
     }
   ],
   "projects": [
@@ -54,28 +42,35 @@
       "description": "This is a photo gallery that I build for a photographer. It's a simple website that showcases his work. Uses Contentful for the media management. It's built with Next.js and Tailwind CSS. Hosted on Vercel.",
       "image": "https://via.placeholder.com/150",
       "stack": ["Next.js", "Contentful", "Typescript", "Tailwind CSS"],
-      "url": "https://photo-gallery-mati.vercel.app/"
+      "url": "https://photo-gallery-mati.vercel.app/",
+      "year": "2024"
     },
     {
       "title": "News Website",
       "description": "A news website focusing on political events in the province of Buenos Aires, Argentina. Built and maintained with Wordpress.",
       "image": "https://via.placeholder.com/150",
       "stack": ["Wordpress", "Custom Plugins", "CSS"],
-      "url": "https://eltableroinfo.com/"
+      "url": "https://eltableroinfo.com/",
+      "year": "2023"
+
     },
     {
       "title": "Ecommerce Store",
       "description": "Ecommerce website for a local store. Built with Next.js and Tailwind CSS. Using Zustand for state management.",
       "image": "https://via.placeholder.com/150",
       "stack": ["Next.js", "Zustand", "Axios"],
-      "url": "https://github.com/Juliansv/ecommerce-store"
+      "url": "https://github.com/Juliansv/ecommerce-store",
+      "year": "2023"
+
     },
     {
       "title": "Portfolio V1",
-      "description": "First attempt for portfolio website.",
+      "description": "First iteration of my portfolio website.",
       "image": "https://via.placeholder.com/150",
       "stack": ["Next.js", "Tailwind CSS", "Zod", "Resend"],
-      "url": "/"
+      "url": "/",
+      "year": "2023"
+
     }
   ]
 }
