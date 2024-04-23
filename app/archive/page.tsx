@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { promises as fs } from "fs";
+import { ArrowLeft } from "lucide-react";
 
 interface Project {
   title: string;
@@ -23,7 +24,10 @@ const Archive = async () => {
           href="/"
           className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-300"
         >
-          Back to page
+          <span>
+            <ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
+          </span>
+          Back to home page
         </Link>
         <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
           All projects
@@ -68,22 +72,27 @@ const Archive = async () => {
                   </div>
                 </td>
                 <td className="hidden py-4 pr-4 align-top lg:table-cell">
-                    <ul className="flex -translate-y-1.5 flex-wrap">
-                        {project.stack?.map((stack, index) => (
-                            <li key={index} className="my-1 mr-1.5">
-                                <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
-                                    {stack}
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
+                  <ul className="flex -translate-y-1.5 flex-wrap">
+                    {project.stack?.map((stack, index) => (
+                      <li key={index} className="my-1 mr-1.5">
+                        <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+                          {stack}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </td>
                 <td className="hidden py-4 align-top sm:table-cell">
-                    <ul className="translate-y-1">
-                        <li className="mb-1 flex items-center">
-                            <Link href={project.url} className="inline-flex items-baseline font-medium leading-tight hover:text-teal-300 focus-visible:text-teal-300 text-sm text-slate-400  group/link ">{project.url}</Link>
-                        </li>
-                    </ul>
+                  <ul className="translate-y-1">
+                    <li className="mb-1 flex items-center">
+                      <Link
+                        href={project.url}
+                        className="inline-flex items-baseline font-medium leading-tight hover:text-teal-300 focus-visible:text-teal-300 text-sm text-slate-400  group/link "
+                      >
+                        {project.url}
+                      </Link>
+                    </li>
+                  </ul>
                 </td>
               </tr>
             ))}
