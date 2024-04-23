@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Socials = () => {
   return (
-    <div className="flex gap-2 mt-10 md:w-1/2">
+    <div className="flex gap-2 mt-10 md:w-1/2 md:mx-auto">
       {/* Github */}
       <button
         type="button"
