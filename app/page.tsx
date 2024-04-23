@@ -17,6 +17,7 @@ interface Project {
   image: string;
   stack?: string[];
   url: string;
+  year: string;
 }
 
 export default async function Page() {
@@ -32,7 +33,7 @@ export default async function Page() {
         <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-              Julian Suarez Vivas
+              <Link href="/">Julian Suarez Vivas</Link>
             </h1>
             <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
               Frontend Developer
@@ -47,7 +48,7 @@ export default async function Page() {
             >
               <ul className="mt-16 w-max">
                 <li>
-                  <Link href="#About" className="group flex items-center py-3">
+                  <Link href="#about" className="group flex items-center py-3">
                     <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
                     <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
                       About
@@ -56,7 +57,7 @@ export default async function Page() {
                 </li>
                 <li>
                   <Link
-                    href="#Experience"
+                    href="#experience"
                     className="group flex items-center py-3"
                   >
                     <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
@@ -67,7 +68,7 @@ export default async function Page() {
                 </li>
                 <li>
                   <Link
-                    href="#Projects"
+                    href="#projects"
                     className="group flex items-center py-3"
                   >
                     <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
@@ -82,12 +83,18 @@ export default async function Page() {
           {/* Here it will go the nav links  */}
           <ul className="ml-1 mt-8 flex items-center">
             <li className="mr-5 text-xs shrink-0">
-              <Link href="https://github.com/juliansv">
+              <Link
+                href="https://github.com/juliansv"
+                className="block hover:text-slate-200"
+              >
                 <Github />
               </Link>
             </li>
             <li className="mr-5 text-xs shrink-0">
-              <Link href="https://www.linkedin.com/in/juliansuarezvivas/">
+              <Link
+                href="https://www.linkedin.com/in/juliansuarezvivas/"
+                className="block hover:text-slate-200"
+              >
                 <Linkedin />
               </Link>
             </li>
@@ -99,7 +106,7 @@ export default async function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="About me"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dark-purple/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                 About
               </h2>
@@ -120,7 +127,7 @@ export default async function Page() {
                 junior frontend developer, then took a detour into QA, and now
                 I&apos;m back to my frontend roots, focusing especially on
                 Next.js. Along the way, I&apos;ve sharpened my skills in
-                JavaScript, React.js, and Next.js, while also picking up
+                React.js, Typescript, and REST APIs, while also picking up
                 insights into quality assurance practices and agile
                 methodologies. With diverse project experience, I enjoy solving
                 problems and staying updated with tech trends. Always learning,
@@ -133,7 +140,7 @@ export default async function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="Work experience"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dark-purple/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                 Experience
               </h2>
@@ -168,7 +175,14 @@ export default async function Page() {
                   </li>
                 ))}
               </ol>
-              <div className="mt-12">View Full Resume</div>
+              <div className="mt-12">
+                <Link
+                  href="https://drive.google.com/file/d/13smCcgiBdyFLyl84QtOG0EQa4onTMIWr/view?usp=sharing"
+                  className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                >
+                  View Full Resume
+                </Link>
+              </div>
             </div>
           </section>
           <section
@@ -176,7 +190,7 @@ export default async function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="Selected projects"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-dark-purple/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
                 Projects
               </h2>
@@ -224,13 +238,43 @@ export default async function Page() {
                   </li>
                 ))}
               </ul>
-              <div>View Full Project Archive</div>
+              <div>
+                <Link
+                  href="/archive"
+                  className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                >
+                  View Full Project Archive
+                </Link>
+              </div>
             </div>
           </section>
           <footer className="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
             <p>
-              Coded in Visual Studio Code by yours truly. Built with Next.js and
-              Tailwind CSS, deployed with Vercel. Font of choice: Montserrat.
+              Coded in{" "}
+              <span className="font-bold hover:text-teal-300">
+                <Link href="https://code.visualstudio.com/">
+                  Visual Studio Code
+                </Link>
+              </span>
+              . Built with{" "}
+              <span className="font-bold hover:text-teal-300">
+                <Link href="https://nextjs.org/">Next.js</Link>
+              </span>{" "}
+              and{" "}
+              <span className="font-bold hover:text-teal-300">
+                <Link href="https://tailwindcss.com/">Tailwind CSS</Link>
+              </span>
+              , deployed with{" "}
+              <span className="font-bold hover:text-teal-300">
+                <Link href="https://vercel.com/">Vercel</Link>
+              </span>
+              . Font of choice:{" "}
+              <span className="font-bold hover:text-teal-300">
+                <Link href="https://fonts.google.com/specimen/Montserrat">
+                  Montserrat
+                </Link>
+              </span>
+              .
             </p>
           </footer>
         </main>
