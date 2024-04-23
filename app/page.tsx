@@ -113,25 +113,39 @@ export default async function Page() {
             </div>
             <div>
               <p className="mb-4">
-                I&apos;ve been involve in web development for a while now,
-                tackling projects for various clients, from small startups to
-                larger corporations. I&apos;m passionate about discovering
-                innovative solutions to challenges and staying in the loop with
-                the latest tech trends. Always hungry for knowledge and eager to
-                explore new territories, my aim is to craft websites that truly
-                stand out.
+                I started my journey as a developer around 2017, when a friend
+                of a friend told me about a bootcamp at a local startup called
+                <span className="font-bold hover:text-teal-300 cursor-pointer">
+                  {" "}
+                  Snappler
+                </span>
+                . There, I learned the basics of web development and gained the
+                confidence I needed to move forward.
+              </p>
+              <p className="mb-4">
+                {" "}
+                Fast forward to today, I have worked as a{" "}
+                <span className="font-bold hover:text-teal-300 cursor-pointer">
+                  {" "}
+                  front-end developer
+                </span>{" "}
+                for three companies and as a{" "}
+                <span className="font-bold hover:text-teal-300 cursor-pointer">
+                  {" "}
+                  QA analyst
+                </span>{" "}
+                for another two. I have honed my skills in different tech stacks
+                and gained experience working both in the office and from home.
               </p>
               <p>
                 {" "}
-                My journey has been quite the adventure. I started off as a
-                junior frontend developer, then took a detour into QA, and now
-                I&apos;m back to my frontend roots, focusing especially on
-                Next.js. Along the way, I&apos;ve sharpened my skills in
-                React.js, Typescript, and REST APIs, while also picking up
-                insights into quality assurance practices and agile
-                methodologies. With diverse project experience, I enjoy solving
-                problems and staying updated with tech trends. Always learning,
-                I aim for standout websites.
+                For the last year I have been working as a{" "}
+                <span className="font-bold hover:text-slate-300 cursor-pointer">
+                  {" "}
+                  freelance developer
+                </span>
+                , diving into various projects. Always learning and keeping up
+                to date with tech trends.
               </p>
             </div>
           </section>
