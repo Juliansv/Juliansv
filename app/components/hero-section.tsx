@@ -24,7 +24,7 @@ const HeroSection = () => {
             kinds of projects from small startups to bigger companies. I like
             finding creative solutions to problems and keeping up with the
             latest tech. Always learning and trying new things, my goal is to
-            make websites that really stand out.
+            make websites that really stand out
           </p>
           <Socials />
         </div>
