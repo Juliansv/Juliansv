@@ -4,8 +4,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Portfolio v2",
-  description: "Portfolio version 2",
+  title: "Julian Suarez Vivas",
+  description: "Portfolio website",
 };
 
 const montserrat = Montserrat({
