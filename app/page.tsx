@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Github, Linkedin, ArrowRight } from "lucide-react";
 
-
 interface Job {
   period: string;
   position: string;
@@ -120,8 +119,8 @@ export default async function Page() {
                   {" "}
                   Snappler
                 </span>
-                . There, I learned the basics of web development and gained the
-                confidence I needed to move forward.
+                . There, I learned the basics of web development and realized
+                that this was the path I wanted to continue on.
               </p>
               <p className="mb-4">
                 {" "}
@@ -145,7 +144,7 @@ export default async function Page() {
                   {" "}
                   freelance developer
                 </span>
-                , diving into various projects. Always learning and keeping up
+                , diving into different projects. Always learning and keeping up
                 to date with tech trends.
               </p>
             </div>

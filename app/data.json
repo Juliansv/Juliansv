@@ -68,7 +68,7 @@
       "description": "First iteration of my portfolio website.",
       "image": "/images/portfolio-v1.png",
       "stack": ["Next.js", "Tailwind CSS", "Zod", "Resend"],
-      "url": "/",
+      "url": "https://portfolio-v1-vert-alpha.vercel.app/",
       "year": "2023"
 
     }
