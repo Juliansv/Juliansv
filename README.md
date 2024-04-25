@@ -1,10 +1,10 @@
 # Hi there, I'm Julian! 👋
 
-I'm a web developer working within the javascript ecosystem
+I'm an Argentinian web developer.
 
 ## About Me
 
-- 🌱 I'm currently learning **React & Next.js** to build full-stack web applications.
+- 🔨 Frontend developer - I have experience building web applications using Next.js, TypeScript, and Tailwind CSS.
 - 🔍 QA background - I have a keen eye for detail and a strong commitment to delivering high-quality code.
 - 🏀 Basketball enthusiast - I love shooting hoops and watching NBA games in my spare time.
 
