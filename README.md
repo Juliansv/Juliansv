@@ -6,7 +6,7 @@ I'm an Argentinian web developer.
 
 - 🔨 Frontend developer - I have experience building web applications using Next.js, TypeScript, and Tailwind CSS.
 - 🔍 QA background - I have a keen eye for detail and a strong commitment to delivering high-quality code.
-- 🏀 Basketball enthusiast - I love shooting hoops and watching NBA games in my spare time.
+- 🏀 Basketball enthusiast - I love shooting hoops in my spare time.
 
 ## Contact Me
 
