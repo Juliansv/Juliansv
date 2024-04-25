@@ -1,9 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* :root {
-  background-color: Canvas;
-  color: CanvasText;
-  color-scheme: light dark;
-} */
+@layer base{
+    body {
+        @apply dark:bg-gray-800 bg-white
+    }
+}
