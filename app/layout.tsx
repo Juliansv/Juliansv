@@ -1,34 +1,25 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
-
+import { Montserrat } from 'next/font/google'
 import "./globals.css";
-import { Inter } from "next/font/google";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import { ThemeProvider } from "./(providers)/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "JSV | Portfolio",
-  description: "Personal portfolio site",
+  title: "Portfolio v2",
+  description: "Portfolio version 2",
 };
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className}`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Header />
-          {children}
-          <Analytics />
-          <Footer />
-        </ThemeProvider>
-      </body>
+    <html lang="en" className={`scroll-smooth ` + montserrat.className}>
+      <body className="bg-dark-purple leading-relaxed selection:bg-teal-300 antialiased text-slate-400 selection:text-teal-900">{children}</body>
     </html>
   );
 }
