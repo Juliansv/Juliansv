@@ -1,6 +1,6 @@
 # Hi there, I'm Julian! 👋
 
-I'm an Argentinian web developer.
+I'm an Argentinian web developer. Currently on my path to become a full-stack dev, enjoying the journey and learning new things every day.
 
 ## About Me
 
