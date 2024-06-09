@@ -2,23 +2,7 @@ import { promises as fs } from "fs";
 import Link from "next/link";
 import Image from "next/image";
 import { Github, Linkedin, ArrowRight } from "lucide-react";
-
-interface Job {
-  period: string;
-  position: string;
-  company: string;
-  description: string;
-  skills: string[];
-}
-
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  stack?: string[];
-  url: string;
-  year: string;
-}
+import { Job, Project } from "@/types";
 
 export default async function Page() {
   const file = await fs.readFile(process.cwd() + "/app/data.json", "utf8");
