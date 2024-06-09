@@ -7,3 +7,12 @@
   color: CanvasText;
   color-scheme: light dark;
 } */
+
+.line-active {
+  width: 4rem;
+  --tw-bg-opacity: 1;
+  background-color: #e2e8f0;
+}
+.text-active {
+  color: rgb(226 232 240);
+}
