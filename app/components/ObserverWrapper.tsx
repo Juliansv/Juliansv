@@ -6,7 +6,6 @@ import Footer from "./Footer";
 import Projects from "./Projects";
 import { Job, Project } from "@/types";
 import { FC, useEffect } from "react";
-import Header from "./Header";
 import { useInView } from "react-intersection-observer";
 
 interface ObserverProps {
@@ -29,25 +28,44 @@ const ObserverWrapper: FC<ObserverProps> = ({
 	});
 
 	useEffect(() => {
-        document.querySelector(".line-active")?.classList.remove("line-active");
-        document.querySelector(".text-active")?.classList.remove("text-active");
+		document.querySelector(".line-active")?.classList.remove("line-active");
+		document.querySelector(".text-active")?.classList.remove("text-active");
 
-        if (aboutInView) {
-            document.getElementById("about-nav-line")?.classList.add("line-active");
-            document.getElementById("about-nav-text")?.classList.add("text-active");
-        } else if (experienceInView) {
-            document.getElementById("experience-nav-line")?.classList.add("line-active");
-            document.getElementById("experience-nav-text")?.classList.add("text-active");
-        } else {
-            document.getElementById("projects-nav-line")?.classList.add("line-active");
-            document.getElementById("projects-nav-text")?.classList.add("text-active");
-        }
-        
+		let element;
+
+		if (aboutInView) {
+			element = "about";
+		} else if (experienceInView) {
+			element = "experience";
+		} else if (projectsInView) {
+			element = "projects";
+		}
+
+		document
+			.getElementById(`${element}-nav-line`)
+			?.classList.add("line-active");
+		document
+			.getElementById(`${element}-nav-text`)
+			?.classList.add("text-active");
 	}, [aboutInView, experienceInView, projectsInView]);
+
+	useEffect(() => {
+		const blob = document.getElementById("blob");
+
+		if (!blob) return;
+
+		document.body.onpointermove = (event) => {
+			const { clientX, clientY } = event;
+
+            blob.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, { duration: 3000, fill: "forwards" })
+		};
+	}, []);
 
 	return (
 		<>
-			<Header />
 			<main className="pt-24 lg:w-1/2 lg:py-24">
 				<div ref={aboutRef} id="about-section">
 					<AboutMe />
