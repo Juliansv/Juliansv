@@ -9,12 +9,11 @@ const Header = () => {
 					<Link href="/">Julian Suarez Vivas</Link>
 				</h1>
 				<h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-					Frontend Developer
+					Web Developer
 				</h2>
 				<p className="mt-4 max-w-sm leading-normal">
 					I focus on delivering slick, user-friendly apps with
-					precision and style, prioritizing user satisfaction above
-					all.
+					precision and style.
 				</p>
 				<nav
 					className="nav hidden lg:block"
