@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import { Job, Project } from "@/types";
 import ObserverWrapper from "./components/ObserverWrapper";
+import Header from "./components/Header";
 
 export default async function Page() {
 	const file = await fs.readFile(process.cwd() + "/app/data.json", "utf8");
