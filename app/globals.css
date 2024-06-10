@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  background-color: Canvas;
-  color: CanvasText;
-  color-scheme: light dark;
-} */
-
 .line-active {
 	width: 4rem;
 	--tw-bg-opacity: 1;
@@ -17,37 +11,13 @@
 	color: rgb(226 232 240);
 }
 
-#blob {
-	background-color: white;
-	margin: 0;
-	padding: 0;
-	height: 100px;
-	aspect-ratio: 1;
-	position: fixed;
-	z-index: -2;
-	left: 50%;
-	top: 50%;
-	translate: -50% -50%;
-	border-radius: 50%;
-	background: linear-gradient(to right, aquamarine, mediumpurple);
-	animation: rotate 20s infinite;
-}
-
-#blur {
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	z-index: -1;
-	backdrop-filter: blur(150px);
-}
-
 @keyframes rotate {
 	from {
 		rotate: 0deg;
 	}
 
 	50% {
-		scale: 1 1.5;
+		scale: 1 2;
 	}
 
 	to {

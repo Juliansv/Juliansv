@@ -49,21 +49,6 @@ const ObserverWrapper: FC<ObserverProps> = ({
 			?.classList.add("text-active");
 	}, [aboutInView, experienceInView, projectsInView]);
 
-	useEffect(() => {
-		const blob = document.getElementById("blob");
-
-		if (!blob) return;
-
-		document.body.onpointermove = (event) => {
-			const { clientX, clientY } = event;
-
-            blob.animate({
-                left: `${clientX}px`,
-                top: `${clientY}px`
-            }, { duration: 3000, fill: "forwards" })
-		};
-	}, []);
-
 	return (
 		<>
 			<main className="pt-24 lg:w-1/2 lg:py-24">
