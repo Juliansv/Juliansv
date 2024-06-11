@@ -2,7 +2,7 @@
 
 I've spent so much time surfing the web that I decided to make a career out of it.
 
-## About Me
+##
 
 - 🇦🇷 Argentinian
 - 🔨 Web developer - I have experience building web applications with React.js, Node.js, and Typescript.
