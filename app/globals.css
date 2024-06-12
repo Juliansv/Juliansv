@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  background-color: Canvas;
-  color: CanvasText;
-  color-scheme: light dark;
-} */
+.line-active {
+	width: 4rem;
+	--tw-bg-opacity: 1;
+	background-color: #e2e8f0;
+}
+.text-active {
+	color: rgb(226 232 240);
+}
+
+@keyframes rotate {
+	from {
+		rotate: 0deg;
+	}
+
+	50% {
+		scale: 1 2;
+	}
+
+	to {
+		rotate: 360deg;
+	}
+}
