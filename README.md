@@ -5,8 +5,8 @@ I've spent so much time surfing the web that I decided to make a career out of i
 ##
 
 - 🇦🇷 Argentinian
-- 🔨 Web developer - I have experience building web applications with React.js, Node.js, and Typescript.
-- 🔍 QA background - I started as a manual tester and later became a QA automation tester.
+- 🔨 I build web applications using React.js.
+- 🔍 QA background
 - 🏀 Basketball enthusiast - I love shooting hoops in my spare time.
 
 ##
