@@ -2,15 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { FC } from "react";
-
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  stack?: string[];
-  url: string;
-  year: string;
-}
+import { Project } from "@/types";
 
 interface ProjectProps {
   projects: Project[];

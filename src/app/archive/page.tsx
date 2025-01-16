@@ -12,7 +12,7 @@ interface Project {
 }
 
 const Archive = async () => {
-  const file = await fs.readFile(process.cwd() + "/app/data.json", "utf8");
+  const file = await fs.readFile(process.cwd() + "/src/lib/data.json", "utf8");
   const data = JSON.parse(file);
 
   const projects: Project[] = data.projects;

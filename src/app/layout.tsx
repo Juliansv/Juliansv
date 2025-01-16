@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import MouseTrailer from "./components/MouseTrailer";
+
+import MouseTrailer from "@/components/MouseTrailer";
 
 export const metadata: Metadata = {
 	title: "Julian Suarez Vivas",

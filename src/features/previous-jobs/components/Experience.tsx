@@ -1,13 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
-
-interface Job {
-  period: string;
-  position: string;
-  company: string;
-  description: string;
-  skills: string[];
-}
+import { Job } from "@/types";
 
 interface JobProps {
   experience: Job[];

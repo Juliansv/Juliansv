@@ -1,19 +1,19 @@
 "use client";
 
-import AboutMe from "./AboutMe";
-import Experience from "./Experience";
-import Footer from "./Footer";
-import Projects from "./Projects";
+import AboutMe from "@/features/about-me/components/AboutMe";
+import Experience from "@/features/previous-jobs/components/Experience";
+import Footer from "@/features/home/Footer";
+import Projects from "@/features/projects/components/Projects";
 import { Job, Project } from "@/types";
 import { FC, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-interface ObserverProps {
+interface MainProps {
 	experience: Job[];
 	projects: Project[];
 }
 
-const ObserverWrapper: FC<ObserverProps> = ({
+const Main: FC<MainProps> = ({
 	experience,
 	projects,
 }): JSX.Element => {
@@ -67,4 +67,4 @@ const ObserverWrapper: FC<ObserverProps> = ({
 	);
 };
 
-export default ObserverWrapper;
+export default Main;
