@@ -1,7 +1,15 @@
-const AdminPage = () => {
-  return (
-    <div>Admin page</div>
-  )
-}
+import { redirect } from "next/navigation";
 
-export default AdminPage
+import { createClient } from "@/features/auth/utils/supabase/server";
+
+const AdminPage = async () => {
+	const supabase = await createClient();
+
+	const { data, error } = await supabase.auth.getUser();
+	if (error || !data?.user) {
+		redirect("/login");
+	}
+	return <div>Admin page</div>;
+};
+
+export default AdminPage;
