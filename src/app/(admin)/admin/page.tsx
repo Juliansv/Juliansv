@@ -9,6 +9,7 @@ const AdminPage = async () => {
 	if (error || !data?.user) {
 		redirect("/login");
 	}
+
 	return <div>Admin page</div>;
 };
 
