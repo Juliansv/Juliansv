@@ -1,10 +1,13 @@
 import { promises as fs } from "fs";
 import { Job, Project } from "@/types";
-import Main from "@/features/home/Main";
-import Header from "@/features/home/Header";
+import Main from "@/features/front/home/Main";
+import Header from "@/features/front/home/Header";
 
 export default async function Page() {
-	const file = await fs.readFile(process.cwd() + "/src/lib/data.json", "utf8");
+	const file = await fs.readFile(
+		process.cwd() + "/src/lib/data.json",
+		"utf8"
+	);
 	const data = JSON.parse(file);
 
 	const experience: Job[] = data.experience;

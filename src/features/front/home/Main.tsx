@@ -1,9 +1,9 @@
 "use client";
 
-import AboutMe from "@/features/about-me/components/AboutMe";
-import Experience from "@/features/previous-jobs/components/Experience";
-import Footer from "@/features/home/Footer";
-import Projects from "@/features/projects/components/Projects";
+import AboutMe from "@/features/front/about-me/components/AboutMe";
+import Experience from "@/features/front/previous-jobs/components/Experience";
+import Footer from "@/features/front/home/Footer";
+import Projects from "@/features/front/projects/components/Projects";
 import { Job, Project } from "@/types";
 import { FC, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -13,10 +13,7 @@ interface MainProps {
 	projects: Project[];
 }
 
-const Main: FC<MainProps> = ({
-	experience,
-	projects,
-}): JSX.Element => {
+const Main: FC<MainProps> = ({ experience, projects }): JSX.Element => {
 	const { ref: aboutRef, inView: aboutInView } = useInView({
 		rootMargin: "-35% 0px -35% 0px",
 	});

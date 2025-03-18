@@ -1,0 +1,21 @@
+"use client";
+
+import { Job } from "@/types";
+import { columns } from "./columns";
+import { DataTable } from "@/features/admin/experience/data-table";
+import { useJobStore } from "@/store/useJobsStore";
+
+interface ExperienceTableProps {
+	data: Job[];
+}
+
+export default function ExperienceTable({ data: Jobs }: ExperienceTableProps) {
+	// save the jobs info to the store
+	const setJobsInStore = useJobStore((state) => state.addJobsToStore);
+	setJobsInStore(Jobs);
+	return (
+		<div className="container mx-auto py-10">
+			<DataTable columns={columns} data={Jobs} />
+		</div>
+	);
+}

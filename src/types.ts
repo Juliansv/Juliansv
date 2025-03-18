@@ -1,11 +1,3 @@
-export interface Job {
-	period: string;
-	position: string;
-	company: string;
-	description: string;
-	skills: string[];
-}
-
 export interface Project {
 	title: string;
 	description: string;
@@ -14,3 +6,14 @@ export interface Project {
 	url: string;
 	year: string;
 }
+
+// This is the type used to define the jobs data.
+export type Job = {
+	id: string;
+	position: string;
+	company: string;
+	startedAt: string;
+	finishedAt: string;
+	description: string;
+	techStack: string[];
+};
