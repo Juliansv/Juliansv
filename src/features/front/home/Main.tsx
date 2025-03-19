@@ -4,12 +4,12 @@ import AboutMe from "@/features/front/about-me/components/AboutMe";
 import Experience from "@/features/front/previous-jobs/components/Experience";
 import Footer from "@/features/front/home/Footer";
 import Projects from "@/features/front/projects/components/Projects";
-import { Job, Project } from "@/types";
+import { Job, JobOld, Project } from "@/types";
 import { FC, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 interface MainProps {
-	experience: Job[];
+	experience: JobOld[];
 	projects: Project[];
 }
 

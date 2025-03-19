@@ -1,5 +1,5 @@
 import { promises as fs } from "fs";
-import { Job, Project } from "@/types";
+import { Job, JobOld, Project } from "@/types";
 import Main from "@/features/front/home/Main";
 import Header from "@/features/front/home/Header";
 
@@ -10,7 +10,7 @@ export default async function Page() {
 	);
 	const data = JSON.parse(file);
 
-	const experience: Job[] = data.experience;
+	const experience: JobOld[] = data.experience;
 	const projects: Project[] = data.projects;
 
 	return (
