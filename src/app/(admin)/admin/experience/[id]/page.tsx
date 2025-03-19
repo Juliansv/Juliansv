@@ -1,16 +1,9 @@
-"use client";
-
-import JobForm from "@/features/admin/experience/job-form";
-import React from "react";
+import Link from "next/link";
 
 import { ArrowBigLeftDashIcon } from "lucide-react";
-import Link from "next/link";
-import { useJobStore } from "@/store/useJobsStore";
+import { ExperienceForm } from "@/features/admin/experience/experience-form";
 
 const JobPage = ({ params }: { params: { id: string } }) => {
-	const jobs = useJobStore((state) => state.jobs);
-	const data = jobs.find((job) => job.id.toString() === params.id);
-
 	return (
 		<div className="p-4 m-4">
 			<Link
@@ -20,7 +13,7 @@ const JobPage = ({ params }: { params: { id: string } }) => {
 				<ArrowBigLeftDashIcon />
 				Go back
 			</Link>
-			<JobForm data={data} />
+			<ExperienceForm id={params.id} />
 		</div>
 	);
 };

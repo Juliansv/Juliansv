@@ -25,15 +25,13 @@ const ExperienceAdminPage = async () => {
 			</div>
 			<Separator className="my-4" />
 			<div id="Header-form" className="m-4 p-4">
-				<div>
-					<Link
-						href="/admin/experience/new"
-						className="flex gap-2 bg-green-700 text-white p-4 rounded-md hover:bg-green-800 w-fit"
-					>
-						<Plus />
-						Add new job
-					</Link>
-				</div>
+				<Link
+					href="/admin/experience/new"
+					className="flex gap-2 bg-green-700 text-white p-4 rounded-md hover:bg-green-800 w-fit"
+				>
+					<Plus />
+					Add new job
+				</Link>
 				<ExperienceTable data={jobsInfo} />
 			</div>
 		</div>

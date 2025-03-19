@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFormState } from "react-hook-form";
+import { TagsInput } from "@/components/ui/extension/tags-input";
 
 import { z } from "zod";
 
@@ -16,14 +17,16 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { formSchema } from "@/features/admin/experience/form-schema";
+import { formSchema } from "@/features/admin/experience/experience-form/form-schema";
+import { createNewJob, updateJob } from "../actions";
+import { useRouter } from "next/navigation";
 
 interface JobFormProps {
 	data?: JobInfoProps;
 }
 
 interface JobInfoProps {
+	id: string;
 	position: string;
 	company: string;
 	startedAt: string;
@@ -45,14 +48,19 @@ const JobForm = ({ data }: JobFormProps) => {
 		},
 	});
 
+	const isNew = !data;
+
+	const { push } = useRouter();
+
 	const { isDirty, dirtyFields, defaultValues, isSubmitting, isValid } =
 		useFormState({
 			control: form.control,
 		});
 
 	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log(values);
+		isNew ? createNewJob(values) : updateJob(values, data.id);
 	}
+
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -101,7 +109,7 @@ const JobForm = ({ data }: JobFormProps) => {
 						<FormItem>
 							<FormLabel>Started at</FormLabel>
 							<FormControl>
-								<Textarea
+								<Input
 									placeholder="Write the start date of the job"
 									{...field}
 								/>
@@ -155,11 +163,11 @@ const JobForm = ({ data }: JobFormProps) => {
 						<FormItem>
 							<FormLabel>Tech Stack</FormLabel>
 							<FormControl>
-								<Textarea
-									placeholder="Write the tech stack used in this job"
-									className="h-60"
-									{...field}
-								/>
+								<TagsInput
+									value={field.value}
+									onValueChange={field.onChange}
+									placeholder="Enter your tech"
+								></TagsInput>
 							</FormControl>
 							<FormDescription>
 								This is the tech stack used in the job
@@ -170,21 +178,25 @@ const JobForm = ({ data }: JobFormProps) => {
 				/>
 				<div className="flex justify-center space-x-4">
 					<Button
-						disabled={!isDirty || !isValid}
+						disabled={!isDirty}
 						variant="outline"
 						type="submit"
-						className="text-2xl w-36 h-16"
+						className="text-2xl w-36 h-16 bg-green-700 text-white hover:bg-green-800"
 					>
-						Save
+						{isNew ? "Create" : "Update"}
 					</Button>
 					<Button
-						disabled={!isDirty || !isValid}
+						disabled={!isDirty}
 						variant="destructive"
-						onClick={() => form.reset(defaultValues)}
-						type="reset"
+						onClick={() => {
+							isNew
+								? push("/admin/experience")
+								: form.reset(defaultValues);
+						}}
+						type={isNew ? "button" : "reset"}
 						className="text-2xl w-36 h-16"
 					>
-						Cancel
+						{isNew ? "Cancel" : "Reset"}
 					</Button>
 				</div>
 			</form>

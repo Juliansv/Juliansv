@@ -4,7 +4,6 @@ import {
 	ColumnDef,
 	flexRender,
 	getCoreRowModel,
-	Row,
 	useReactTable,
 } from "@tanstack/react-table";
 
@@ -17,7 +16,6 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { useRouter } from "next/navigation";
-import { useJobStore } from "@/store/useJobsStore";
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];

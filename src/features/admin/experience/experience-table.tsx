@@ -1,8 +1,8 @@
 "use client";
 
 import { Job } from "@/types";
-import { columns } from "./columns";
-import { DataTable } from "@/features/admin/experience/data-table";
+import { columns } from "./experience-form/columns";
+import { DataTable } from "@/features/admin/experience/experience-form/data-table";
 import { useJobStore } from "@/store/useJobsStore";
 
 interface ExperienceTableProps {
