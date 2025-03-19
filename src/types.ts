@@ -17,3 +17,12 @@ export type Job = {
 	description: string;
 	techStack: string[];
 };
+
+export type JobOld = {
+	id: string;
+	position: string;
+	company: string;
+	period: string;
+	description: string;
+	skills: string[];
+};
