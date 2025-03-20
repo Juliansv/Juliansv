@@ -178,7 +178,7 @@ const JobForm = ({ data }: JobFormProps) => {
 				/>
 				<div className="flex justify-center space-x-4">
 					<Button
-						disabled={!isDirty}
+						disabled={!isDirty || isSubmitting}
 						variant="outline"
 						type="submit"
 						className="text-2xl w-36 h-16 bg-green-700 text-white hover:bg-green-800"
@@ -186,7 +186,7 @@ const JobForm = ({ data }: JobFormProps) => {
 						{isNew ? "Create" : "Update"}
 					</Button>
 					<Button
-						disabled={!isDirty}
+						disabled={!isDirty || isSubmitting}
 						variant="destructive"
 						onClick={() => {
 							isNew
@@ -194,7 +194,7 @@ const JobForm = ({ data }: JobFormProps) => {
 								: form.reset(defaultValues);
 						}}
 						type={isNew ? "button" : "reset"}
-						className="text-2xl w-36 h-16"
+						className="text-2xl w-36 h-16 bg-red-700 hover:bg-red-800"
 					>
 						{isNew ? "Cancel" : "Reset"}
 					</Button>

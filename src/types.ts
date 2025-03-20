@@ -18,6 +18,15 @@ export type Job = {
 	techStack: string[];
 };
 
+export interface HomeInfo {
+	title: string;
+	subtitle: string;
+	description: string;
+	github_link: string;
+	linkedin_link: string;
+	about_me: string;
+}
+
 export type JobOld = {
 	id: string;
 	position: string;

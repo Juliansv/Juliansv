@@ -15,7 +15,7 @@ import {
 const items = [
 	{
 		title: "Home",
-		url: "/admin",
+		url: "/admin/home",
 		icon: Home,
 	},
 	{

@@ -1,4 +1,4 @@
-import { Job } from "@/types";
+import { HomeInfo, Job } from "@/types";
 import { SupabaseClient } from "@supabase/supabase-js";
 
 interface getSupabaseInfoProps {
@@ -9,6 +9,27 @@ export async function getHomeInfo({ supabase }: getSupabaseInfoProps) {
 	const { data } = await supabase.from("HomeSection").select("*");
 	const homeInfo = data?.pop();
 	return homeInfo;
+}
+
+export async function updateHomeInfo(
+	{ supabase }: getSupabaseInfoProps,
+	formData: HomeInfo
+) {
+	console.log("formData", formData);
+
+	const { data, error } = await supabase
+		.from("HomeSection")
+		.update({
+			title: formData.title,
+			subtitle: formData.subtitle,
+			description: formData.description,
+			github_link: formData.github_link,
+			linkedin_link: formData.linkedin_link,
+			about_me: formData.about_me,
+		})
+		.eq("id", 1)
+		.select();
+	return { data, error };
 }
 
 export async function getExperienceInfo({ supabase }: getSupabaseInfoProps) {

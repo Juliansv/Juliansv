@@ -15,7 +15,7 @@ interface HomeFormProps {
 	about_me: string;
 }
 
-const AdminPage = async () => {
+const HomeAdminPage = async () => {
 	const supabase = await createClient();
 
 	const { data, error } = await supabase.auth.getUser();
@@ -29,15 +29,15 @@ const AdminPage = async () => {
 		<div id="home-container">
 			<div className="h-16 flex">
 				<h2 className="m-auto text-3xl py-6 font-semibold">
-					Dashboard
+					Home Section
 				</h2>
 			</div>
 			<Separator className="my-4" />
 			<div id="header-form" className="m-4 p-4">
-				Dashboard data
+				<HomeForm data={homeInfo} />
 			</div>
 		</div>
 	);
 };
 
-export default AdminPage;
+export default HomeAdminPage;

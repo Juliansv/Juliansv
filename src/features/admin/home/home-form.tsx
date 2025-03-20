@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formSchema } from "@/features/admin/home/form-schema";
+import { handleUpdateHomeInfo } from "./actions";
 
 interface HomeFormProps {
 	data: HomeInfoProps;
@@ -61,6 +62,7 @@ const HomeForm = ({
 
 	function onSubmit(values: z.infer<typeof formSchema>) {
 		console.log(values);
+		handleUpdateHomeInfo(values);
 	}
 	return (
 		<Form {...form}>
@@ -174,21 +176,21 @@ const HomeForm = ({
 				/>
 				<div className="flex justify-center space-x-4">
 					<Button
-						disabled={!isDirty || !isValid}
+						disabled={!isDirty || !isValid || isSubmitting}
 						variant="outline"
 						type="submit"
-						className="text-2xl w-36 h-16"
+						className="text-2xl w-36 h-16 bg-green-700 text-white hover:bg-green-800 hover:text-white"
 					>
-						Save
+						Update
 					</Button>
 					<Button
-						disabled={!isDirty || !isValid}
+						disabled={!isDirty || !isValid || isSubmitting}
 						variant="destructive"
 						onClick={() => form.reset(defaultValues)}
 						type="reset"
-						className="text-2xl w-36 h-16"
+						className="text-2xl w-36 h-16 bg-red-700 hover:bg-red-800"
 					>
-						Cancel
+						Reset
 					</Button>
 				</div>
 			</form>
