@@ -1,0 +1,219 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, useFormState } from "react-hook-form";
+import { TagsInput } from "@/components/ui/extension/tags-input";
+
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
+import {
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { formSchema } from "@/features/admin/projects/projects-form/form-schema";
+// import { createNewJob, updateJob } from "../actions";
+import {
+	createNewProject,
+	updateProject,
+} from "@/features/admin/projects/actions";
+import { useRouter } from "next/navigation";
+import { Textarea } from "@/components/ui/textarea";
+import { useProjectsStore } from "@/store/useProjectsStore";
+
+interface ProjectsFormProps {
+	data?: ProjectsInfoProps;
+}
+
+interface ProjectsInfoProps {
+	id: string;
+	title: string;
+	description: string;
+	image: string;
+	stack?: string[];
+	url: string;
+	year: string;
+}
+
+const ProjectForm = ({ id }: { id: string }) => {
+	// useProjectsStore is a custom hook that returns the projects array from the store
+	const projects = useProjectsStore((state) => state.projects);
+
+	// The find method is used to find the job with the id that matches the id passed as a prop
+	const data = projects.find((project) => project.id.toString() === id);
+
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
+		defaultValues: {
+			title: data?.title || "",
+			description: data?.description || "",
+			image: data?.image || "",
+			stack: data?.stack || [],
+			url: data?.url || "",
+			year: data?.year || "",
+		},
+	});
+
+	const isNew = !data;
+
+	const { push } = useRouter();
+
+	const { isDirty, dirtyFields, defaultValues, isSubmitting, isValid } =
+		useFormState({
+			control: form.control,
+		});
+
+	function onSubmit(values: z.infer<typeof formSchema>) {
+		isNew ? createNewProject(values) : updateProject(values, data.id);
+	}
+
+	return (
+		<Form {...form}>
+			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+				<FormField
+					control={form.control}
+					name="title"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Title</FormLabel>
+							<FormControl>
+								<Input
+									placeholder="Write the title here..."
+									{...field}
+								/>
+							</FormControl>
+							<FormDescription>
+								This is the title of the project.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="description"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Description</FormLabel>
+							<FormControl>
+								<Input placeholder="Description" {...field} />
+							</FormControl>
+							<FormDescription>
+								This is the description of the project.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="image"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Image</FormLabel>
+							<FormControl>
+								<Input
+									placeholder="Write the image url here..."
+									{...field}
+								/>
+							</FormControl>
+							<FormDescription>
+								This is the image url.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="stack"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Tech Stack</FormLabel>
+							<FormControl>
+								<TagsInput
+									value={field.value}
+									onValueChange={field.onChange}
+									placeholder="Enter your tech"
+								></TagsInput>
+							</FormControl>
+							<FormDescription>
+								This is the tech stack used in the project
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="url"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>URL</FormLabel>
+							<FormControl>
+								<Input
+									placeholder="Write the url of the project"
+									{...field}
+								/>
+							</FormControl>
+							<FormDescription>
+								This is the url of the project.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="year"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Year</FormLabel>
+							<FormControl>
+								<Input
+									placeholder="Write the year of creation of the project..."
+									{...field}
+								/>
+							</FormControl>
+							<FormDescription>
+								This is the year of creation of the project.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<div className="flex justify-center space-x-4">
+					<Button
+						disabled={!isDirty || isSubmitting}
+						variant="outline"
+						type="submit"
+						className="text-2xl w-36 h-16 bg-green-700 text-white hover:bg-green-800"
+					>
+						{isNew ? "Create" : "Update"}
+					</Button>
+					<Button
+						disabled={!isDirty || isSubmitting}
+						variant="destructive"
+						onClick={() => {
+							isNew
+								? push("/admin/experience")
+								: form.reset(defaultValues);
+						}}
+						type={isNew ? "button" : "reset"}
+						className="text-2xl w-36 h-16 bg-red-700 hover:bg-red-800"
+					>
+						{isNew ? "Cancel" : "Reset"}
+					</Button>
+				</div>
+			</form>
+		</Form>
+	);
+};
+
+export default ProjectForm;

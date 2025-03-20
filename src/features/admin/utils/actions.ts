@@ -1,4 +1,4 @@
-import { HomeInfo, Job } from "@/types";
+import { HomeInfo, Job, Project } from "@/types";
 import { SupabaseClient } from "@supabase/supabase-js";
 
 interface getSupabaseInfoProps {
@@ -72,6 +72,51 @@ export async function updateExperienceInfo(
 			finishedAt: job.finishedAt,
 			description: job.description,
 			techStack: job.techStack,
+		})
+		.eq("id", id);
+	return { data, error };
+}
+
+export async function getProjectsInfo({ supabase }: getSupabaseInfoProps) {
+	const { data } = await supabase.from("ProjectsSection").select("*");
+	if (!data) return [];
+	return data;
+}
+
+export async function setProjectInfo(
+	{ supabase }: getSupabaseInfoProps,
+	project: Omit<Project, "id">
+) {
+	const { data, error } = await supabase
+		.from("ProjectsSection")
+		.insert([
+			{
+				title: project.title,
+				description: project.description,
+				image: project.image,
+				stack: project.stack,
+				url: project.url,
+				year: project.year,
+			},
+		])
+		.select();
+	return { data, error };
+}
+
+export async function updateProjectInfo(
+	{ supabase }: getSupabaseInfoProps,
+	project: Omit<Project, "id">,
+	id: string
+) {
+	const { data, error } = await supabase
+		.from("ProjectsSection")
+		.update({
+			title: project.title,
+			description: project.description,
+			image: project.image,
+			stack: project.stack,
+			url: project.url,
+			year: project.year,
 		})
 		.eq("id", id);
 	return { data, error };
