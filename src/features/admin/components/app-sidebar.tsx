@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import { Calendar, Home, Search, Settings } from "lucide-react";
 
 import {
 	Sidebar,
@@ -10,6 +10,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 // Menu items.
 const items = [
@@ -40,7 +41,9 @@ export function AppSidebar() {
 		<Sidebar collapsible="icon">
 			<SidebarContent>
 				<SidebarGroup>
-					<SidebarGroupLabel>ADMIN DASHBOARD</SidebarGroupLabel>
+					<SidebarGroupLabel>
+						<Link href="/admin">ADMIN DASHBOARD</Link>
+					</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu>
 							{items.map((item) => (
