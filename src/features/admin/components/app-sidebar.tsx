@@ -1,8 +1,18 @@
-import { Calendar, Home, Search, Settings } from "lucide-react";
+"use client";
+
+import {
+	Calendar,
+	ChevronUp,
+	Home,
+	Search,
+	Settings,
+	User2,
+} from "lucide-react";
 
 import {
 	Sidebar,
 	SidebarContent,
+	SidebarFooter,
 	SidebarGroup,
 	SidebarGroupContent,
 	SidebarGroupLabel,
@@ -11,6 +21,13 @@ import {
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 // Menu items.
 const items = [
@@ -37,6 +54,19 @@ const items = [
 ];
 
 export function AppSidebar() {
+	const router = useRouter();
+
+	async function handleSignOut() {
+		try {
+			const response = await fetch("/auth/signout", {
+				method: "POST",
+			});
+			router.push(response.url);
+		} catch (error) {
+			console.log("error: ", error);
+		}
+	}
+
 	return (
 		<Sidebar collapsible="icon">
 			<SidebarContent>
@@ -62,6 +92,30 @@ export function AppSidebar() {
 					</SidebarGroupContent>
 				</SidebarGroup>
 			</SidebarContent>
+			<SidebarFooter>
+				<SidebarMenu className="p-0">
+					<SidebarMenuItem className="content-center">
+						<DropdownMenu>
+							<DropdownMenuTrigger asChild>
+								<SidebarMenuButton>
+									<User2 /> Juliansv22@gmail.com
+									<ChevronUp className="ml-auto" />
+								</SidebarMenuButton>
+							</DropdownMenuTrigger>
+							<button onClick={handleSignOut}>
+								<DropdownMenuContent
+									side="top"
+									className="w-[--radix-popper-anchor-width]"
+								>
+									<DropdownMenuItem className="cursor-pointer">
+										Sign Out
+									</DropdownMenuItem>
+								</DropdownMenuContent>
+							</button>
+						</DropdownMenu>
+					</SidebarMenuItem>
+				</SidebarMenu>
+			</SidebarFooter>
 		</Sidebar>
 	);
 }

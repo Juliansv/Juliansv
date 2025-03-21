@@ -1,13 +1,13 @@
-import { login } from "@/features/auth/login/actions";
+import { login } from "@/app/(auth)/auth/actions";
 
 export default function LoginPage() {
-  return (
-    <form>
-      <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
-      <input id="password" name="password" type="password" required />
-      <button formAction={login}>Log in</button>
-    </form>
-  )
+	return (
+		<form>
+			<label htmlFor="email">Email:</label>
+			<input id="email" name="email" type="email" required />
+			<label htmlFor="password">Password:</label>
+			<input id="password" name="password" type="password" required />
+			<button formAction={login}>Log in</button>
+		</form>
+	);
 }
