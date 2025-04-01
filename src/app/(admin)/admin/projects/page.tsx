@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import ProjectsTable from "@/features/admin/projects/projects-table";
-import { getProjectsInfo } from "@/features/admin/utils/actions";
+import { getProjectsInfo } from "@/features/utils/actions";
 import { Project } from "@/types";
 import { createClient } from "@/utils/supabase/server";
 import { Plus } from "lucide-react";

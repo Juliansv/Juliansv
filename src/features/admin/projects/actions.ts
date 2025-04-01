@@ -2,10 +2,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import {
-	setProjectInfo,
-	updateProjectInfo,
-} from "@/features/admin/utils/actions";
+import { setProjectInfo, updateProjectInfo } from "@/features/utils/actions";
 import { Project } from "@/types";
 
 export async function createNewProject(formData: Omit<Project, "id">) {

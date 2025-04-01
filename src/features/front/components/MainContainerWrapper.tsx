@@ -1,19 +1,11 @@
 "use client";
 
-import AboutMe from "@/features/front/about-me/components/AboutMe";
-import Experience from "@/features/front/previous-jobs/components/Experience";
-import Footer from "@/features/front/home/Footer";
-import Projects from "@/features/front/projects/components/Projects";
-import { Job, JobOld, Project } from "@/types";
-import { FC, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { Children } from "react";
+import { cloneElement } from "react";
+import { useEffect } from "react";
 
-interface MainProps {
-	experience: JobOld[];
-	projects: Project[];
-}
-
-const Main: FC<MainProps> = ({ experience, projects }): JSX.Element => {
+const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 	const { ref: aboutRef, inView: aboutInView } = useInView({
 		rootMargin: "-35% 0px -35% 0px",
 	});
@@ -38,6 +30,8 @@ const Main: FC<MainProps> = ({ experience, projects }): JSX.Element => {
 			element = "projects";
 		}
 
+		console.log("element: ", aboutInView);
+
 		document
 			.getElementById(`${element}-nav-line`)
 			?.classList.add("line-active");
@@ -46,22 +40,20 @@ const Main: FC<MainProps> = ({ experience, projects }): JSX.Element => {
 			?.classList.add("text-active");
 	}, [aboutInView, experienceInView, projectsInView]);
 
-	return (
-		<>
-			<main className="pt-24 lg:w-1/2 lg:py-24">
-				<div ref={aboutRef} id="about-section">
-					<AboutMe />
-				</div>
-				<div ref={experienceRef} id="experience-section">
-					<Experience experience={experience} />
-				</div>
-				<div ref={projectsRef} id="projects-section">
-					<Projects projects={projects} />
-				</div>
-				<Footer />
-			</main>
-		</>
-	);
+	const childrenWithRefs = Children.map(children, (child, index) => {
+		// Check if the child is a valid element
+		if (!child || typeof child !== "object" || !("props" in child)) {
+			return child;
+		}
+
+		// Add the appropriate ref based on index
+		if (index === 0) return cloneElement(child, { ref: aboutRef });
+		if (index === 1) return cloneElement(child, { ref: experienceRef });
+		if (index === 2) return cloneElement(child, { ref: projectsRef });
+		return child;
+	});
+
+	return <main className="pt-24 lg:w-1/2 lg:py-24">{childrenWithRefs}</main>;
 };
 
-export default Main;
+export default MainContainerWrapper;

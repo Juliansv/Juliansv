@@ -3,7 +3,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { HomeInfo } from "@/types";
-import { updateHomeInfo } from "../utils/actions";
+import { updateHomeInfo } from "../../utils/actions";
 
 export async function handleUpdateHomeInfo(formData: HomeInfo) {
 	const supabase = await createClient();

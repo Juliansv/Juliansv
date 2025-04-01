@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import ExperienceTable from "@/features/admin/experience/experience-table";
-import { getExperienceInfo } from "@/features/admin/utils/actions";
+import { getExperienceInfo } from "@/features/utils/actions";
 import { Job } from "@/types";
 import { createClient } from "@/utils/supabase/server";
 import { Plus } from "lucide-react";

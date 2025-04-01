@@ -2,7 +2,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { setExperienceInfo, updateExperienceInfo } from "../utils/actions";
+import { setExperienceInfo, updateExperienceInfo } from "../../utils/actions";
 import { Job } from "@/types";
 
 export async function createNewJob(formData: Omit<Job, "id">) {
