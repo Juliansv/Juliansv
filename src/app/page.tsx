@@ -24,15 +24,6 @@ export default async function Page() {
 						<AboutMe />
 					</SectionWrapper>
 					<SectionWrapper
-						id="experience-section"
-						styles="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-						ariaLabel="Work experience"
-					>
-						<Suspense fallback={<ExperienceSkeleton />}>
-							<Experience />
-						</Suspense>
-					</SectionWrapper>
-					<SectionWrapper
 						id="projects-section"
 						styles="mb-16 scroll-mt-16 mdd:mb-24 lg:mb-36 lg:scroll-mt-24"
 						ariaLabel="Selected projects"
@@ -41,7 +32,15 @@ export default async function Page() {
 							<Projects />
 						</Suspense>
 					</SectionWrapper>
-
+					<SectionWrapper
+						id="experience-section"
+						styles="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+						ariaLabel="Work experience"
+					>
+						<Suspense fallback={<ExperienceSkeleton />}>
+							<Experience />
+						</Suspense>
+					</SectionWrapper>
 					<Footer />
 				</MainContainerWrapper>
 			</div>
