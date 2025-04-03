@@ -1,7 +1,7 @@
 "use client";
 
 import AboutMe from "@/features/front/about-me/components/AboutMe";
-import Experience from "@/features/front/previous-jobs/components/Experience";
+import Experience from "@/features/front/experience/components/Experience";
 import Footer from "@/features/front/components/Footer";
 import Projects from "@/features/front/projects/components/Projects";
 import { Job, JobOld, Project } from "@/types";
