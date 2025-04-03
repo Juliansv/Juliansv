@@ -6,7 +6,20 @@ import { Job } from "@/types";
 const Experience = async () => {
 	const supabase = await createClient();
 
-	const experience: Job[] = await getExperienceInfo({ supabase });
+	const data: Job[] = await getExperienceInfo({ supabase });
+
+	const sortJobsByStartDate = (jobs: Job[]): Job[] => {
+		return jobs.sort((a, b) => {
+			const parseDate = (dateStr: string) => {
+				const [month, year] = dateStr.trim().split("/").map(Number);
+				return new Date(year, month - 1).getTime(); // Convert to timestamp
+			};
+
+			return parseDate(b.startedAt) - parseDate(a.startedAt); // Descending order
+		});
+	};
+
+	const experience = sortJobsByStartDate(data);
 
 	return (
 		<>
