@@ -16,13 +16,15 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { useRouter } from "next/navigation";
+import { useProjectsStore } from "@/store/useProjectsStore";
+import { Project } from "@/types";
 
-interface DataTableProps<TData, TValue> {
+interface DataTableProps<TData extends Project, TValue> {
 	columns: ColumnDef<TData, TValue>[];
 	data: TData[];
 }
 
-export function DataTable<TData, TValue>({
+export function DataTable<TData extends Project, TValue>({
 	columns,
 	data,
 }: DataTableProps<TData, TValue>) {
@@ -33,6 +35,12 @@ export function DataTable<TData, TValue>({
 	});
 
 	const router = useRouter();
+
+	// save the jobs info to the store
+	const setProjectsInStore = useProjectsStore(
+		(state) => state.addProjectsToStore
+	);
+	setProjectsInStore(data);
 
 	return (
 		<div className="rounded-md border">

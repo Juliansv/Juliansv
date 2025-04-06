@@ -1,21 +1,11 @@
 import { Separator } from "@/components/ui/separator";
+import TableSkeleton from "@/features/admin/components/table-skeleton";
 import ExperienceTable from "@/features/admin/experience/experience-table";
-import { getExperienceInfo } from "@/features/utils/actions";
-import { Job } from "@/types";
-import { createClient } from "@/utils/supabase/server";
 import { Plus } from "lucide-react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { Suspense } from "react";
 
 const ExperienceAdminPage = async () => {
-	const supabase = await createClient();
-
-	const { data, error } = await supabase.auth.getUser();
-	if (error || !data?.user) {
-		redirect("/login");
-	}
-
-	const jobsInfo: Job[] = await getExperienceInfo({ supabase });
 	return (
 		<div id="home-container">
 			<div className="h-16 flex">
@@ -32,7 +22,9 @@ const ExperienceAdminPage = async () => {
 					<Plus />
 					Add new job
 				</Link>
-				<ExperienceTable data={jobsInfo} />
+				<Suspense fallback={<TableSkeleton />}>
+					<ExperienceTable />
+				</Suspense>
 			</div>
 		</div>
 	);

@@ -1,20 +1,19 @@
-"use client";
-
 import { Project } from "@/types";
 import { columns } from "./projects-form/columns";
 import { DataTable } from "@/features/admin/projects/projects-form/data-table";
-import { useProjectsStore } from "@/store/useProjectsStore";
+import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
+import { getProjectsInfo } from "@/features/utils/actions";
 
-interface ProjectsTableProps {
-	data: Project[];
-}
+export default async function ProjectsTable() {
+	const supabase = await createClient();
 
-export default function ProjectsTable({ data: Projects }: ProjectsTableProps) {
-	// save the jobs info to the store
-	const setProjectsInStore = useProjectsStore(
-		(state) => state.addProjectsToStore
-	);
-	setProjectsInStore(Projects);
+	const { data, error } = await supabase.auth.getUser();
+	if (error || !data?.user) {
+		redirect("/login");
+	}
+
+	const Projects: Project[] = await getProjectsInfo({ supabase });
 	return (
 		<div className="container mx-auto py-10">
 			<DataTable columns={columns} data={Projects} />

@@ -1,18 +1,19 @@
-"use client";
-
 import { Job } from "@/types";
 import { columns } from "./experience-form/columns";
 import { DataTable } from "@/features/admin/experience/experience-form/data-table";
-import { useJobStore } from "@/store/useJobsStore";
+import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
+import { getExperienceInfo } from "@/features/utils/actions";
 
-interface ExperienceTableProps {
-	data: Job[];
-}
+export default async function ExperienceTable() {
+	const supabase = await createClient();
 
-export default function ExperienceTable({ data: Jobs }: ExperienceTableProps) {
-	// save the jobs info to the store
-	const setJobsInStore = useJobStore((state) => state.addJobsToStore);
-	setJobsInStore(Jobs);
+	const { data, error } = await supabase.auth.getUser();
+	if (error || !data?.user) {
+		redirect("/login");
+	}
+
+	const Jobs: Job[] = await getExperienceInfo({ supabase });
 	return (
 		<div className="container mx-auto py-10">
 			<DataTable columns={columns} data={Jobs} />
