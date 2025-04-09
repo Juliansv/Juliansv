@@ -15,8 +15,6 @@ export async function updateHomeInfo(
 	{ supabase }: getSupabaseInfoProps,
 	formData: HomeInfo
 ) {
-	console.log("formData", formData);
-
 	const { data, error } = await supabase
 		.from("HomeSection")
 		.update({
@@ -87,6 +85,7 @@ export async function setProjectInfo(
 	{ supabase }: getSupabaseInfoProps,
 	project: Omit<Project, "id">
 ) {
+	// save the project in the DB
 	const { data, error } = await supabase
 		.from("ProjectsSection")
 		.insert([
@@ -97,6 +96,10 @@ export async function setProjectInfo(
 				stack: project.stack,
 				url: project.url,
 				year: project.year,
+				long_description: project.long_description,
+				features: project.features,
+				technologies: project.technologies,
+				code_repository: project.code_repository,
 			},
 		])
 		.select();
@@ -117,6 +120,10 @@ export async function updateProjectInfo(
 			stack: project.stack,
 			url: project.url,
 			year: project.year,
+			long_description: project.long_description,
+			features: project.features,
+			technologies: project.technologies,
+			code_repository: project.code_repository,
 		})
 		.eq("id", id);
 	return { data, error };

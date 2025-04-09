@@ -9,14 +9,27 @@ export const formSchema = z.object({
 	description: z.string().min(2, {
 		message: "Description must be at least 2 characters",
 	}),
-	image: z.string().min(2, {
-		message: "Company must be at least 2 characters.",
-	}),
+	image: z.string(),
 	stack: z.array(z.string()),
 	url: z.string().min(2, {
-		message: "Start at must be at least 2 characters.",
+		message: "Project URL must be at least 2 characters long.",
 	}),
 	year: z.string().min(2, {
-		message: "Finish at must be at least 2 characters.",
+		message: "year at must be at least 2 characters.",
+	}),
+	long_description: z.string().min(2, {
+		message: "Description must be at least 2 characters long.",
+	}),
+
+	features: z.string().min(2, {
+		message: "Description must be at least 2 characters long.",
+	}),
+
+	technologies: z.string().min(2, {
+		message: "Description must be at least 2 characters long.",
+	}),
+
+	code_repository: z.string().min(2, {
+		message: "Description must be at least 2 characters long.",
 	}),
 });

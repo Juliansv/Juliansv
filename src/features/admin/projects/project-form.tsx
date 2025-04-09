@@ -3,6 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFormState } from "react-hook-form";
 import { TagsInput } from "@/components/ui/extension/tags-input";
+import { X } from "lucide-react";
+import Image from "next/image";
 
 import { z } from "zod";
 
@@ -18,28 +20,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { formSchema } from "@/features/admin/projects/projects-form/form-schema";
-// import { createNewJob, updateJob } from "../actions";
 import {
 	createNewProject,
 	updateProject,
 } from "@/features/admin/projects/actions";
 import { useRouter } from "next/navigation";
-import { Textarea } from "@/components/ui/textarea";
 import { useProjectsStore } from "@/store/useProjectsStore";
-
-interface ProjectsFormProps {
-	data?: ProjectsInfoProps;
-}
-
-interface ProjectsInfoProps {
-	id: string;
-	title: string;
-	description: string;
-	image: string;
-	stack?: string[];
-	url: string;
-	year: string;
-}
+import { useState } from "react";
+import { uploadProjectImage } from "./client-actions";
+import Tiptap from "../components/Tiptap";
 
 const ProjectForm = ({ id }: { id: string }) => {
 	// useProjectsStore is a custom hook that returns the projects array from the store
@@ -53,29 +42,61 @@ const ProjectForm = ({ id }: { id: string }) => {
 		defaultValues: {
 			title: data?.title || "",
 			description: data?.description || "",
-			image: data?.image || "",
+			image: "",
 			stack: data?.stack || [],
 			url: data?.url || "",
 			year: data?.year || "",
 		},
 	});
 
+	// Variable for managing if the project is being created or updated
 	const isNew = !data;
 
 	const { push } = useRouter();
 
-	const { isDirty, dirtyFields, defaultValues, isSubmitting, isValid } =
-		useFormState({
-			control: form.control,
-		});
+	// Variable to handle the file upload
+	const [imageFile, setImageFile] = useState<File>();
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		isNew ? createNewProject(values) : updateProject(values, data.id);
+	// Variable to show the image
+	const [projectImage, setProjectImage] = useState<Boolean>(
+		data?.image ? true : false
+	);
+
+	// State for handling form state
+	const { isDirty, defaultValues, isSubmitting } = useFormState({
+		control: form.control,
+	});
+
+	async function onSubmit(values: z.infer<typeof formSchema>) {
+		try {
+			//
+			let aux = values?.image || "/images/placeholder.png";
+
+			if (imageFile) {
+				const imageURL = await uploadProjectImage(imageFile);
+				if (imageURL) {
+					aux = imageURL;
+				}
+			}
+
+			values.image = aux;
+
+			isNew
+				? await createNewProject(values)
+				: await updateProject(values, data.id);
+		} catch (error) {
+			console.log("Error submitting the form", error);
+		}
 	}
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+			<form
+				onSubmit={form.handleSubmit(onSubmit, (errors) => {
+					console.log("validations errors: ", errors);
+				})}
+				className="space-y-8"
+			>
 				<FormField
 					control={form.control}
 					name="title"
@@ -111,25 +132,52 @@ const ProjectForm = ({ id }: { id: string }) => {
 						</FormItem>
 					)}
 				/>
-				<FormField
-					control={form.control}
-					name="image"
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Image</FormLabel>
-							<FormControl>
-								<Input
-									placeholder="Write the image url here..."
-									{...field}
-								/>
-							</FormControl>
-							<FormDescription>
-								This is the image url.
-							</FormDescription>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
+				{projectImage ? (
+					<div className="h-full w-fit relative">
+						<X
+							className="absolute top-0 right-0 text-black cursor-pointer"
+							onClick={() => setProjectImage(false)}
+						/>
+						<Image
+							src={
+								data?.image || "/images/via.placeholder.com/150"
+							}
+							alt="project-image"
+							width={100}
+							height={100}
+						/>
+					</div>
+				) : (
+					<FormField
+						control={form.control}
+						name="image"
+						render={({ field }) => (
+							<FormItem>
+								<FormLabel>Image</FormLabel>
+								<FormControl>
+									<Input
+										type="file"
+										accept="image/*"
+										{...field}
+										onChange={(
+											e: React.ChangeEvent<HTMLInputElement>
+										) => {
+											field.onChange(e);
+											const file = e.target.files?.[0];
+											if (file) {
+												setImageFile(file);
+											}
+										}}
+									/>
+								</FormControl>
+								<FormDescription>
+									This is the image uploader.
+								</FormDescription>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+				)}
 				<FormField
 					control={form.control}
 					name="stack"
@@ -183,6 +231,82 @@ const ProjectForm = ({ id }: { id: string }) => {
 							</FormControl>
 							<FormDescription>
 								This is the year of creation of the project.
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="long_description"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Long description</FormLabel>
+							<FormControl>
+								<Tiptap
+									description={data?.long_description || ""}
+									onChange={field.onChange}
+								/>
+							</FormControl>
+							<FormDescription>
+								Long description for project page
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="features"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Features</FormLabel>
+							<FormControl>
+								<Tiptap
+									description={data?.features || ""}
+									onChange={field.onChange}
+								/>
+							</FormControl>
+							<FormDescription>
+								Project features for project page
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="technologies"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Technologies</FormLabel>
+							<FormControl>
+								<Tiptap
+									description={data?.technologies || ""}
+									onChange={field.onChange}
+								/>
+							</FormControl>
+							<FormDescription>
+								Technologies of the project for the project page
+							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="code_repository"
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Code and repository</FormLabel>
+							<FormControl>
+								<Tiptap
+									description={data?.code_repository || ""}
+									onChange={field.onChange}
+								/>
+							</FormControl>
+							<FormDescription>
+								Code and repository of the project
 							</FormDescription>
 							<FormMessage />
 						</FormItem>

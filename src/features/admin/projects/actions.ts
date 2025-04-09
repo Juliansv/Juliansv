@@ -30,8 +30,6 @@ export async function updateProject(formData: Omit<Project, "id">, id: string) {
 
 	const result = await updateProjectInfo({ supabase }, formData, id);
 
-	console.log("results of edit", result);
-
 	if (!result.error) {
 		redirect("/admin/projects");
 	}
