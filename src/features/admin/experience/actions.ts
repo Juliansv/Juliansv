@@ -30,8 +30,6 @@ export async function updateJob(formData: Omit<Job, "id">, id: string) {
 
 	const result = await updateExperienceInfo({ supabase }, formData, id);
 
-	console.log("results of edit", result);
-
 	if (!result.error) {
 		redirect("/admin/experience");
 	}

@@ -3,7 +3,6 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Toolbar } from "./ToolBar";
-import Heading from "@tiptap/extension-heading";
 
 export default function Tiptap({
 	description,
@@ -23,7 +22,6 @@ export default function Tiptap({
 		},
 		onUpdate({ editor }) {
 			onChange(editor.getHTML());
-			console.log(editor.getHTML());
 		},
 	});
 

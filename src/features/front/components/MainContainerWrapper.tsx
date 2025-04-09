@@ -30,8 +30,6 @@ const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 			element = "projects";
 		}
 
-		console.log("element: ", aboutInView);
-
 		document
 			.getElementById(`${element}-nav-line`)
 			?.classList.add("line-active");

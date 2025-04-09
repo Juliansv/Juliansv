@@ -91,6 +91,7 @@ export async function setProjectInfo(
 		.insert([
 			{
 				title: project.title,
+				featured: project.featured,
 				description: project.description,
 				image: project.image,
 				stack: project.stack,
@@ -115,6 +116,7 @@ export async function updateProjectInfo(
 		.from("ProjectsSection")
 		.update({
 			title: project.title,
+			featured: project.featured,
 			description: project.description,
 			image: project.image,
 			stack: project.stack,

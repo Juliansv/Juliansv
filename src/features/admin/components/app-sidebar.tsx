@@ -63,7 +63,7 @@ export function AppSidebar() {
 			});
 			router.push(response.url);
 		} catch (error) {
-			console.log("error: ", error);
+			console.log("error while signing out: ", error);
 		}
 	}
 

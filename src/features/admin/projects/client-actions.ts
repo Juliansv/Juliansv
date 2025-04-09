@@ -14,8 +14,6 @@ export async function uploadProjectImage(file: File) {
 	const fileName = `${Date.now()}.${fileExt}`;
 	const filePath = `projects/${fileName}`;
 
-	console.log("file from image uploader: ", file);
-
 	const { error: imageError } = await supabase.storage
 		.from("portfolio-images")
 		.upload(filePath, file);
@@ -28,8 +26,6 @@ export async function uploadProjectImage(file: File) {
 	const { data: imageData } = await supabase.storage
 		.from("portfolio-images")
 		.getPublicUrl(filePath);
-
-	console.log("public URL: ", imageData.publicUrl);
 
 	return imageData.publicUrl;
 }

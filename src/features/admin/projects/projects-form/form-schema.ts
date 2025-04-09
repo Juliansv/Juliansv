@@ -6,6 +6,7 @@ export const formSchema = z.object({
 	title: z.string().min(2, {
 		message: "Title must be at least 2 characters.",
 	}),
+	featured: z.boolean(),
 	description: z.string().min(2, {
 		message: "Description must be at least 2 characters",
 	}),
@@ -17,19 +18,8 @@ export const formSchema = z.object({
 	year: z.string().min(2, {
 		message: "year at must be at least 2 characters.",
 	}),
-	long_description: z.string().min(2, {
-		message: "Description must be at least 2 characters long.",
-	}),
-
-	features: z.string().min(2, {
-		message: "Description must be at least 2 characters long.",
-	}),
-
-	technologies: z.string().min(2, {
-		message: "Description must be at least 2 characters long.",
-	}),
-
-	code_repository: z.string().min(2, {
-		message: "Description must be at least 2 characters long.",
-	}),
+	long_description: z.string(),
+	features: z.string(),
+	technologies: z.string(),
+	code_repository: z.string(),
 });

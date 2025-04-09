@@ -15,8 +15,6 @@ export async function handleUpdateHomeInfo(formData: HomeInfo) {
 
 	const result = await updateHomeInfo({ supabase }, formData);
 
-	console.log("results of update home info", result);
-
 	if (!result.error) {
 		redirect("/admin");
 	}

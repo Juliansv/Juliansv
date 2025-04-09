@@ -29,6 +29,7 @@ import { useProjectsStore } from "@/store/useProjectsStore";
 import { useState } from "react";
 import { uploadProjectImage } from "./client-actions";
 import Tiptap from "../components/Tiptap";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const ProjectForm = ({ id }: { id: string }) => {
 	// useProjectsStore is a custom hook that returns the projects array from the store
@@ -41,6 +42,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			title: data?.title || "",
+			featured: data?.featured || false,
 			description: data?.description || "",
 			image: "",
 			stack: data?.stack || [],
@@ -92,8 +94,9 @@ const ProjectForm = ({ id }: { id: string }) => {
 	return (
 		<Form {...form}>
 			<form
-				onSubmit={form.handleSubmit(onSubmit, (errors) => {
+				onSubmit={form.handleSubmit(onSubmit, (errors, values) => {
 					console.log("validations errors: ", errors);
+					console.log("values:", values);
 				})}
 				className="space-y-8"
 			>
@@ -112,6 +115,24 @@ const ProjectForm = ({ id }: { id: string }) => {
 							<FormDescription>
 								This is the title of the project.
 							</FormDescription>
+							<FormMessage />
+						</FormItem>
+					)}
+				/>
+				<FormField
+					control={form.control}
+					name="featured"
+					render={({ field }) => (
+						<FormItem className="flex flex-col">
+							<FormLabel>Featured</FormLabel>
+							<FormControl>
+								<Checkbox
+									id="featured"
+									className="h-6 w-6 bg-secondary data-[state=checked]:bg-green-400"
+									checked={field.value}
+									onCheckedChange={field.onChange}
+								/>
+							</FormControl>
 							<FormMessage />
 						</FormItem>
 					)}
@@ -301,7 +322,9 @@ const ProjectForm = ({ id }: { id: string }) => {
 							<FormLabel>Code and repository</FormLabel>
 							<FormControl>
 								<Tiptap
-									description={data?.code_repository || ""}
+									description={
+										data?.code_repository || field.value
+									}
 									onChange={field.onChange}
 								/>
 							</FormControl>
