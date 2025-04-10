@@ -48,6 +48,10 @@ const ProjectForm = ({ id }: { id: string }) => {
 			stack: data?.stack || [],
 			url: data?.url || "",
 			year: data?.year || "",
+			long_description: data?.long_description || "",
+			features: data?.features || "",
+			technologies: data?.technologies || "",
+			code_repository: data?.code_repository || "",
 		},
 	});
 
@@ -72,7 +76,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 	async function onSubmit(values: z.infer<typeof formSchema>) {
 		try {
 			//
-			let aux = values?.image || "/images/placeholder.png";
+			let aux = data?.image || "/images/placeholder.png";
 
 			if (imageFile) {
 				const imageURL = await uploadProjectImage(imageFile);
@@ -265,7 +269,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 							<FormLabel>Long description</FormLabel>
 							<FormControl>
 								<Tiptap
-									description={data?.long_description || ""}
+									value={field.value}
 									onChange={field.onChange}
 								/>
 							</FormControl>
@@ -284,7 +288,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 							<FormLabel>Features</FormLabel>
 							<FormControl>
 								<Tiptap
-									description={data?.features || ""}
+									value={field.value}
 									onChange={field.onChange}
 								/>
 							</FormControl>
@@ -303,7 +307,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 							<FormLabel>Technologies</FormLabel>
 							<FormControl>
 								<Tiptap
-									description={data?.technologies || ""}
+									value={field.value}
 									onChange={field.onChange}
 								/>
 							</FormControl>
@@ -322,9 +326,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 							<FormLabel>Code and repository</FormLabel>
 							<FormControl>
 								<Tiptap
-									description={
-										data?.code_repository || field.value
-									}
+									value={field.value}
 									onChange={field.onChange}
 								/>
 							</FormControl>

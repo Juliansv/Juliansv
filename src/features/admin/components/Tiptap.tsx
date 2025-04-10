@@ -5,15 +5,15 @@ import StarterKit from "@tiptap/starter-kit";
 import { Toolbar } from "./ToolBar";
 
 export default function Tiptap({
-	description,
+	value,
 	onChange,
 }: {
-	description: string;
+	value: string;
 	onChange: (richText: string) => void;
 }) {
 	const editor = useEditor({
 		extensions: [StarterKit.configure()],
-		content: description,
+		content: value,
 		immediatelyRender: false,
 		editorProps: {
 			attributes: {
