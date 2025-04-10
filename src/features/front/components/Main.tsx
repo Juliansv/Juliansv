@@ -1,8 +1,8 @@
 "use client";
 
 import AboutMe from "@/features/front/about-me/components/AboutMe";
-import Experience from "@/features/front/previous-jobs/components/Experience";
-import Footer from "@/features/front/home/Footer";
+import Experience from "@/features/front/experience/components/Experience";
+import Footer from "@/features/front/components/Footer";
 import Projects from "@/features/front/projects/components/Projects";
 import { Job, JobOld, Project } from "@/types";
 import { FC, useEffect } from "react";
@@ -53,10 +53,10 @@ const Main: FC<MainProps> = ({ experience, projects }): JSX.Element => {
 					<AboutMe />
 				</div>
 				<div ref={experienceRef} id="experience-section">
-					<Experience experience={experience} />
+					<Experience />
 				</div>
 				<div ref={projectsRef} id="projects-section">
-					<Projects projects={projects} />
+					<Projects />
 				</div>
 				<Footer />
 			</main>

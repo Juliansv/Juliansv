@@ -1,10 +1,12 @@
+"use cache";
+
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
 
 import { Separator } from "@/components/ui/separator";
 import HomeForm from "@/features/admin/home/home-form";
-import { getHomeInfo } from "@/features/admin/utils/actions";
+import { getHomeInfo } from "@/features/utils/actions";
 
 interface HomeFormProps {
 	title: string;

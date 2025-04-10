@@ -2,7 +2,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { setExperienceInfo, updateExperienceInfo } from "../utils/actions";
+import { setExperienceInfo, updateExperienceInfo } from "../../utils/actions";
 import { Job } from "@/types";
 
 export async function createNewJob(formData: Omit<Job, "id">) {
@@ -29,8 +29,6 @@ export async function updateJob(formData: Omit<Job, "id">, id: string) {
 	}
 
 	const result = await updateExperienceInfo({ supabase }, formData, id);
-
-	console.log("results of edit", result);
 
 	if (!result.error) {
 		redirect("/admin/experience");

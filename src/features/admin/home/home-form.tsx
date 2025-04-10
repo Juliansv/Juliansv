@@ -61,7 +61,6 @@ const HomeForm = ({
 		});
 
 	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log(values);
 		handleUpdateHomeInfo(values);
 	}
 	return (

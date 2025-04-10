@@ -1,10 +1,16 @@
 export interface Project {
+	id: string;
 	title: string;
+	featured: boolean;
 	description: string;
 	image: string;
 	stack?: string[];
 	url: string;
 	year: string;
+	long_description: string;
+	features: string;
+	technologies: string;
+	code_repository: string;
 }
 
 // This is the type used to define the jobs data.
