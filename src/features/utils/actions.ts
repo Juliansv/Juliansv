@@ -1,18 +1,18 @@
 import { HomeInfo, Job, Project } from "@/types";
 import { SupabaseClient } from "@supabase/supabase-js";
 
-interface getSupabaseInfoProps {
+interface SupabaseInfoProps {
 	supabase: SupabaseClient<any, "public", any>;
 }
 
-export async function getHomeInfo({ supabase }: getSupabaseInfoProps) {
+export async function getHomeInfo({ supabase }: SupabaseInfoProps) {
 	const { data } = await supabase.from("HomeSection").select("*");
 	const homeInfo = data?.pop();
 	return homeInfo;
 }
 
 export async function updateHomeInfo(
-	{ supabase }: getSupabaseInfoProps,
+	{ supabase }: SupabaseInfoProps,
 	formData: HomeInfo
 ) {
 	const { data, error } = await supabase
@@ -30,14 +30,14 @@ export async function updateHomeInfo(
 	return { data, error };
 }
 
-export async function getExperienceInfo({ supabase }: getSupabaseInfoProps) {
+export async function getExperienceInfo({ supabase }: SupabaseInfoProps) {
 	const { data } = await supabase.from("ExperienceSection").select("*");
 	if (!data) return [];
 	return data;
 }
 
 export async function setExperienceInfo(
-	{ supabase }: getSupabaseInfoProps,
+	{ supabase }: SupabaseInfoProps,
 	job: Omit<Job, "id">
 ) {
 	const { data, error } = await supabase
@@ -57,7 +57,7 @@ export async function setExperienceInfo(
 }
 
 export async function updateExperienceInfo(
-	{ supabase }: getSupabaseInfoProps,
+	{ supabase }: SupabaseInfoProps,
 	job: Omit<Job, "id">,
 	id: string
 ) {
@@ -75,14 +75,14 @@ export async function updateExperienceInfo(
 	return { data, error };
 }
 
-export async function getProjectsInfo({ supabase }: getSupabaseInfoProps) {
+export async function getProjectsInfo({ supabase }: SupabaseInfoProps) {
 	const { data } = await supabase.from("ProjectsSection").select("*");
 	if (!data) return [];
 	return data;
 }
 
 export async function setProjectInfo(
-	{ supabase }: getSupabaseInfoProps,
+	{ supabase }: SupabaseInfoProps,
 	project: Omit<Project, "id">
 ) {
 	// save the project in the DB
@@ -108,7 +108,7 @@ export async function setProjectInfo(
 }
 
 export async function updateProjectInfo(
-	{ supabase }: getSupabaseInfoProps,
+	{ supabase }: SupabaseInfoProps,
 	project: Omit<Project, "id">,
 	id: string
 ) {
@@ -129,4 +129,28 @@ export async function updateProjectInfo(
 		})
 		.eq("id", id);
 	return { data, error };
+}
+
+export async function getFeaturedProjects({ supabase }: SupabaseInfoProps) {
+	console.log("llama a la db");
+
+	const { data } = await supabase
+		.from("ProjectsSection")
+		.select("*")
+		.eq("featured", true);
+	if (!data) return [];
+	return data;
+}
+
+export async function getProjectById(
+	{ supabase }: SupabaseInfoProps,
+	id: number
+) {
+	const { data } = await supabase
+		.from("ProjectsSection")
+		.select("*")
+		.eq("id", id);
+
+	if (!data) return null;
+	return data;
 }

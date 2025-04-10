@@ -9,10 +9,10 @@ const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 	const { ref: aboutRef, inView: aboutInView } = useInView({
 		rootMargin: "-35% 0px -35% 0px",
 	});
-	const { ref: experienceRef, inView: experienceInView } = useInView({
+	const { ref: experienceRef, inView: projectsInView } = useInView({
 		rootMargin: "-35% 0px -35% 0px",
 	});
-	const { ref: projectsRef, inView: projectsInView } = useInView({
+	const { ref: projectsRef, inView: experienceInView } = useInView({
 		rootMargin: "-35% 0px -35% 0px",
 	});
 

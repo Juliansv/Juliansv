@@ -44,7 +44,7 @@ const ProjectForm = ({ id }: { id: string }) => {
 			title: data?.title || "",
 			featured: data?.featured || false,
 			description: data?.description || "",
-			image: "",
+			image: data?.image || "",
 			stack: data?.stack || [],
 			url: data?.url || "",
 			year: data?.year || "",

@@ -1,14 +1,16 @@
+"use cache";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { createClient } from "@/utils/supabase/server";
-import { getProjectsInfo } from "@/features/utils/actions";
+import { getFeaturedProjects } from "@/features/utils/actions";
 import { Project } from "@/types";
 
 const Projects = async () => {
 	const supabase = await createClient();
 
-	const projects: Project[] = await getProjectsInfo({ supabase });
+	const projects: Project[] = await getFeaturedProjects({ supabase });
 
 	return (
 		<>

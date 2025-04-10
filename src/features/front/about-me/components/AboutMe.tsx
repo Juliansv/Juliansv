@@ -34,15 +34,12 @@ const AboutMe = async () => {
 					stacks and gained experience working both in the office and
 					from home.
 				</p>
+
 				<p>
 					{" "}
-					For the last year I have been working as a{" "}
-					<span className="font-bold hover:text-teal-300 cursor-pointer">
-						{" "}
-						freelance developer
-					</span>
-					, diving into different projects. Always learning and
-					keeping up to date with tech trends.
+					So far, I’ve been enjoying the journey—constantly learning,
+					exploring new technologies, and staying up to date with the
+					latest trends.
 				</p>
 			</div>
 		</>
