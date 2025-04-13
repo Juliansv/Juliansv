@@ -1,19 +1,10 @@
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
-
-import { Separator } from "@/components/ui/separator";
-import HomeForm from "@/features/admin/home/home-form";
 import { getHomeInfo } from "@/features/utils/actions";
-
-interface HomeFormProps {
-	title: string;
-	subtitle: string;
-	description: string;
-	github_link: string;
-	linkedin_link: string;
-	about_me: string;
-}
+import { Separator } from "@/components/ui/separator";
+import { HomeInfo } from "@/types";
+import HomeForm from "@/features/admin/home/home-form";
 
 const HomeAdminPage = async () => {
 	const supabase = await createClient();
@@ -23,7 +14,7 @@ const HomeAdminPage = async () => {
 		redirect("/login");
 	}
 
-	const homeInfo: HomeFormProps = await getHomeInfo({ supabase });
+	const homeInfo: HomeInfo = await getHomeInfo({ supabase });
 
 	return (
 		<div id="home-container">
