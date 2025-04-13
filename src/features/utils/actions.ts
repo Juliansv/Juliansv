@@ -1,15 +1,55 @@
 import { HomeInfo, Job, Project } from "@/types";
 import { SupabaseClient } from "@supabase/supabase-js";
+import { cache } from "react";
 
 interface SupabaseInfoProps {
 	supabase: SupabaseClient<any, "public", any>;
 }
 
-export async function getHomeInfo({ supabase }: SupabaseInfoProps) {
+export const getHomeInfo = cache(async ({ supabase }: SupabaseInfoProps) => {
 	const { data } = await supabase.from("HomeSection").select("*");
-	const homeInfo = data?.pop();
-	return homeInfo;
-}
+	if (!data) return [];
+	return data.at(0);
+});
+
+export const getExperienceInfo = cache(
+	async ({ supabase }: SupabaseInfoProps) => {
+		const { data } = await supabase.from("ExperienceSection").select("*");
+		if (!data) return [];
+		return data;
+	}
+);
+
+export const getProjectsInfo = cache(
+	async ({ supabase }: SupabaseInfoProps) => {
+		const { data } = await supabase.from("ProjectsSection").select("*");
+		if (!data) return [];
+		return data;
+	}
+);
+
+export const getFeaturedProjects = cache(
+	async ({ supabase }: SupabaseInfoProps) => {
+		const { data } = await supabase
+			.from("ProjectsSection")
+			.select("*")
+			.eq("featured", true);
+		if (!data) return [];
+		return data;
+	}
+);
+
+export const getProjectById = cache(
+	async ({ supabase }: SupabaseInfoProps, id: number) => {
+		const { data } = await supabase
+			.from("ProjectsSection")
+			.select("*")
+			.eq("id", id);
+
+		if (!data) return null;
+		return data;
+	}
+);
 
 export async function updateHomeInfo(
 	{ supabase }: SupabaseInfoProps,
@@ -28,12 +68,6 @@ export async function updateHomeInfo(
 		.eq("id", 1)
 		.select();
 	return { data, error };
-}
-
-export async function getExperienceInfo({ supabase }: SupabaseInfoProps) {
-	const { data } = await supabase.from("ExperienceSection").select("*");
-	if (!data) return [];
-	return data;
 }
 
 export async function setExperienceInfo(
@@ -73,12 +107,6 @@ export async function updateExperienceInfo(
 		})
 		.eq("id", id);
 	return { data, error };
-}
-
-export async function getProjectsInfo({ supabase }: SupabaseInfoProps) {
-	const { data } = await supabase.from("ProjectsSection").select("*");
-	if (!data) return [];
-	return data;
 }
 
 export async function setProjectInfo(
@@ -129,26 +157,4 @@ export async function updateProjectInfo(
 		})
 		.eq("id", id);
 	return { data, error };
-}
-
-export async function getFeaturedProjects({ supabase }: SupabaseInfoProps) {
-	const { data } = await supabase
-		.from("ProjectsSection")
-		.select("*")
-		.eq("featured", true);
-	if (!data) return [];
-	return data;
-}
-
-export async function getProjectById(
-	{ supabase }: SupabaseInfoProps,
-	id: number
-) {
-	const { data } = await supabase
-		.from("ProjectsSection")
-		.select("*")
-		.eq("id", id);
-
-	if (!data) return null;
-	return data;
 }
