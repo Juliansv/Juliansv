@@ -7,7 +7,20 @@ import { Project } from "@/types";
 const Archive = async () => {
 	const supabase = await createClient();
 
-	const projects: Project[] = await getProjectsInfo({ supabase });
+	const data: Project[] = await getProjectsInfo({ supabase });
+
+	const sortExperienceByDate = (experience: Project[]): Project[] => {
+		return experience.sort((a, b) => {
+			const parseDate = (dateStr: string) => {
+				const year = Number(dateStr);
+				return new Date(year, 1).getTime(); // Convert to timestamp
+			};
+
+			return parseDate(b.year) - parseDate(a.year); // Descending order
+		});
+	};
+
+	const projects = sortExperienceByDate(data);
 
 	return (
 		<div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
@@ -59,14 +72,28 @@ const Archive = async () => {
 									<div>
 										<div className="block sm:hidden">
 											<Link
-												href={project.url}
+												href={{
+													pathname: `/project/${project.id}`,
+													query: {
+														name: "project archive",
+													},
+												}}
 												className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 sm:hidden group/link text-base"
 											>
 												{project.title}
 											</Link>
 										</div>
 										<div className="hidden sm:block">
-											{project.title}
+											<Link
+												href={{
+													pathname: `/project/${project.id}`,
+													query: {
+														name: "project archive",
+													},
+												}}
+											>
+												{project.title}
+											</Link>
 										</div>
 									</div>
 								</td>

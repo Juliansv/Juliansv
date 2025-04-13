@@ -10,10 +10,10 @@ import {
 
 const TableSkeleton = () => {
 	return (
-		<div className="rounded-md border">
+		<div className="rounded-md border mt-10">
 			<Table>
 				<TableHeader>
-					<TableRow>
+					<TableRow className="h-12">
 						{Array.from({ length: 5 }).map((_, index) => (
 							<TableHead key={index}>
 								<Skeleton className="h-4 w-24" />
@@ -27,19 +27,19 @@ const TableSkeleton = () => {
 							key={index}
 							className="hover:bg-muted/50 cursor-pointer"
 						>
-							<TableCell>
+							<TableCell className="h-20">
 								<Skeleton className="h-4 w-40" />
 							</TableCell>
-							<TableCell>
+							<TableCell className="h-20">
 								<Skeleton className="h-4 w-20" />
 							</TableCell>
-							<TableCell>
+							<TableCell className="h-20">
 								<Skeleton className="h-4 w-20" />
 							</TableCell>
-							<TableCell>
+							<TableCell className="h-20">
 								<Skeleton className="h-4 w-96" />
 							</TableCell>
-							<TableCell>
+							<TableCell className="h-20">
 								<Skeleton className="h-4 w-80" />
 							</TableCell>
 						</TableRow>

@@ -8,14 +8,17 @@ import {
 	List,
 	ListOrdered,
 	Heading2,
+	ExternalLink,
 } from "lucide-react";
 import { Toggle } from "@/components/ui/toggle";
+import { useCallback } from "react";
 
 type Props = {
 	editor: Editor | null;
+	setLink: () => void;
 };
 
-export function Toolbar({ editor }: Props) {
+export function Toolbar({ editor, setLink }: Props) {
 	if (!editor) {
 		return null;
 	}
@@ -75,6 +78,13 @@ export function Toolbar({ editor }: Props) {
 				}
 			>
 				<Bold className="h-4 w-4" />
+			</Toggle>
+			<Toggle
+				size="sm"
+				pressed={editor.isActive("ExternalLink")}
+				onPressedChange={() => editor.chain().focus().setLink}
+			>
+				<ExternalLink className="h-4 w-4" />
 			</Toggle>
 		</div>
 	);
