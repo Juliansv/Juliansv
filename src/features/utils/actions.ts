@@ -132,8 +132,6 @@ export async function updateProjectInfo(
 }
 
 export async function getFeaturedProjects({ supabase }: SupabaseInfoProps) {
-	console.log("llama a la db");
-
 	const { data } = await supabase
 		.from("ProjectsSection")
 		.select("*")

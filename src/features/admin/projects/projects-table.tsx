@@ -1,5 +1,3 @@
-"use cache";
-
 import { Project } from "@/types";
 import { columns } from "./projects-form/columns";
 import { DataTable } from "@/features/admin/projects/projects-form/data-table";

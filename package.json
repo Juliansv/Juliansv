@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "kill": "bash -c 'for port in {3000..3003}; do lsof -i :$port -t | xargs -r kill; done'",
+    "dev": "npm run kill; next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-accordion": "^1.2.4",
     "@radix-ui/react-checkbox": "^1.1.5",
     "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
@@ -27,6 +29,8 @@
     "@tiptap/extension-horizontal-rule": "^2.11.7",
     "@tiptap/extension-image": "^2.11.7",
     "@tiptap/extension-link": "^2.11.7",
+    "@tiptap/extension-list-item": "^2.11.7",
+    "@tiptap/extension-ordered-list": "^2.11.7",
     "@tiptap/extension-placeholder": "^2.11.7",
     "@tiptap/extension-text-style": "^2.11.7",
     "@tiptap/extension-typography": "^2.11.7",

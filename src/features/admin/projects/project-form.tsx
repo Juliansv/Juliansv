@@ -100,7 +100,6 @@ const ProjectForm = ({ id }: { id: string }) => {
 			<form
 				onSubmit={form.handleSubmit(onSubmit, (errors, values) => {
 					console.log("validations errors: ", errors);
-					console.log("values:", values);
 				})}
 				className="space-y-8"
 			>
@@ -325,13 +324,13 @@ const ProjectForm = ({ id }: { id: string }) => {
 						<FormItem>
 							<FormLabel>Code and repository</FormLabel>
 							<FormControl>
-								<Tiptap
-									value={field.value}
-									onChange={field.onChange}
+								<Input
+									placeholder="Link to the project repository"
+									{...field}
 								/>
 							</FormControl>
 							<FormDescription>
-								Code and repository of the project
+								repository of the project
 							</FormDescription>
 							<FormMessage />
 						</FormItem>

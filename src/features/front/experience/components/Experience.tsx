@@ -1,5 +1,3 @@
-"use cache";
-
 import { getExperienceInfo } from "@/features/utils/actions";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";

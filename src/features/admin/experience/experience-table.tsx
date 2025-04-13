@@ -1,5 +1,3 @@
-"use cache";
-
 import { Job } from "@/types";
 import { columns } from "./experience-form/columns";
 import { DataTable } from "@/features/admin/experience/experience-form/data-table";
