@@ -33,8 +33,15 @@ const ProjectAccordion = ({
 	}
 
 	return (
-		<Accordion type="single" collapsible className="w-full lg:w-1/2">
-			<AccordionItem value="item-1">
+		<Accordion
+			type="single"
+			collapsible
+			className="w-full lg:w-1/2 group/list"
+		>
+			<AccordionItem
+				value="item-1"
+				className="group lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
+			>
 				<AccordionTrigger className="font-bold">
 					Description
 				</AccordionTrigger>
@@ -44,7 +51,10 @@ const ProjectAccordion = ({
 					></span>
 				</AccordionContent>
 			</AccordionItem>
-			<AccordionItem value="item-2">
+			<AccordionItem
+				value="item-2"
+				className="lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
+			>
 				<AccordionTrigger className="font-bold">
 					Features
 				</AccordionTrigger>
@@ -52,7 +62,10 @@ const ProjectAccordion = ({
 					<span dangerouslySetInnerHTML={{ __html: features }}></span>
 				</AccordionContent>
 			</AccordionItem>
-			<AccordionItem value="item-3">
+			<AccordionItem
+				value="item-3"
+				className="lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
+			>
 				<AccordionTrigger className="font-bold">
 					Technologies
 				</AccordionTrigger>
@@ -62,7 +75,10 @@ const ProjectAccordion = ({
 					></span>
 				</AccordionContent>
 			</AccordionItem>
-			<AccordionItem value="item-4">
+			<AccordionItem
+				value="item-4"
+				className="lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
+			>
 				<AccordionTrigger className="font-bold">Code</AccordionTrigger>
 				<AccordionContent>{repository}</AccordionContent>
 			</AccordionItem>
