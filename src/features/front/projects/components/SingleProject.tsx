@@ -25,7 +25,7 @@ const SingleProject = async ({ id }: SingleProjectProps) => {
 			<div className="flex flex-col gap-4 lg:w-1/2">
 				<Link
 					href="/"
-					className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-100"
+					className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-50"
 				>
 					<span>
 						<ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
