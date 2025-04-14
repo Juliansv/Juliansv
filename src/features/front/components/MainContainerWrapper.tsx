@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Children } from "react";
 import { cloneElement } from "react";
 import { useEffect } from "react";
+import React from "react";
 
 const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 	const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -39,15 +40,17 @@ const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 	}, [aboutInView, experienceInView, projectsInView]);
 
 	const childrenWithRefs = Children.map(children, (child, index) => {
-		// Check if the child is a valid element
-		if (!child || typeof child !== "object" || !("props" in child)) {
+		// Check if the child is a valid React element
+		if (!React.isValidElement(child)) {
 			return child;
 		}
 
 		// Add the appropriate ref based on index
-		if (index === 0) return cloneElement(child, { ref: aboutRef });
-		if (index === 1) return cloneElement(child, { ref: experienceRef });
-		if (index === 2) return cloneElement(child, { ref: projectsRef });
+		if (index === 0) return cloneElement(child, { ref: aboutRef } as any);
+		if (index === 1)
+			return cloneElement(child, { ref: experienceRef } as any);
+		if (index === 2)
+			return cloneElement(child, { ref: projectsRef } as any);
 		return child;
 	});
 
