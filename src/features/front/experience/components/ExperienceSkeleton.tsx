@@ -13,11 +13,11 @@ const ExperienceCardSkeleton = () => {
 					<h3 className="font-medium leading-snug text-slate-200 flex gap-2">
 						<Skeleton className="w-36 h-4" />
 					</h3>
-					<p className="mt-2 text-sm leading-normal flex flex-col gap-2">
+					<div className="mt-2 text-sm leading-normal flex flex-col gap-2">
 						<Skeleton className="w-full h-3 sm:w-72" />
 						<Skeleton className="w-full h-3 sm:w-72" />
 						<Skeleton className="w-full h-3 sm:w-72" />
-					</p>
+					</div>
 					<ul className="mt-2 flex flex-wrap">
 						<li className="mr-1.5 mt-2">
 							<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">

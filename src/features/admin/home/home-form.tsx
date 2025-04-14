@@ -19,18 +19,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { formSchema } from "@/features/admin/home/form-schema";
 import { handleUpdateHomeInfo } from "./actions";
+import { HomeInfo } from "@/types";
 
 interface HomeFormProps {
-	data: HomeInfoProps;
-}
-
-interface HomeInfoProps {
-	title: string;
-	subtitle: string;
-	description: string;
-	github_link: string;
-	linkedin_link: string;
-	about_me: string;
+	data: HomeInfo;
 }
 
 const HomeForm = ({

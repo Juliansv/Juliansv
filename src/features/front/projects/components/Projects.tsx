@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { createClient } from "@/utils/supabase/server";
 import { getFeaturedProjects } from "@/features/utils/actions";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import { Project } from "@/types";
 
 const Projects = async () => {
@@ -34,16 +35,17 @@ const Projects = async () => {
 								<div className="z-10 sm:order-2 sm:col-span-6">
 									<h3>
 										<Link
-											href={{
-												pathname: `/project/${project.id}`,
-												query: {
-													name: "home page",
-												},
-											}}
+											href={`/project/${project.id}`}
 											className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base"
 										>
 											<span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-											<span>{project.title}</span>
+											<ViewTransition
+												name={`project-name-transition-${project.id}`}
+											>
+												<span className="inline-block">
+													{project.title}
+												</span>
+											</ViewTransition>
 										</Link>
 									</h3>
 									<p className="mt-2 text-sm leading-normal">

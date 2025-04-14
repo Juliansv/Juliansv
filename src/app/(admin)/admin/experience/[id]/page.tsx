@@ -3,8 +3,9 @@ import Link from "next/link";
 import { ArrowBigLeftDashIcon } from "lucide-react";
 import { ExperienceForm } from "@/features/admin/experience/experience-form";
 
-const JobPage = ({ params }: { params: { id: string } }) => {
-	return (
+const JobPage = async (props: { params: Promise<{ id: string }> }) => {
+    const params = await props.params;
+    return (
 		<div className="p-4 m-4">
 			<Link
 				href="/admin/experience"

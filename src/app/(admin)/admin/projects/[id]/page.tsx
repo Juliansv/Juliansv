@@ -3,8 +3,9 @@ import Link from "next/link";
 import { ArrowBigLeftDashIcon } from "lucide-react";
 import ProjectForm from "@/features/admin/projects/project-form";
 
-const ProjectPage = ({ params }: { params: { id: string } }) => {
-	return (
+const ProjectPage = async (props: { params: Promise<{ id: string }> }) => {
+    const params = await props.params;
+    return (
 		<div className="p-4 m-4">
 			<Link
 				href="/admin/projects"

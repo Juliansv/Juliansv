@@ -9,7 +9,7 @@ const Archive = async () => {
 
 	const data: Project[] = await getProjectsInfo({ supabase });
 
-	const sortExperienceByDate = (experience: Project[]): Project[] => {
+	const sortProjectsByDate = (experience: Project[]): Project[] => {
 		return experience.sort((a, b) => {
 			const parseDate = (dateStr: string) => {
 				const year = Number(dateStr);
@@ -20,7 +20,7 @@ const Archive = async () => {
 		});
 	};
 
-	const projects = sortExperienceByDate(data);
+	const projects = sortProjectsByDate(data);
 
 	return (
 		<div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
@@ -72,12 +72,7 @@ const Archive = async () => {
 									<div>
 										<div className="block sm:hidden">
 											<Link
-												href={{
-													pathname: `/project/${project.id}`,
-													query: {
-														name: "project archive",
-													},
-												}}
+												href={`/project/${project.id}`}
 												className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 sm:hidden group/link text-base"
 											>
 												{project.title}
@@ -85,12 +80,7 @@ const Archive = async () => {
 										</div>
 										<div className="hidden sm:block">
 											<Link
-												href={{
-													pathname: `/project/${project.id}`,
-													query: {
-														name: "project archive",
-													},
-												}}
+												href={`/project/${project.id}`}
 											>
 												{project.title}
 											</Link>
