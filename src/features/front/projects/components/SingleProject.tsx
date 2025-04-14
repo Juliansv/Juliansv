@@ -3,6 +3,7 @@ import { getProjectById } from "@/features/utils/actions";
 import { Project } from "@/types";
 import { createClient } from "@/utils/supabase/server";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,7 +43,13 @@ const SingleProject = async ({ id }: SingleProjectProps) => {
 				/>
 				<div className="lg:order-1">
 					<h1 className="text-4xl font-bold pb-2 text-teal-50">
-						{project.title}
+						<ViewTransition
+							name={`project-name-transition-${project.id}`}
+						>
+							<span className="inline-block">
+								{project.title}
+							</span>
+						</ViewTransition>
 					</h1>
 					<Link
 						href={project.url}
