@@ -3,9 +3,11 @@ import { getProjectById } from "@/features/utils/actions";
 import { Project } from "@/types";
 import { createClient } from "@/utils/supabase/server";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { Suspense, unstable_ViewTransition as ViewTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BackButton from "./BackButton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface SingleProjectProps {
 	id: string;
@@ -24,23 +26,17 @@ const SingleProject = async ({ id }: SingleProjectProps) => {
 	return (
 		<article className="mx-auto max-w-screen-xl min-h-[750px] items-center px-6 py-12 flex flex-col gap-4 md:px-12 md:py-20 lg:p-24 lg:flex-row lg:justify-center">
 			<div className="flex flex-col gap-4 lg:w-1/2">
-				<Link
-					href="/"
-					className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-50"
-				>
-					<span>
-						<ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
-					</span>
-					Back to home page
-				</Link>
-				<Image
-					src={project.image}
-					alt={project.title}
-					width={500}
-					height={500}
-					className="h-auto w-auto"
-					priority
-				/>
+				<BackButton />
+				<Suspense fallback={<Skeleton className="w-[100%] h-60" />}>
+					<Image
+						src={project.image}
+						alt={project.title}
+						width={500}
+						height={500}
+						className="h-auto w-auto"
+						priority
+					/>
+				</Suspense>
 				<div className="lg:order-1">
 					<h1 className="text-4xl font-bold pb-2 text-teal-50">
 						<ViewTransition

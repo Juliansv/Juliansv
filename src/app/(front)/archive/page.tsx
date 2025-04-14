@@ -72,7 +72,10 @@ const Archive = async () => {
 									<div>
 										<div className="block sm:hidden">
 											<Link
-												href={`/project/${project.id}`}
+												href={{
+													pathname: `/project/${project.id}`,
+													query: { from: "archive" },
+												}}
 												className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 sm:hidden group/link text-base"
 											>
 												{project.title}
@@ -80,7 +83,10 @@ const Archive = async () => {
 										</div>
 										<div className="hidden sm:block">
 											<Link
-												href={`/project/${project.id}`}
+												href={{
+													pathname: `/project/${project.id}`,
+													query: { from: "archive" },
+												}}
 											>
 												{project.title}
 											</Link>

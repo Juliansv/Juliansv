@@ -29,7 +29,7 @@ const ProjectAccordion = ({
 			/>
 		);
 	} else {
-		repository = code_repository;
+		repository = <span className="italic">{code_repository}</span>;
 	}
 
 	return (

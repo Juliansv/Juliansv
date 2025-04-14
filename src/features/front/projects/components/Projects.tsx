@@ -35,7 +35,10 @@ const Projects = async () => {
 								<div className="z-10 sm:order-2 sm:col-span-6">
 									<h3>
 										<Link
-											href={`/project/${project.id}`}
+											href={{
+												pathname: `/project/${project.id}`,
+												query: { from: "home" },
+											}}
 											className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base"
 										>
 											<span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
