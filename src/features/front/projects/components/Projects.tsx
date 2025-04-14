@@ -99,3 +99,7 @@ const Projects = async () => {
 };
 
 export default Projects;
+
+export const dynamic = "force-static";
+
+export const revalidate = 3600;

@@ -130,3 +130,7 @@ const Archive = async () => {
 };
 
 export default Archive;
+
+export const dynamic = "force-static";
+
+export const revalidate = 3600;

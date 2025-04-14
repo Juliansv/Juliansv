@@ -47,3 +47,7 @@ const AboutMe = async () => {
 };
 
 export default AboutMe;
+
+export const dynamic = "force-static";
+
+export const revalidate = 3600;
