@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+import withBundleAnalyzer from "@next/bundle-analyzer";
 const nextConfig = {
 	experimental: {
 		viewTransition: true,
@@ -20,6 +21,11 @@ const nextConfig = {
 		],
 		dangerouslyAllowSVG: true,
 	},
+	turbopack: {},
 };
 
-export default nextConfig;
+const BundleAnalyzer = withBundleAnalyzer({
+	enabled: process.env.ANALYZE === "true",
+});
+
+export default BundleAnalyzer(nextConfig);

@@ -75,3 +75,7 @@ const Experience = async () => {
 };
 
 export default Experience;
+
+export const dynamic = "force-static";
+
+export const revalidate = 3600;

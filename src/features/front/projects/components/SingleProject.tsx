@@ -69,3 +69,7 @@ const SingleProject = async ({ id }: SingleProjectProps) => {
 };
 
 export default SingleProject;
+
+export const dynamic = "force-static";
+
+export const revalidate = 3600;
