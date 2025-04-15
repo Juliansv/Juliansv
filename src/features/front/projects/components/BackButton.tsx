@@ -11,6 +11,7 @@ const BackButton = () => {
 	return (
 		<Link
 			href={from === "archive" ? "/archive" : "/"}
+			scroll={false}
 			className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-50"
 		>
 			<span>
