@@ -42,7 +42,7 @@ const ProjectAccordion = ({
 				value="item-1"
 				className="group lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
 			>
-				<AccordionTrigger className="font-bold">
+				<AccordionTrigger className="font-bold text-teal-50">
 					Description
 				</AccordionTrigger>
 				<AccordionContent>
@@ -55,7 +55,7 @@ const ProjectAccordion = ({
 				value="item-2"
 				className="lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
 			>
-				<AccordionTrigger className="font-bold">
+				<AccordionTrigger className="font-bold text-teal-50">
 					Features
 				</AccordionTrigger>
 				<AccordionContent>
@@ -66,7 +66,7 @@ const ProjectAccordion = ({
 				value="item-3"
 				className="lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
 			>
-				<AccordionTrigger className="font-bold">
+				<AccordionTrigger className="font-bold text-teal-50">
 					Technologies
 				</AccordionTrigger>
 				<AccordionContent>
@@ -79,7 +79,9 @@ const ProjectAccordion = ({
 				value="item-4"
 				className="lg:group-hover/list:opacity-50 lg:hover:!opacity-100"
 			>
-				<AccordionTrigger className="font-bold">Code</AccordionTrigger>
+				<AccordionTrigger className="font-bold text-teal-50">
+					Code
+				</AccordionTrigger>
 				<AccordionContent>{repository}</AccordionContent>
 			</AccordionItem>
 		</Accordion>

@@ -1,7 +1,27 @@
+"use client";
+
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 const Header = () => {
+	const handleDisableViewTransitions = (id: string) => {
+		// Temporarily disable view transitions
+		const originalStartViewTransition = document.startViewTransition;
+		document.startViewTransition = () => {
+			throw new Error("View transitions are temporarily disabled.");
+		};
+
+		// Scroll to the section
+		const section = document.querySelector(id);
+		if (section) {
+			section.scrollIntoView({ behavior: "smooth" });
+		}
+
+		// Restore view transitions after scrolling
+		setTimeout(() => {
+			document.startViewTransition = originalStartViewTransition;
+		}, 500); // Adjust timeout based on scroll duration
+	};
 	return (
 		<header className="z-10 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
 			<div>
@@ -23,16 +43,20 @@ const Header = () => {
 						<li>
 							<Link
 								href="#about"
+								onNavigate={(e) => {
+									e.preventDefault();
+									handleDisableViewTransitions("#about");
+								}}
 								className="group flex items-center py-3"
 								id="about-nav"
 							>
 								<span
 									id="about-nav-line"
-									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-active:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:bg-slate-200 motion-reduce:transition-none"
+									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-active:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:bg-slate-200 motion-reduce:transition-none line-active"
 								></span>
 								<span
 									id="about-nav-text"
-									className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200 group-active:text-slate-200"
+									className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200 group-active:text-slate-200 text-active"
 								>
 									About
 								</span>
@@ -42,6 +66,10 @@ const Header = () => {
 						<li>
 							<Link
 								href="#projects"
+								onNavigate={(e) => {
+									e.preventDefault();
+									handleDisableViewTransitions("#projects");
+								}}
 								className="group flex items-center py-3"
 								id="projects-nav"
 							>
@@ -60,6 +88,10 @@ const Header = () => {
 						<li>
 							<Link
 								href="#experience"
+								onNavigate={(e) => {
+									e.preventDefault();
+									handleDisableViewTransitions("#experience");
+								}}
 								className="group flex items-center py-3"
 								id="experience-nav"
 							>

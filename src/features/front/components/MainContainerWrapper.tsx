@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "react-intersection-observer";
-import { Children } from "react";
+import { Children, useState } from "react";
 import { cloneElement } from "react";
 import { useEffect } from "react";
 import React from "react";
@@ -17,7 +17,14 @@ const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 		rootMargin: "-35% 0px -35% 0px",
 	});
 
+	const [isFirstRender, setIsFirstRender] = useState(true);
+
 	useEffect(() => {
+		if (isFirstRender) {
+			setIsFirstRender(false);
+			return;
+		}
+
 		document.querySelector(".line-active")?.classList.remove("line-active");
 		document.querySelector(".text-active")?.classList.remove("text-active");
 

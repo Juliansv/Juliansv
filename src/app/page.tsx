@@ -17,14 +17,14 @@ export default async function Page() {
 				<Header />
 				<MainContainerWrapper>
 					<SectionWrapper
-						id="about-section"
+						id="about"
 						styles="z-10 relative mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
 						ariaLabel="About me"
 					>
 						<AboutMe />
 					</SectionWrapper>
 					<SectionWrapper
-						id="projects-section"
+						id="projects"
 						styles="mb-16 scroll-mt-16 mdd:mb-24 lg:mb-36 lg:scroll-mt-24"
 						ariaLabel="Selected projects"
 					>
@@ -33,7 +33,7 @@ export default async function Page() {
 						</Suspense>
 					</SectionWrapper>
 					<SectionWrapper
-						id="experience-section"
+						id="experience"
 						styles="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
 						ariaLabel="Work experience"
 					>

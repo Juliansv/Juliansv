@@ -63,7 +63,7 @@ const Experience = async () => {
 				</ol>
 				<div className="mt-12">
 					<Link
-						href="https://drive.google.com/file/d/1T6KBAnDuYT9WOldc_S3v4Z3JXDU-Q2wp/view?usp=drive_link"
+						href="/resume"
 						className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
 					>
 						View Full Resume

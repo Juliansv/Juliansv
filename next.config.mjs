@@ -21,7 +21,11 @@ const nextConfig = {
 		],
 		dangerouslyAllowSVG: true,
 	},
-	turbopack: {},
+	turbopack: {
+		resolveAlias: {
+			canvas: "./empty-module.ts",
+		},
+	},
 };
 
 const BundleAnalyzer = withBundleAnalyzer({
