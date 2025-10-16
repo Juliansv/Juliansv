@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const AboutMe = async () => {
 	return (
 		<>
@@ -11,25 +13,34 @@ const AboutMe = async () => {
 					I started my journey as a developer around 2017, when a
 					friend of a friend told me about a bootcamp at a local
 					startup called
-					<span className="font-bold hover:text-teal-300 cursor-pointer">
+					<Link
+						href="#experience"
+						className="font-bold hover:text-teal-300 cursor-pointer"
+					>
 						{" "}
 						Snappler
-					</span>
+					</Link>
 					. There, I learned the basics of web development and
 					realized that this was the path I wanted to continue on.
 				</p>
 				<p className="mb-4">
 					{" "}
 					Fast forward to today, I have worked as a{" "}
-					<span className="font-bold hover:text-teal-300 cursor-pointer">
+					<Link
+						href="#experience"
+						className="font-bold hover:text-teal-300 cursor-pointer"
+					>
 						{" "}
 						front-end developer
-					</span>{" "}
+					</Link>{" "}
 					for three companies and as a{" "}
-					<span className="font-bold hover:text-teal-300 cursor-pointer">
+					<Link
+						href="#experience"
+						className="font-bold hover:text-teal-300 cursor-pointer"
+					>
 						{" "}
 						QA analyst
-					</span>{" "}
+					</Link>{" "}
 					for another two. I have honed my skills in different tech
 					stacks and gained experience working both in the office and
 					from home.
@@ -37,9 +48,17 @@ const AboutMe = async () => {
 
 				<p>
 					{" "}
-					So far, I’ve been enjoying the journey—constantly learning,
-					exploring new technologies, and staying up to date with the
-					latest trends.
+					I’ve truly enjoyed the ride so far. Always learning, diving
+					into new tools, and building things that matter. Nowadays I
+					also take on{" "}
+					<Link
+						href="#projects"
+						className="font-bold hover:text-teal-300 cursor-pointer"
+					>
+						freelance projects
+					</Link>
+					, especially WordPress sites and custom web builds, helping
+					clients bring their ideas to life online.
 				</p>
 			</div>
 		</>
