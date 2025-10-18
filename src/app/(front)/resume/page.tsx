@@ -1,5 +1,6 @@
 "use client";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowLeft, Download } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,7 +11,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 const Resume = () => {
 	const [numPages, setNumPages] = useState<number>();
-	const [pageNumber, setPageNumber] = useState<number>(1);
 	const [isMobile, setIsMobile] = useState<boolean>();
 
 	function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
@@ -60,6 +60,7 @@ const Resume = () => {
 			<Document
 				file="./resume.pdf"
 				onLoadSuccess={onDocumentLoadSuccess}
+				loading={<PDFSkeleton />}
 				className={"flex flex-col"}
 			>
 				{Array.from(new Array(numPages), (el, index) => (
@@ -75,6 +76,18 @@ const Resume = () => {
 					/>
 				))}
 			</Document>
+		</div>
+	);
+};
+
+const PDFSkeleton = () => {
+	return (
+		<div id="skeleton" className="w-screen flex flex-col">
+			<div className="mx-auto">
+				<Skeleton className="lg:h-[55rem] lg:w-[50rem] h-[30rem] w-96 mx-4 mb-4" />
+				<Skeleton className="lg:h-[55rem] lg:w-[50rem] h-[30rem] w-96 mx-4 mb-4" />
+				<Skeleton className="lg:h-[55rem] lg:w-[50rem] h-[30rem] w-96 mx-4 mb-4" />
+			</div>
 		</div>
 	);
 };
