@@ -1,4 +1,4 @@
-# Hi there, I'm Julian! 👋
+# Hi there, I'm Julian! 
 
 I've spent so much time surfing the web that I decided to make a career out of it.
 
