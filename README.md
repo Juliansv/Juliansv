@@ -1,13 +1,6 @@
 # Hi there, I'm Julian! 
 
-I've spent so much time surfing the web that I decided to make a career out of it.
-
-##
-
--   🇦🇷 Argentinian.
--   🔨 Building full-stack web applications.
--   🔍 QA background.
--   🏀 I love shooting hoops in my spare time.
+I'm a web developer. Probably down a rabbit hole about something I just learned about. 
 
 ##
 
