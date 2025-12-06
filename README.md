@@ -1,8 +1,8 @@
-# Hi there, I'm Julian! 
+# Hi, I'm Julian.
 
-I'm a web developer. Probably down a rabbit hole about something I just learned about. 
+I'm a web developer. 
 
 ##
 
--   🌐 Visit my [personal website](https://www.julisv.com) to learn more about me and my projects.
--   📫 You can reach me via email at [juliansv22@gmail.com](mailto:juliansv22@gmail.com)
+- Visit my [personal website](https://www.julisv.com) to learn more about me and my projects.
+- Email me at [juliansv22@gmail.com](mailto:juliansv22@gmail.com)
