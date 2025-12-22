@@ -1,13 +1,15 @@
 import { Experience } from "../types";
 import { freelanceDeveloper } from "./freelance-developer";
-import { frontendDeveloper } from "./frontend-developer";
-import { juniorDeveloper } from "./junior-developer";
+import { juniorAero } from "./junior-frontend-developer-aero";
+import { qaComposable } from "./qa-analyst-composable";
+import { qaScaleAI } from "./qa-analyst-scaleai";
 
 // Add all your experiences here
 export const experiences: Experience[] = [
 	freelanceDeveloper,
-	frontendDeveloper,
-	juniorDeveloper,
+	qaComposable,
+	qaScaleAI,
+	juniorAero,
 ];
 
 // Helper functions
