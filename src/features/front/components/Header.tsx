@@ -4,24 +4,13 @@ import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 const Header = () => {
-	const handleDisableViewTransitions = (id: string) => {
-		// Temporarily disable view transitions
-		const originalStartViewTransition = document.startViewTransition;
-		document.startViewTransition = () => {
-			throw new Error("View transitions are temporarily disabled.");
-		};
-
-		// Scroll to the section
-		const section = document.querySelector(id);
-		if (section) {
-			section.scrollIntoView({ behavior: "smooth" });
+	const scrollToSection = (id: string) => {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
 		}
-
-		// Restore view transitions after scrolling
-		setTimeout(() => {
-			document.startViewTransition = originalStartViewTransition;
-		}, 500); // Adjust timeout based on scroll duration
 	};
+
 	return (
 		<header className="z-10 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
 			<div>
@@ -41,12 +30,8 @@ const Header = () => {
 				>
 					<ul className="mt-16 w-max">
 						<li>
-							<Link
-								href="#about"
-								onNavigate={(e) => {
-									e.preventDefault();
-									handleDisableViewTransitions("#about");
-								}}
+							<button
+								onClick={() => scrollToSection("about")}
 								className="group flex items-center py-3"
 								id="about-nav"
 							>
@@ -60,16 +45,12 @@ const Header = () => {
 								>
 									About
 								</span>
-							</Link>
+							</button>
 						</li>
 
 						<li>
-							<Link
-								href="#projects"
-								onNavigate={(e) => {
-									e.preventDefault();
-									handleDisableViewTransitions("#projects");
-								}}
+							<button
+								onClick={() => scrollToSection("projects")}
 								className="group flex items-center py-3"
 								id="projects-nav"
 							>
@@ -83,15 +64,11 @@ const Header = () => {
 								>
 									Projects
 								</span>
-							</Link>
+							</button>
 						</li>
 						<li>
-							<Link
-								href="#experience"
-								onNavigate={(e) => {
-									e.preventDefault();
-									handleDisableViewTransitions("#experience");
-								}}
+							<button
+								onClick={() => scrollToSection("experience")}
 								className="group flex items-center py-3"
 								id="experience-nav"
 							>
@@ -105,16 +82,17 @@ const Header = () => {
 								>
 									Experience
 								</span>
-							</Link>
+							</button>
 						</li>
 					</ul>
 				</nav>
 			</div>
-			{/* Here it will go the nav links  */}
 			<ul className="ml-1 mt-8 flex items-center">
 				<li className="mr-5 text-xs shrink-0">
 					<Link
 						href="https://github.com/juliansv"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="block hover:text-slate-200"
 					>
 						<Github />
@@ -123,6 +101,8 @@ const Header = () => {
 				<li className="mr-5 text-xs shrink-0">
 					<Link
 						href="https://www.linkedin.com/in/juliansuarezvivas/"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="block hover:text-slate-200"
 					>
 						<Linkedin />

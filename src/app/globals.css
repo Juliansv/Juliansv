@@ -11,17 +11,13 @@
 	color: rgb(226 232 240);
 }
 
-@keyframes rotate {
-	from {
-		rotate: 0deg;
-	}
-
-	50% {
-		scale: 1 2;
-	}
-
-	to {
-		rotate: 360deg;
+/* View Transition API styles */
+@supports (view-transition-name: none) {
+	/* Basic page transition - simple crossfade */
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.25s;
+		animation-timing-function: ease-in-out;
 	}
 }
 
