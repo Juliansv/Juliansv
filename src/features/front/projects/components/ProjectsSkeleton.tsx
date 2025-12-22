@@ -8,7 +8,7 @@ const ProjectsCardSkeleton = () => {
 				<Skeleton className="w-32 h-32 col-span-2" />
 				<div className="z-10 sm:order-2 sm:col-span-6">
 					<h3>
-						<div className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
+						<div className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400  group/link text-base">
 							<span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
 							<span>
 								<Skeleton className="w-20 h-4" />
@@ -22,17 +22,17 @@ const ProjectsCardSkeleton = () => {
 					</div>
 					<ul className="mt-2 flex flex-wrap">
 						<li className="mr-1.5 mt-2">
-							<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+							<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400 ">
 								<Skeleton className="w-10 h-4" />
 							</div>
 						</li>
 						<li className="mr-1.5 mt-2">
-							<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+							<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400 ">
 								<Skeleton className="w-10 h-4" />
 							</div>
 						</li>
 						<li className="mr-1.5 mt-2">
-							<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+							<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400 ">
 								<Skeleton className="w-10 h-4" />
 							</div>
 						</li>
@@ -58,7 +58,7 @@ const ProjectsSkeleton = () => {
 					<ProjectsCardSkeleton />
 				</ul>
 				<div>
-					<div className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group text-base">
+					<div className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400 group text-base">
 						<Skeleton className="w-40 h-3" />
 					</div>
 				</div>
