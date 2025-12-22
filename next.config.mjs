@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 import withBundleAnalyzer from "@next/bundle-analyzer";
+
 const nextConfig = {
 	experimental: {
 		viewTransition: true,
@@ -14,17 +15,8 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "placehold.co",
 			},
-			{
-				protocol: "https",
-				hostname: "ypilahtpsnpflhlxcmmx.supabase.co",
-			},
 		],
 		dangerouslyAllowSVG: true,
-	},
-	turbopack: {
-		resolveAlias: {
-			canvas: "./empty-module.ts",
-		},
 	},
 };
 
