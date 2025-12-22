@@ -6,7 +6,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				"dark-purple": "#110E2A",
+				"dark-purple": "#0f172a",
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
 				card: {
