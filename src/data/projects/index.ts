@@ -1,17 +1,23 @@
 import { Project } from "../types";
-import { ecommercePlatform } from "./ecommerce-platform";
-import { portfolioWebsite } from "./portfolio-website";
-import { taskManagementApp } from "./task-management-app";
-import { restaurantWebsite } from "./restaurant-website";
-import { fitnessTracker } from "./fitness-tracker";
+import { abogadaPrevisional } from "./abogada-previsional";
+import { ecommerceStore } from "./ecommerce-store";
+import { ekomod } from "./ekomod";
+import { elTableroNoticias } from "./el-tablero-noticias";
+import { faveCocina } from "./fave-cocina";
+import { photoGallery } from "./photo-gallery";
+import { sallyPortSuites } from "./sally-port-suites";
+import { theBagelHole } from "./the-bagel-hole";
 
 // Add all your projects here
 export const projects: Project[] = [
-	ecommercePlatform,
-	portfolioWebsite,
-	taskManagementApp,
-	restaurantWebsite,
-	fitnessTracker,
+	faveCocina,
+	abogadaPrevisional,
+	sallyPortSuites,
+	theBagelHole,
+	ekomod,
+	photoGallery,
+	elTableroNoticias,
+	ecommerceStore,
 ];
 
 // Helper functions
