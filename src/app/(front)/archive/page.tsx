@@ -1,33 +1,16 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { createClient } from "@/utils/supabase/server";
-import { getProjectsInfo } from "@/features/utils/actions";
-import { Project } from "@/types";
+import { sortedProjects } from "@/data";
 
 const Archive = async () => {
-	const supabase = await createClient();
-
-	const data: Project[] = await getProjectsInfo({ supabase });
-
-	const sortProjectsByDate = (experience: Project[]): Project[] => {
-		return experience.sort((a, b) => {
-			const parseDate = (dateStr: string) => {
-				const year = Number(dateStr);
-				return new Date(year, 1).getTime(); // Convert to timestamp
-			};
-
-			return parseDate(b.year) - parseDate(a.year); // Descending order
-		});
-	};
-
-	const projects = sortProjectsByDate(data);
+	const projects = sortedProjects;
 
 	return (
 		<div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
 			<div className="lg:py-24">
 				<Link
 					href="/"
-					className="group mb-2 inline-flex items-center font-semibold leading-tight text-teal-300"
+					className="group mb-2 inline-flex items-center font-semibold leading-tight text-sky-400"
 				>
 					<span>
 						<ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
@@ -73,10 +56,10 @@ const Archive = async () => {
 										<div className="block sm:hidden">
 											<Link
 												href={{
-													pathname: `/project/${project.id}`,
+													pathname: `/project/${project.slug}`,
 													query: { from: "archive" },
 												}}
-												className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 sm:hidden group/link text-base"
+												className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400 sm:hidden group/link text-base"
 											>
 												{project.title}
 											</Link>
@@ -84,7 +67,7 @@ const Archive = async () => {
 										<div className="hidden sm:block">
 											<Link
 												href={{
-													pathname: `/project/${project.id}`,
+													pathname: `/project/${project.slug}`,
 													query: { from: "archive" },
 												}}
 											>
@@ -100,7 +83,7 @@ const Archive = async () => {
 												key={index}
 												className="my-1 mr-1.5"
 											>
-												<div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
+												<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400 ">
 													{stack}
 												</div>
 											</li>
@@ -112,7 +95,7 @@ const Archive = async () => {
 										<li className="mb-1 flex items-center">
 											<Link
 												href={project.url}
-												className="inline-flex items-baseline font-medium leading-tight hover:text-teal-300 focus-visible:text-teal-300 text-sm text-slate-400  group/link "
+												className="inline-flex items-baseline font-medium leading-tight hover:text-sky-400 focus-visible:text-sky-400 text-sm text-slate-400  group/link "
 											>
 												{project.url}
 											</Link>
