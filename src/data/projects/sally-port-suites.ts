@@ -22,6 +22,6 @@ export const sallyPortSuites: Project = {
 	],
 	technologies: ["WordPress", "PHP", "JavaScript", "MySQL", "Cloudflare", "Hostinger", "SEO"],
 	stack: ["WordPress", "PHP", "JavaScript"],
-	image: "https://placehold.co/600x400/1e293b/94a3b8?text=Sally%20Port%20Suites",
+	image: "/images/projects/sallyport.webp",
 	url: "https://sallyport.com.mt/", // Placeholder URL
 };

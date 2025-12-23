@@ -22,6 +22,6 @@ export const theBagelHole: Project = {
 	],
 	technologies: ["WordPress", "Docker", "Nginx", "Digital Ocean", "PHP", "MySQL", "JavaScript"],
 	stack: ["WordPress", "Docker", "Nginx"],
-	image: "https://placehold.co/600x400/1e293b/94a3b8?text=The%20Bagel%20Hole",
+	image: "/images/projects/thebagelhole.webp",
 	url: "https://itsthebagelhole.com/",
 };

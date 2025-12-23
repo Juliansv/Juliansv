@@ -21,6 +21,6 @@ export const elTableroNoticias: Project = {
 	],
 	technologies: ["React", "TypeScript", "Tailwind CSS", "NewsAPI", "JavaScript"],
 	stack: ["React", "TypeScript", "Tailwind CSS"],
-	image: "https://placehold.co/600x400/1e293b/94a3b8?text=El%20Tablero%20Noticias",
+	image: "/images/projects/eltableroinfo.webp",
 	url: "https://darkgrey-jellyfish-379181.hostingersite.com/", // Temporary URL
 };

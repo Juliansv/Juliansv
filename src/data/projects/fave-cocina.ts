@@ -22,6 +22,6 @@ export const faveCocina: Project = {
 	],
 	technologies: ["WordPress", "WooCommerce", "ATUM", "Elementor", "PHP", "MySQL", "JavaScript"],
 	stack: ["WordPress", "PHP", "JavaScript"],
-	image: "https://placehold.co/600x400/1e293b/94a3b8?text=FaVe%20Cocina",
+	image: "/images/projects/favecocina.webp",
 	url: "https://favecocina.com", // Placeholder URL
 };
