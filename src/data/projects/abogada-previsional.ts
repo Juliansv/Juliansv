@@ -23,5 +23,5 @@ export const abogadaPrevisional: Project = {
 	technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Resend", "React Email", "Zod", "React Hook Form"],
 	stack: ["Next.js", "TypeScript", "Tailwind CSS"],
 	image: "/images/projects/abogadaprevisional.webp",
-	url: "www.abogadaprevisional.com.ar",
+	url: "https://abogadaprevisional.com.ar",
 };
