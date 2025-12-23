@@ -4,7 +4,7 @@ export const freelanceDeveloper: Experience = {
 	id: "1",
 	slug: "freelance-web-developer",
 	company: "Freelance",
-	position: "Frontend Developer",
+	position: "Web Developer",
 	startDate: "02/2024",
 	endDate: "Present",
 	description:

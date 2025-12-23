@@ -23,5 +23,5 @@ export const ekomod: Project = {
 	technologies: ["Astro", "Tailwind CSS", "JavaScript", "HTML", "CSS", "Vite"],
 	stack: ["Astro", "Tailwind CSS", "JavaScript"],
 	image: "https://placehold.co/600x400/1e293b/94a3b8?text=Ekomod",
-	url: "https://ekomod.com", // Placeholder URL
+	url: "https://www.ekomod.com.co/",
 };

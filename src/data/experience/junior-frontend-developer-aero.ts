@@ -2,9 +2,9 @@ import { Experience } from "../types";
 
 export const juniorAero: Experience = {
 	id: "4",
-	slug: "junior-frontend-developer-aero",
+	slug: "frontend-developer-aero",
 	company: "Aero",
-	position: "Junior Frontend Developer",
+	position: "Frontend Developer",
 	startDate: "11/2017",
 	endDate: "12/2019",
 	description:

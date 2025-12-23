@@ -23,5 +23,5 @@ export const abogadaPrevisional: Project = {
 	technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Resend", "React Email", "Zod", "React Hook Form"],
 	stack: ["Next.js", "TypeScript", "Tailwind CSS"],
 	image: "https://placehold.co/600x400/1e293b/94a3b8?text=Abogada%20Previsional",
-	url: "https://abogada-previsional.com", // Placeholder URL
+	url: "www.abogadaprevisional.com.ar",
 };

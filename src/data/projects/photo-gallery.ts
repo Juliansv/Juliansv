@@ -23,5 +23,5 @@ export const photoGallery: Project = {
 	technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Contentful API", "Embla Carousel", "React"],
 	stack: ["Next.js", "TypeScript", "Contentful"],
 	image: "https://placehold.co/600x400/1e293b/94a3b8?text=Photo%20Gallery",
-	url: "https://example-photo-gallery.com", // Placeholder URL
+	url: "photo-gallery-mati.vercel.app", // Placeholder URL
 };
