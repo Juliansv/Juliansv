@@ -1,6 +1,23 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { sortedProjects } from "@/data";
+import { siteConfig } from "@/data/site";
+
+export const metadata: Metadata = {
+	title: "All Projects",
+	description:
+		"Complete archive of web development projects by Julian Suarez Vivas. Browse all websites and applications built with Next.js, React, WordPress, and more.",
+	openGraph: {
+		title: `All Projects | ${siteConfig.name}`,
+		description:
+			"Complete archive of web development projects by Julian Suarez Vivas.",
+		url: `${siteConfig.url}/archive`,
+	},
+	alternates: {
+		canonical: `${siteConfig.url}/archive`,
+	},
+};
 
 const Archive = async () => {
 	const projects = sortedProjects;

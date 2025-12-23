@@ -32,12 +32,17 @@ export interface SiteConfig {
 	title: string;
 	subtitle: string;
 	description: string;
+	url: string;
+	image: string;
+	email: string;
 	socialLinks: {
 		github: string;
 		linkedin: string;
 	};
+	keywords: string[];
 }
 
 export interface AboutContent {
-	paragraphs: string[];
+	hero: string[];
+	approach: string[];
 }
