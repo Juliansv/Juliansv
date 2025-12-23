@@ -4,6 +4,8 @@ import Header from "@/features/front/components/Header";
 import AboutMe from "@/features/front/about-me/components/AboutMe";
 import Experience from "@/features/front/experience/components/Experience";
 import Projects from "@/features/front/projects/components/Projects";
+import Approach from "@/features/front/approach/components/Approach";
+import Contact from "@/features/front/contact/components/Contact";
 import MainContainerWrapper from "@/features/front/components/MainContainerWrapper";
 import Footer from "@/features/front/components/Footer";
 import { SectionWrapper } from "@/features/front/components/SectionWrapper";
@@ -40,6 +42,20 @@ export default async function Page() {
 						<Suspense fallback={<ExperienceSkeleton />}>
 							<Experience />
 						</Suspense>
+					</SectionWrapper>
+					<SectionWrapper
+						id="approach"
+						styles="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+						ariaLabel="How I work"
+					>
+						<Approach />
+					</SectionWrapper>
+					<SectionWrapper
+						id="contact"
+						styles="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+						ariaLabel="Get in touch"
+					>
+						<Contact />
 					</SectionWrapper>
 					<Footer />
 				</MainContainerWrapper>

@@ -9,10 +9,10 @@ const AboutMe = async () => {
 				</h2>
 			</div>
 			<div>
-				{aboutContent.paragraphs.map((paragraph, index) => (
+				{aboutContent.hero.map((paragraph, index) => (
 					<p
 						key={index}
-						className={`leading-relaxed ${index < aboutContent.paragraphs.length - 1 ? "mb-4" : ""}`}
+						className={`leading-relaxed ${index < aboutContent.hero.length - 1 ? "mb-4" : ""}`}
 						dangerouslySetInnerHTML={{ __html: paragraph }}
 					/>
 				))}
