@@ -76,7 +76,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 						<Zoom>
 							<Image
 								src={project.image}
-								alt={project.title}
+								alt={`Screenshot of ${project.title} showing the main interface and features`}
 								width={1200}
 								height={600}
 								className="w-full h-auto rounded-lg border border-slate-200/10"
