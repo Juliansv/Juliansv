@@ -1,6 +1,5 @@
 import { Project } from "../types";
 import { abogadaPrevisional } from "./abogada-previsional";
-import { ecommerceStore } from "./ecommerce-store";
 import { ekomod } from "./ekomod";
 import { elTableroNoticias } from "./el-tablero-noticias";
 import { faveCocina } from "./fave-cocina";
@@ -17,7 +16,6 @@ export const projects: Project[] = [
 	ekomod,
 	photoGallery,
 	elTableroNoticias,
-	ecommerceStore,
 ];
 
 // Helper functions
