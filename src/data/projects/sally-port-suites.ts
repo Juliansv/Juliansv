@@ -20,7 +20,15 @@ export const sallyPortSuites: Project = {
 		"Mobile-first responsive design for travelers on the go",
 		"Contact forms and location maps",
 	],
-	technologies: ["WordPress", "PHP", "JavaScript", "MySQL", "Cloudflare", "Hostinger", "SEO"],
+	technologies: [
+		"WordPress",
+		"PHP",
+		"JavaScript",
+		"MySQL",
+		"Cloudflare",
+		"Hostinger",
+		"SEO",
+	],
 	stack: ["WordPress", "PHP", "JavaScript"],
 	image: "/images/projects/sallyport.webp",
 	url: "https://sallyport.com.mt/", // Placeholder URL

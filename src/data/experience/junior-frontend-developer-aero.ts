@@ -15,5 +15,12 @@ export const juniorAero: Experience = {
 		"Translated design mockups from the design team into responsive and functional web pages using HTML5, CSS, and JavaScript.",
 		"Collaborated with senior developers to debug production issues and implement effective solutions.",
 	],
-	technologies: ["Ruby On Rails", "JavaScript", "HTML5", "CSS", "React.js", "Redux"],
+	technologies: [
+		"Ruby On Rails",
+		"JavaScript",
+		"HTML5",
+		"CSS",
+		"React.js",
+		"Redux",
+	],
 };

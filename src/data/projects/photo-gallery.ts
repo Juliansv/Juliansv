@@ -20,7 +20,14 @@ export const photoGallery: Project = {
 		"Image optimization handled by Next.js",
 		"SEO-friendly architecture",
 	],
-	technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Contentful API", "Embla Carousel", "React"],
+	technologies: [
+		"Next.js",
+		"TypeScript",
+		"Tailwind CSS",
+		"Contentful API",
+		"Embla Carousel",
+		"React",
+	],
 	stack: ["Next.js", "TypeScript", "Contentful"],
 	image: "/images/projects/photogallery.webp",
 	url: "https://photo-gallery-mati.vercel.app", // Placeholder URL

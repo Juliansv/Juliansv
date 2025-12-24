@@ -23,7 +23,9 @@ const Projects = async () => {
 								{/* image */}
 								<div
 									className="sm:order-1 sm:col-span-2"
-									style={{ viewTransitionName: `project-image-${project.slug}` }}
+									style={{
+										viewTransitionName: `project-image-${project.slug}`,
+									}}
 								>
 									<Image
 										src={project.image}
@@ -37,12 +39,14 @@ const Projects = async () => {
 									<h3>
 										<ViewTransitionLink
 											href={`/project/${project.slug}`}
-											className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400  group/link text-base"
+											className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400"
 										>
 											<span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
 											<span
 												className="inline-block"
-												style={{ viewTransitionName: `project-title-${project.slug}` }}
+												style={{
+													viewTransitionName: `project-title-${project.slug}`,
+												}}
 											>
 												{project.title}
 											</span>
@@ -53,18 +57,13 @@ const Projects = async () => {
 									</p>
 									{project.stack && (
 										<ul className="mt-2 flex flex-wrap">
-											{project.stack.map(
-												(stackName, index) => (
-													<li
-														key={index}
-														className="mr-1.5 mt-2"
-													>
-														<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400">
-															{stackName}
-														</div>
-													</li>
-												)
-											)}
+											{project.stack.map((stackName, index) => (
+												<li key={index} className="mr-1.5 mt-2">
+													<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400">
+														{stackName}
+													</div>
+												</li>
+											))}
 										</ul>
 									)}
 								</div>
@@ -75,7 +74,7 @@ const Projects = async () => {
 				<div>
 					<Link
 						href="/archive"
-						className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400 group text-base"
+						className="group inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400"
 					>
 						<span>
 							<span className="border-b border-transparent pb-px transition group-hover:border-sky-400 motion-reduce:transition-none">

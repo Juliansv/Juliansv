@@ -27,7 +27,9 @@ const Experience = async () => {
 											href={`/experience/${exp.slug}`}
 											className="hover:text-sky-400 focus-visible:text-sky-400"
 										>
-											<span style={{ viewTransitionName: `exp-title-${exp.slug}` }}>
+											<span
+												style={{ viewTransitionName: `exp-title-${exp.slug}` }}
+											>
 												{exp.position} · {exp.company}
 											</span>
 										</ViewTransitionLink>
@@ -37,11 +39,8 @@ const Experience = async () => {
 									</p>
 									<ul className="mt-2 flex flex-wrap">
 										{exp.technologies.map((skill, index) => (
-											<li
-												key={index}
-												className="mr-1.5 mt-2"
-											>
-												<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400 ">
+											<li key={index} className="mr-1.5 mt-2">
+												<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400">
 													{skill}
 												</div>
 											</li>

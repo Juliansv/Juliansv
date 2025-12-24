@@ -13,17 +13,14 @@ const Archive = async () => {
 					className="group mb-2 inline-flex items-center font-semibold leading-tight text-sky-400"
 				>
 					<span>
-						<ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
+						<ArrowLeft className="mr-1 size-4 transition-transform group-hover:-translate-x-2" />
 					</span>
 					Back to home page
 				</Link>
 				<h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
 					All projects
 				</h1>
-				<table
-					id="content"
-					className="mt-12 w-full border-collapse text-left"
-				>
+				<table id="content" className="mt-12 w-full border-collapse text-left">
 					<thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 px-6 py-5 backdrop-blur">
 						<tr>
 							<th className="py-4 pr-8 text-sm font-semibold text-slate-200">
@@ -47,9 +44,7 @@ const Archive = async () => {
 								className="border-b border-slate-300/10 last:border-none"
 							>
 								<td className="py-4 pr-4 align-top text-sm">
-									<div className="translate-y-px">
-										{project.year}
-									</div>
+									<div className="translate-y-px">{project.year}</div>
 								</td>
 								<td className="py-4 pr-4 align-top font-semibold leading-snug text-slate-200">
 									<div>
@@ -59,7 +54,7 @@ const Archive = async () => {
 													pathname: `/project/${project.slug}`,
 													query: { from: "archive" },
 												}}
-												className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400 sm:hidden group/link text-base"
+												className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-sky-400 focus-visible:text-sky-400 sm:hidden"
 											>
 												{project.title}
 											</Link>
@@ -79,11 +74,8 @@ const Archive = async () => {
 								<td className="hidden py-4 pr-4 align-top lg:table-cell">
 									<ul className="flex -translate-y-1.5 flex-wrap">
 										{project.stack?.map((stack, index) => (
-											<li
-												key={index}
-												className="my-1 mr-1.5"
-											>
-												<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400 ">
+											<li key={index} className="my-1 mr-1.5">
+												<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400">
 													{stack}
 												</div>
 											</li>
@@ -95,7 +87,7 @@ const Archive = async () => {
 										<li className="mb-1 flex items-center">
 											<Link
 												href={project.url}
-												className="inline-flex items-baseline font-medium leading-tight hover:text-sky-400 focus-visible:text-sky-400 text-sm text-slate-400  group/link "
+												className="group/link inline-flex items-baseline text-sm font-medium leading-tight text-slate-400 hover:text-sky-400 focus-visible:text-sky-400"
 											>
 												{project.url}
 											</Link>

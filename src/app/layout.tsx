@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={`scroll-smooth ` + montserrat.className}>
-			<body className="bg-dark-purple leading-relaxed selection:bg-sky-400 antialiased text-slate-400 selection:text-slate-900">
+			<body className="bg-dark-purple leading-relaxed text-slate-400 antialiased selection:bg-sky-400 selection:text-slate-900">
 				<PostHogProvider>{children}</PostHogProvider>
 			</body>
 		</html>

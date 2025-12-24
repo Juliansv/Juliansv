@@ -20,6 +20,6 @@ export const freelanceDeveloper: Experience = {
 		"TypeScript",
 		"Tailwind CSS",
 		"Vercel",
-		"WordPress"
+		"WordPress",
 	],
 };

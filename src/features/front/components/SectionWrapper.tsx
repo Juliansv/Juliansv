@@ -11,12 +11,7 @@ interface SectionWrapperProps {
 export const SectionWrapper = forwardRef<HTMLDivElement, SectionWrapperProps>(
 	({ children, id, styles, ariaLabel }, ref) => {
 		return (
-			<section
-				id={id}
-				ref={ref}
-				className={styles}
-				aria-label={ariaLabel}
-			>
+			<section id={id} ref={ref} className={styles} aria-label={ariaLabel}>
 				{children}
 			</section>
 		);

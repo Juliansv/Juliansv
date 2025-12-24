@@ -54,10 +54,8 @@ const MainContainerWrapper = ({ children }: { children: React.ReactNode }) => {
 
 		// Add the appropriate ref based on index
 		if (index === 0) return cloneElement(child, { ref: aboutRef } as any);
-		if (index === 1)
-			return cloneElement(child, { ref: experienceRef } as any);
-		if (index === 2)
-			return cloneElement(child, { ref: projectsRef } as any);
+		if (index === 1) return cloneElement(child, { ref: experienceRef } as any);
+		if (index === 2) return cloneElement(child, { ref: projectsRef } as any);
 		return child;
 	});
 
