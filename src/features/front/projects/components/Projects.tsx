@@ -27,7 +27,7 @@ const Projects = async () => {
 								>
 									<Image
 										src={project.image}
-										alt={project.title}
+										alt={`Screenshot of ${project.title} - ${project.description.slice(0, 100)}`}
 										width={150}
 										height={150}
 										className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:translate-y-1"
