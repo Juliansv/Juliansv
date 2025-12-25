@@ -13,7 +13,7 @@ const BackButton = () => {
 			className="group mb-2 inline-flex items-center font-semibold leading-tight text-sky-400"
 		>
 			<span>
-				<ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
+				<ArrowLeft className="mr-1 size-4 transition-transform group-hover:-translate-x-2" />
 			</span>
 			Back to {from === "archive" ? "archive page" : "home page"}
 		</ViewTransitionLink>

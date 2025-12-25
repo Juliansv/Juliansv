@@ -21,13 +21,10 @@ const Header = () => {
 					Web Developer
 				</h2>
 				<p className="mt-4 max-w-sm leading-normal">
-					I focus on delivering slick, user-friendly apps with
-					precision and style.
+					I focus on delivering slick, user-friendly apps with precision and
+					style.
 				</p>
-				<nav
-					className="nav hidden lg:block"
-					aria-label="In-page jump links"
-				>
+				<nav className="nav hidden lg:block" aria-label="In-page jump links">
 					<ul className="mt-16 w-max">
 						<li>
 							<button
@@ -37,11 +34,11 @@ const Header = () => {
 							>
 								<span
 									id="about-nav-line"
-									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-active:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:bg-slate-200 motion-reduce:transition-none line-active"
+									className="nav-indicator line-active mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:w-16 group-active:bg-slate-200 motion-reduce:transition-none"
 								></span>
 								<span
 									id="about-nav-text"
-									className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200 group-active:text-slate-200 text-active"
+									className="nav-text text-active text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200 group-active:text-slate-200"
 								>
 									About
 								</span>
@@ -56,7 +53,7 @@ const Header = () => {
 							>
 								<span
 									id="projects-nav-line"
-									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-active:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:bg-slate-200 motion-reduce:transition-none"
+									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:w-16 group-active:bg-slate-200 motion-reduce:transition-none"
 								></span>
 								<span
 									id="projects-nav-text"
@@ -74,7 +71,7 @@ const Header = () => {
 							>
 								<span
 									id="experience-nav-line"
-									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-active:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:bg-slate-200 motion-reduce:transition-none"
+									className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:w-16 group-active:bg-slate-200 motion-reduce:transition-none"
 								></span>
 								<span
 									id="experience-nav-text"
@@ -88,7 +85,7 @@ const Header = () => {
 				</nav>
 			</div>
 			<ul className="ml-1 mt-8 flex items-center">
-				<li className="mr-5 text-xs shrink-0">
+				<li className="mr-5 shrink-0 text-xs">
 					<Link
 						href="https://github.com/juliansv"
 						target="_blank"
@@ -98,7 +95,7 @@ const Header = () => {
 						<Github />
 					</Link>
 				</li>
-				<li className="mr-5 text-xs shrink-0">
+				<li className="mr-5 shrink-0 text-xs">
 					<Link
 						href="https://www.linkedin.com/in/juliansuarezvivas/"
 						target="_blank"

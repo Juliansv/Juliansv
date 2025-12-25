@@ -1,49 +1,73 @@
 {
-  "name": "portfolio-v3",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "kill": "bash -c 'for port in {3000..3003}; do lsof -i :$port -t | xargs -r kill; done'",
-    "dev": "npm run kill; next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@next/bundle-analyzer": "^15.3.0",
-    "@radix-ui/react-accordion": "^1.2.4",
-    "@radix-ui/react-slot": "^1.2.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.488.0",
-    "next": "15.3.6",
-    "posthog-js": "^1.236.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-intersection-observer": "^9.16.0",
-    "react-medium-image-zoom": "^5.2.14",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.1",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^20.17.30",
-    "@types/react": "19.1.1",
-    "@types/react-dom": "19.1.2",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.24.0",
-    "eslint-config-next": "15.3.0",
-    "eslint-plugin-next": "^0.0.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.1.1",
-      "@types/react-dom": "19.1.2"
-    }
-  }
+	"name": "portfolio-v3",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"kill": "bash -c 'for port in {3000..3003}; do lsof -i :$port -t | xargs -r kill; done'",
+		"dev": "npm run kill; next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"typecheck": "tsc --noEmit",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"test": "vitest",
+		"test:ui": "vitest --ui",
+		"test:ci": "vitest run --coverage",
+		"test:watch": "vitest --watch",
+		"validate": "pnpm lint && pnpm typecheck && pnpm format:check && pnpm test:ci && pnpm build",
+		"analyze": "ANALYZE=true pnpm build",
+		"prepare": "husky"
+	},
+	"engines": {
+		"node": ">=22.21.0",
+		"pnpm": ">=9.0.0"
+	},
+	"dependencies": {
+		"@next/bundle-analyzer": "^15.3.0",
+		"@radix-ui/react-accordion": "^1.2.4",
+		"@radix-ui/react-slot": "^1.2.0",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.488.0",
+		"next": "15.3.6",
+		"posthog-js": "^1.236.1",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"react-intersection-observer": "^9.16.0",
+		"react-medium-image-zoom": "^5.2.14",
+		"tailwind-merge": "^2.6.0",
+		"tailwindcss-animate": "^1.0.7"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.3",
+		"@eslint/js": "^9.39.1",
+		"@tailwindcss/typography": "^0.5.16",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.1",
+		"@types/node": "^20.17.30",
+		"@types/react": "19.1.1",
+		"@types/react-dom": "19.1.2",
+		"@vitejs/plugin-react": "^5.1.2",
+		"@vitest/coverage-v8": "^4.0.16",
+		"autoprefixer": "^10.4.21",
+		"eslint": "^9.24.0",
+		"eslint-config-next": "15.3.0",
+		"eslint-plugin-next": "^0.0.0",
+		"husky": "^9.1.7",
+		"jsdom": "^27.3.0",
+		"lint-staged": "^16.2.7",
+		"postcss": "^8.5.3",
+		"prettier": "^3.7.4",
+		"prettier-plugin-tailwindcss": "^0.7.2",
+		"tailwindcss": "^3.4.17",
+		"typescript": "^5.8.3",
+		"vitest": "^4.0.16"
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.1.1",
+			"@types/react-dom": "19.1.2"
+		}
+	}
 }

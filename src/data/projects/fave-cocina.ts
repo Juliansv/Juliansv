@@ -20,7 +20,15 @@ export const faveCocina: Project = {
 		"Efficient mobile stock management system for inventory control",
 		"Secure payment gateway integration",
 	],
-	technologies: ["WordPress", "WooCommerce", "ATUM", "Elementor", "PHP", "MySQL", "JavaScript"],
+	technologies: [
+		"WordPress",
+		"WooCommerce",
+		"ATUM",
+		"Elementor",
+		"PHP",
+		"MySQL",
+		"JavaScript",
+	],
 	stack: ["WordPress", "PHP", "JavaScript"],
 	image: "/images/projects/favecocina.webp",
 	url: "https://favecocina.com", // Placeholder URL

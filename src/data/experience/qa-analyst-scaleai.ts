@@ -15,5 +15,11 @@ export const qaScaleAI: Experience = {
 		"Collaborated closely with development teams within an Agile framework, providing continuous feedback during sprints.",
 		"Developed a deep understanding of web scraping techniques and the complexities of automated data extraction.",
 	],
-	technologies: ["Manual QA", "Web Scraping", "Agile Methodologies", "Jira", "Data Verification"],
+	technologies: [
+		"Manual QA",
+		"Web Scraping",
+		"Agile Methodologies",
+		"Jira",
+		"Data Verification",
+	],
 };

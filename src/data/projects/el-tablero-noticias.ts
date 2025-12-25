@@ -19,7 +19,13 @@ export const elTableroNoticias: Project = {
 		"Responsive design for a seamless experience on any device",
 		"Focus on a minimalist and user-friendly UI/UX",
 	],
-	technologies: ["React", "TypeScript", "Tailwind CSS", "NewsAPI", "JavaScript"],
+	technologies: [
+		"React",
+		"TypeScript",
+		"Tailwind CSS",
+		"NewsAPI",
+		"JavaScript",
+	],
 	stack: ["React", "TypeScript", "Tailwind CSS"],
 	image: "/images/projects/eltableroinfo.webp",
 	url: "https://darkgrey-jellyfish-379181.hostingersite.com/", // Temporary URL

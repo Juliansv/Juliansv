@@ -28,7 +28,7 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 				href="/#experience"
 				className="group mb-8 inline-flex items-center font-semibold leading-tight text-sky-400"
 			>
-				<ArrowLeft className="mr-1 size-4 group-hover:-translate-x-2 transition-transform" />
+				<ArrowLeft className="mr-1 size-4 transition-transform group-hover:-translate-x-2" />
 				Back to home
 			</ViewTransitionLink>
 
@@ -46,7 +46,7 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 					</div>
 				)}
 				<h1
-					className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl mb-2"
+					className="mb-2 text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
 					style={{ viewTransitionName: `exp-title-${experience.slug}` }}
 				>
 					{experience.position} · {experience.company}
@@ -66,15 +66,12 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 			{/* Key Highlights */}
 			{experience.highlights.length > 0 && (
 				<section className="mb-12">
-					<h2 className="text-xl font-semibold text-sky-400 uppercase tracking-wide mb-4">
+					<h2 className="mb-4 text-xl font-semibold uppercase tracking-wide text-sky-400">
 						Key Highlights
 					</h2>
 					<ul className="space-y-3">
 						{experience.highlights.map((highlight, index) => (
-							<li
-								key={index}
-								className="flex items-start text-slate-300"
-							>
+							<li key={index} className="flex items-start text-slate-300">
 								<span className="mr-3 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400" />
 								{highlight}
 							</li>
@@ -86,7 +83,7 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 			{/* Technologies */}
 			{experience.technologies.length > 0 && (
 				<section className="mb-12">
-					<h2 className="text-xl font-semibold text-sky-400 uppercase tracking-wide mb-4">
+					<h2 className="mb-4 text-xl font-semibold uppercase tracking-wide text-sky-400">
 						Technologies
 					</h2>
 					<ul className="flex flex-wrap gap-2">
@@ -103,14 +100,14 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 			)}
 
 			{/* Navigation between experiences */}
-			<nav className="mt-16 pt-8 border-t border-slate-300/10">
-				<div className="flex justify-between items-center">
+			<nav className="mt-16 border-t border-slate-300/10 pt-8">
+				<div className="flex items-center justify-between">
 					{prev ? (
 						<ViewTransitionLink
 							href={`/experience/${prev.slug}`}
-							className="group flex items-center text-slate-400 hover:text-sky-400 transition-colors"
+							className="group flex items-center text-slate-400 transition-colors hover:text-sky-400"
 						>
-							<ArrowLeft className="mr-2 size-4 group-hover:-translate-x-1 transition-transform" />
+							<ArrowLeft className="mr-2 size-4 transition-transform group-hover:-translate-x-1" />
 							<div className="text-left">
 								<p className="text-xs uppercase tracking-wide text-slate-500">
 									Previous
@@ -124,7 +121,7 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 					{next ? (
 						<ViewTransitionLink
 							href={`/experience/${next.slug}`}
-							className="group flex items-center text-slate-400 hover:text-sky-400 transition-colors"
+							className="group flex items-center text-slate-400 transition-colors hover:text-sky-400"
 						>
 							<div className="text-right">
 								<p className="text-xs uppercase tracking-wide text-slate-500">
@@ -132,7 +129,7 @@ const ExperienceDetail = async ({ slug }: ExperienceDetailProps) => {
 								</p>
 								<p className="font-medium">{next.position}</p>
 							</div>
-							<ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
+							<ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
 						</ViewTransitionLink>
 					) : (
 						<div />

@@ -29,23 +29,23 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 	return (
 		<div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-24">
 			{/* Header with back button and visit link */}
-			<div className="flex justify-between items-center mb-8">
+			<div className="mb-8 flex items-center justify-between">
 				<BackButton />
 				<Link
 					href={project.url}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="group inline-flex items-center font-semibold leading-tight text-sky-400 hover:text-sky-300 transition-colors"
+					className="group inline-flex items-center font-semibold leading-tight text-sky-400 transition-colors hover:text-sky-300"
 				>
 					Visit Site
-					<ExternalLink className="ml-1 size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+					<ExternalLink className="ml-1 size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
 				</Link>
 			</div>
 
 			{/* Project title and meta */}
-			<header className="text-center mb-12">
+			<header className="mb-12 text-center">
 				<h1
-					className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl mb-4"
+					className="mb-4 text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
 					style={{ viewTransitionName: `project-title-${project.slug}` }}
 				>
 					{project.title}
@@ -55,13 +55,10 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 					<span className="text-slate-600">·</span>
 					<div className="flex flex-wrap justify-center gap-2">
 						{project.stack.map((tech, index) => (
-							<span
-								key={index}
-								className="text-sm text-sky-400"
-							>
+							<span key={index} className="text-sm text-sky-400">
 								{tech}
 								{index < project.stack.length - 1 && (
-									<span className="text-slate-600 ml-2">·</span>
+									<span className="ml-2 text-slate-600">·</span>
 								)}
 							</span>
 						))}
@@ -71,7 +68,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 
 			{/* Hero image */}
 			<section className="mb-16">
-				<Suspense fallback={<Skeleton className="w-full h-80 rounded-lg" />}>
+				<Suspense fallback={<Skeleton className="h-80 w-full rounded-lg" />}>
 					<div style={{ viewTransitionName: `project-image-${project.slug}` }}>
 						<Zoom>
 							<Image
@@ -79,7 +76,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 								alt={`Screenshot of ${project.title} showing the main interface and features`}
 								width={1200}
 								height={600}
-								className="w-full h-auto rounded-lg border border-slate-200/10"
+								className="h-auto w-full rounded-lg border border-slate-200/10"
 								priority
 							/>
 						</Zoom>
@@ -89,11 +86,11 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 
 			{/* Overview section */}
 			<section className="mb-16">
-				<h2 className="text-xl font-semibold text-sky-400 uppercase tracking-wide mb-4 pb-2 border-b border-slate-300/10">
+				<h2 className="mb-4 border-b border-slate-300/10 pb-2 text-xl font-semibold uppercase tracking-wide text-sky-400">
 					Overview
 				</h2>
 				<div
-					className="text-lg leading-relaxed text-slate-300 prose prose-invert prose-slate max-w-none"
+					className="prose prose-slate prose-invert max-w-none text-lg leading-relaxed text-slate-300"
 					dangerouslySetInnerHTML={{ __html: project.longDescription }}
 				/>
 			</section>
@@ -101,15 +98,12 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 			{/* Key Features section */}
 			{project.features.length > 0 && (
 				<section className="mb-16">
-					<h2 className="text-xl font-semibold text-sky-400 uppercase tracking-wide mb-4 pb-2 border-b border-slate-300/10">
+					<h2 className="mb-4 border-b border-slate-300/10 pb-2 text-xl font-semibold uppercase tracking-wide text-sky-400">
 						Key Features
 					</h2>
 					<ul className="space-y-3">
 						{project.features.map((feature, index) => (
-							<li
-								key={index}
-								className="flex items-start text-slate-300"
-							>
+							<li key={index} className="flex items-start text-slate-300">
 								<span className="mr-3 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400" />
 								{feature}
 							</li>
@@ -121,7 +115,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 			{/* Technologies section */}
 			{project.technologies.length > 0 && (
 				<section className="mb-16">
-					<h2 className="text-xl font-semibold text-sky-400 uppercase tracking-wide mb-4 pb-2 border-b border-slate-300/10">
+					<h2 className="mb-4 border-b border-slate-300/10 pb-2 text-xl font-semibold uppercase tracking-wide text-sky-400">
 						Technologies
 					</h2>
 					<ul className="flex flex-wrap gap-2">
@@ -144,7 +138,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 						href={project.codeRepository}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="group inline-flex items-center gap-2 rounded-lg border border-slate-300/20 px-6 py-3 font-medium text-slate-200 hover:border-sky-400/50 hover:text-sky-400 transition-colors"
+						className="group inline-flex items-center gap-2 rounded-lg border border-slate-300/20 px-6 py-3 font-medium text-slate-200 transition-colors hover:border-sky-400/50 hover:text-sky-400"
 					>
 						<Github className="size-5" />
 						View Code Repository
@@ -154,7 +148,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 					href={project.url}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="group inline-flex items-center gap-2 rounded-lg bg-sky-400/10 px-6 py-3 font-medium text-sky-400 hover:bg-sky-400/20 transition-colors"
+					className="group inline-flex items-center gap-2 rounded-lg bg-sky-400/10 px-6 py-3 font-medium text-sky-400 transition-colors hover:bg-sky-400/20"
 				>
 					<ExternalLink className="size-5" />
 					Visit Live Site
@@ -162,14 +156,14 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 			</section>
 
 			{/* Navigation between projects */}
-			<nav className="mt-16 pt-8 border-t border-slate-300/10">
-				<div className="flex justify-between items-center">
+			<nav className="mt-16 border-t border-slate-300/10 pt-8">
+				<div className="flex items-center justify-between">
 					{prev ? (
 						<ViewTransitionLink
 							href={`/project/${prev.slug}`}
-							className="group flex items-center text-slate-400 hover:text-sky-400 transition-colors"
+							className="group flex items-center text-slate-400 transition-colors hover:text-sky-400"
 						>
-							<ArrowLeft className="mr-2 size-4 group-hover:-translate-x-1 transition-transform" />
+							<ArrowLeft className="mr-2 size-4 transition-transform group-hover:-translate-x-1" />
 							<div className="text-left">
 								<p className="text-xs uppercase tracking-wide text-slate-500">
 									Previous Project
@@ -183,7 +177,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 					{next ? (
 						<ViewTransitionLink
 							href={`/project/${next.slug}`}
-							className="group flex items-center text-slate-400 hover:text-sky-400 transition-colors"
+							className="group flex items-center text-slate-400 transition-colors hover:text-sky-400"
 						>
 							<div className="text-right">
 								<p className="text-xs uppercase tracking-wide text-slate-500">
@@ -191,7 +185,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 								</p>
 								<p className="font-medium">{next.title}</p>
 							</div>
-							<ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
+							<ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
 						</ViewTransitionLink>
 					) : (
 						<div />
