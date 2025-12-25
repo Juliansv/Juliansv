@@ -2,7 +2,7 @@ import Link from "next/link";
 import { sortedExperiences } from "@/data";
 import { ViewTransitionLink } from "@/components/ViewTransitionLink";
 
-const Experience = async () => {
+const Experience = () => {
 	const experience = sortedExperiences;
 
 	return (
