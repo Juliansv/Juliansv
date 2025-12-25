@@ -1,10 +1,8 @@
 import { getProjectBySlug, getAdjacentProjects } from "@/data";
 import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
-import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BackButton from "./BackButton";
-import { Skeleton } from "@/components/ui/skeleton";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import { ViewTransitionLink } from "@/components/ViewTransitionLink";
@@ -68,20 +66,19 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 
 			{/* Hero image */}
 			<section className="mb-16">
-				<Suspense fallback={<Skeleton className="h-80 w-full rounded-lg" />}>
-					<div style={{ viewTransitionName: `project-image-${project.slug}` }}>
-						<Zoom>
-							<Image
-								src={project.image}
-								alt={project.title}
-								width={1200}
-								height={600}
-								className="h-auto w-full rounded-lg border border-slate-200/10"
-								priority
-							/>
-						</Zoom>
-					</div>
-				</Suspense>
+				<div style={{ viewTransitionName: `project-image-${project.slug}` }}>
+					<Zoom>
+						<Image
+							src={project.image}
+							alt={`Screenshot of ${project.title} showing the main interface and features`}
+							width={1200}
+							height={600}
+							className="h-auto w-full rounded-lg border border-slate-200/10"
+							priority
+							loading="eager"
+						/>
+					</Zoom>
+				</div>
 			</section>
 
 			{/* Overview section */}

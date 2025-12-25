@@ -21,8 +21,7 @@ const Header = () => {
 					Web Developer
 				</h2>
 				<p className="mt-4 max-w-sm leading-normal">
-					I focus on delivering slick, user-friendly apps with precision and
-					style.
+					I build modern, user-focused web applications.
 				</p>
 				<nav className="nav hidden lg:block" aria-label="In-page jump links">
 					<ul className="mt-16 w-max">

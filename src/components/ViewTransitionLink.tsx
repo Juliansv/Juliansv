@@ -42,13 +42,24 @@ export function ViewTransitionLink({
 			// Prevent default Link behavior
 			e.preventDefault();
 
+			// Lock hover state to prevent flash during transition
+			const groupElement = e.currentTarget.closest(".group");
+			if (groupElement) {
+				groupElement.setAttribute("data-transitioning", "true");
+			}
+
 			// Get the URL string from href
 			const url = typeof href === "string" ? href : href.pathname || "/";
 
 			// Start the view transition
-			document.startViewTransition(() => {
-				router.push(url);
-			});
+			document
+				.startViewTransition(() => {
+					router.push(url);
+				})
+				.finished.catch(() => {
+					// Cleanup on error (success cleanup happens via page navigation)
+					groupElement?.removeAttribute("data-transitioning");
+				});
 		},
 		[href, onClick, router]
 	);

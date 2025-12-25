@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 import Header from "@/features/front/components/Header";
 import AboutMe from "@/features/front/about-me/components/AboutMe";
 import Experience from "@/features/front/experience/components/Experience";
@@ -7,8 +5,6 @@ import Projects from "@/features/front/projects/components/Projects";
 import MainContainerWrapper from "@/features/front/components/MainContainerWrapper";
 import Footer from "@/features/front/components/Footer";
 import { SectionWrapper } from "@/features/front/components/SectionWrapper";
-import ExperienceSkeleton from "@/features/front/experience/components/ExperienceSkeleton";
-import ProjectsSkeleton from "@/features/front/projects/components/ProjectsSkeleton";
 
 export default async function Page() {
 	return (
@@ -28,18 +24,14 @@ export default async function Page() {
 						styles="mb-16 scroll-mt-16 mdd:mb-24 lg:mb-36 lg:scroll-mt-24"
 						ariaLabel="Selected projects"
 					>
-						<Suspense fallback={<ProjectsSkeleton />}>
-							<Projects />
-						</Suspense>
+						<Projects />
 					</SectionWrapper>
 					<SectionWrapper
 						id="experience"
 						styles="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
 						ariaLabel="Work experience"
 					>
-						<Suspense fallback={<ExperienceSkeleton />}>
-							<Experience />
-						</Suspense>
+						<Experience />
 					</SectionWrapper>
 					<Footer />
 				</MainContainerWrapper>

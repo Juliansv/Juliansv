@@ -5,6 +5,8 @@ I'm a web developer.
 [![CI](https://github.com/juliansv/Juliansv/actions/workflows/ci.yml/badge.svg)](https://github.com/juliansv/Juliansv/actions/workflows/ci.yml)
 [![Lighthouse](https://github.com/juliansv/Juliansv/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/juliansv/Juliansv/actions/workflows/lighthouse.yml)
 
+---
+
 Visit my [personal website](https://www.julisv.com) to learn more about me and my projects.
 
 Email me at [juliansv22@gmail.com](mailto:juliansv22@gmail.com)
