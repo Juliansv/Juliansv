@@ -26,7 +26,7 @@ Successfully implemented a comprehensive CI/CD pipeline for the Juliansv portfol
 
 #### `lighthouse.yml` - Performance Audits
 
-- **Triggers**: Pushes to main and develop branches
+- **Triggers**: Pushes to main branch
 - **Features**:
   - Waits for Vercel preview deployment
   - Runs Lighthouse CI (3 runs averaged)
