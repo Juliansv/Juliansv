@@ -9,152 +9,88 @@ const AboutMe = () => {
 				</h2>
 			</div>
 
-			{/* Artistic Bento Grid */}
-			<div className="group/list">
-				<div className="grid auto-rows-[minmax(120px,auto)] grid-cols-6 gap-3">
-					{/* Hero Card - Large, spans full width */}
-					<div className="group relative col-span-6 row-span-2 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full border-l-2 border-sky-400/30 p-6">
-							<div className="mb-2 text-xs font-bold uppercase tracking-widest text-sky-400">
-								01
-							</div>
-							<h3 className="mb-3 text-2xl font-bold text-slate-200">
-								Web Developer
-							</h3>
-							<p className="max-w-2xl text-base leading-relaxed text-slate-300">
-								Building fast, modern websites that help businesses grow and
-								succeed online. From concept to launch, I create digital
-								experiences that make an impact.
-							</p>
-						</div>
+			{/* Viewport-Fitted Bento Grid */}
+			<div className="grid auto-rows-[minmax(100px,auto)] grid-cols-1 gap-4 md:-mx-6 md:max-h-[calc(100vh-20rem)] md:grid-cols-6 lg:max-h-[calc(100vh-15rem)]">
+				{/* Hero Card - Large, spans full width */}
+				<div className="min-h-[180px] rounded-lg border-l-2 border-sky-400/30 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/60 hover:shadow-lg hover:shadow-sky-400/10 md:col-span-6 md:row-span-2 md:p-6">
+					<div className="mb-2 text-xs font-bold uppercase tracking-widest text-sky-400">
+						01
 					</div>
+					<h3 className="mb-2 text-2xl font-bold text-slate-200 md:mb-3 md:text-3xl">
+						Web Developer
+					</h3>
+					<p className="max-w-2xl text-sm leading-relaxed text-slate-300 md:text-base">
+						Building fast, modern websites that help businesses grow and succeed
+						online. From concept to launch, I create digital experiences that
+						make an impact.
+					</p>
+				</div>
 
-					{/* WordPress - Medium tall */}
-					<div className="group relative col-span-3 row-span-2 pb-1 transition-all md:col-span-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full rounded-lg bg-gradient-to-br from-emerald-500/5 to-transparent p-5">
-							<div className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
-								02
-							</div>
-							<h3 className="mb-2 text-lg font-bold text-slate-200">
-								WordPress
-							</h3>
-							<p className="text-sm leading-relaxed text-slate-400">
-								Easy-to-manage CMS solutions that empower you to control your
-								content.
-							</p>
-						</div>
+				{/* WordPress - Medium tall */}
+				<div className="min-h-[180px] rounded-lg bg-gradient-to-br from-emerald-500/5 to-transparent p-4 transition-all duration-300 hover:-translate-y-1 hover:from-emerald-500/10 hover:shadow-lg hover:shadow-emerald-400/10 md:col-span-3 md:row-span-1 md:p-5">
+					<div className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-400">
+						02
 					</div>
+					<h3 className="mb-2 text-xl font-bold text-slate-200 md:text-2xl">
+						WordPress
+					</h3>
+					<p className="text-sm leading-relaxed text-slate-400 md:text-base">
+						Easy-to-manage CMS solutions that empower you to control your
+						content.
+					</p>
+				</div>
 
-					{/* Custom Apps - Tall accent */}
-					<div className="group relative col-span-3 row-span-3 pb-1 transition-all md:col-span-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 flex h-full flex-col justify-center rounded-lg border border-violet-400/20 p-5">
-							<div className="mb-2 text-xs font-bold uppercase tracking-widest text-violet-400">
-								03
-							</div>
-							<h3 className="mb-3 text-xl font-bold text-slate-200">
-								Custom Web Applications
-							</h3>
-							<p className="text-sm leading-relaxed text-slate-400">
-								Tailored solutions built from the ground up to match your exact
-								requirements and business needs.
-							</p>
-						</div>
+				{/* Custom Apps - Tall accent */}
+				<div className="justify-top flex min-h-[180px] flex-col rounded-lg border border-violet-400/20 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/50 hover:shadow-lg hover:shadow-violet-400/10 md:col-span-3 md:row-span-2 md:p-5">
+					<div className="mb-2 text-xs font-bold uppercase tracking-widest text-violet-400">
+						03
 					</div>
+					<h3 className="mb-2 text-xl font-bold text-slate-200 md:text-2xl">
+						Custom Web Applications
+					</h3>
+					<p className="text-sm leading-relaxed text-slate-400 md:text-base">
+						Tailored solutions built from the ground up to match your exact
+						requirements and business needs.
+					</p>
+				</div>
 
-					{/* Communication - Wide */}
-					<div className="group relative col-span-6 row-span-1 pb-1 transition-all md:col-span-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full rounded-lg bg-slate-800/30 p-5">
-							<div className="mb-1 text-xs font-bold uppercase tracking-widest text-amber-400">
-								04
-							</div>
-							<h3 className="text-base font-bold text-slate-200">
-								Clear Communication
-							</h3>
-						</div>
+				{/* Who I Work With - Combined */}
+				<div className="min-h-[180px] rounded-lg bg-slate-800/30 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800/50 hover:shadow-lg md:col-span-3 md:row-span-1 md:p-5">
+					<div className="mb-2 text-xs font-bold uppercase tracking-widest text-amber-400">
+						04
 					</div>
+					<h3 className="mb-2 text-xl font-bold text-slate-200 md:text-2xl">
+						Who I Work With
+					</h3>
+					<p className="text-sm text-slate-400 md:text-base">
+						Startups · Small Businesses · Creative Professionals
+					</p>
+				</div>
 
-					{/* Small Business */}
-					<div className="group relative col-span-3 row-span-1 pb-1 transition-all md:col-span-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full p-5">
-							<h3 className="mb-1 text-sm font-bold text-slate-200">
-								Small Business
-							</h3>
-							<p className="text-xs text-slate-400">Growth-focused solutions</p>
-						</div>
+				{/* Frontend - Accent card */}
+				<div className="min-h-[180px] rounded-lg border-b-2 border-sky-400/30 bg-gradient-to-r from-sky-500/10 to-transparent p-4 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/60 hover:from-sky-500/15 hover:shadow-lg hover:shadow-sky-400/10 md:col-span-4 md:row-span-1 md:p-5">
+					<div className="mb-2 text-xs font-bold uppercase tracking-widest text-sky-400">
+						05
 					</div>
+					<h3 className="mb-2 text-xl font-bold text-slate-200 md:text-2xl">
+						Frontend
+					</h3>
+					<p className="text-sm text-slate-400 md:text-base">
+						React · Next.js · TypeScript · Tailwind CSS
+					</p>
+				</div>
 
-					{/* Creatives */}
-					<div className="group relative col-span-3 row-span-1 pb-1 transition-all md:col-span-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full p-5">
-							<h3 className="mb-1 text-sm font-bold text-slate-200">
-								Creative Professionals
-							</h3>
-							<p className="text-xs text-slate-400">
-								Portfolio & showcase sites
-							</p>
-						</div>
+				{/* Backend & Infrastructure - Combined */}
+				<div className="min-h-[180px] rounded-lg border border-slate-700/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-slate-600 hover:shadow-lg md:col-span-2 md:row-span-1 md:p-5">
+					<div className="mb-2 text-xs font-bold uppercase tracking-widest text-violet-400">
+						06
 					</div>
-
-					{/* Frontend - Accent card */}
-					<div className="group relative col-span-3 row-span-1 pb-1 transition-all md:col-span-3 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full rounded-lg border-b-2 border-sky-400/30 bg-gradient-to-r from-sky-500/10 to-transparent p-5">
-							<h3 className="mb-1 text-base font-bold text-slate-200">
-								Frontend
-							</h3>
-							<p className="text-sm text-slate-400">
-								React · Next.js · TypeScript
-							</p>
-						</div>
-					</div>
-
-					{/* Styling */}
-					<div className="group relative col-span-3 row-span-1 pb-1 transition-all md:col-span-1 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full p-5">
-							<h3 className="mb-1 text-sm font-bold text-slate-200">Styling</h3>
-							<p className="text-xs text-slate-400">Tailwind · Sass</p>
-						</div>
-					</div>
-
-					{/* Backend */}
-					<div className="group relative col-span-3 row-span-1 pb-1 transition-all md:col-span-1 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full p-5">
-							<h3 className="mb-1 text-sm font-bold text-slate-200">Backend</h3>
-							<p className="text-xs text-slate-400">Node.js · PostgreSQL</p>
-						</div>
-					</div>
-
-					{/* Responsive */}
-					<div className="group relative col-span-3 row-span-1 pb-1 transition-all md:col-span-1 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full p-5">
-							<h3 className="mb-1 text-sm font-bold text-slate-200">
-								Responsive
-							</h3>
-							<p className="text-xs text-slate-400">Mobile-first</p>
-						</div>
-					</div>
-
-					{/* Planning */}
-					<div className="group relative col-span-6 row-span-1 pb-1 transition-all md:col-span-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-						<div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
-						<div className="relative z-10 h-full border-t border-slate-700/50 p-5">
-							<h3 className="mb-1 text-sm font-bold text-slate-200">
-								Strategic Planning
-							</h3>
-							<p className="text-xs text-slate-400">
-								Thoughtful approach from concept to execution
-							</p>
-						</div>
-					</div>
+					<h3 className="mb-2 text-xl font-bold text-slate-200 md:text-2xl">
+						Backend
+					</h3>
+					<p className="text-sm text-slate-400 md:text-base">
+						Node.js · PHP · PostgreSQL · REST APIs
+					</p>
 				</div>
 			</div>
 		</>
