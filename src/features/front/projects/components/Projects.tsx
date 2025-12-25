@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { featuredProjects } from "@/data";
 import { ViewTransitionLink } from "@/components/ViewTransitionLink";
 
-const Projects = async () => {
+const Projects = () => {
 	const projects = featuredProjects;
 
 	return (
