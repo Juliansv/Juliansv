@@ -21,6 +21,32 @@
 	}
 }
 
+/* Preserve hover state during view transitions */
+@media (min-width: 1024px) {
+	/* Lock opacity for transitioning item */
+	.group[data-transitioning] {
+		opacity: 1 !important;
+	}
+
+	/* Lock background overlay styles */
+	.group[data-transitioning] > .absolute {
+		background-color: rgb(30 41 59 / 0.5) !important;
+		box-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1) !important;
+		filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+			drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)) !important;
+	}
+
+	/* Lock image border during transition */
+	.group[data-transitioning] img {
+		border-color: rgb(226 232 240 / 0.3) !important;
+	}
+
+	/* Keep other items dimmed when one is transitioning */
+	.group\/list:has([data-transitioning]) .group:not([data-transitioning]) {
+		opacity: 0.5 !important;
+	}
+}
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;
