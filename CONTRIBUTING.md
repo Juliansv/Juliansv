@@ -7,6 +7,7 @@ Thank you for considering contributing to this project! This guide will help you
 ## Table of Contents
 
 - [Development Setup](#development-setup)
+- [Branching Strategy](#branching-strategy)
 - [Development Workflow](#development-workflow)
 - [Code Quality Standards](#code-quality-standards)
 - [Testing](#testing)
@@ -53,6 +54,105 @@ Thank you for considering contributing to this project! This guide will help you
    pnpm validate
    ```
    This runs all checks (lint, typecheck, format, test, build).
+
+---
+
+## Branching Strategy
+
+This project follows a **develop-main** branching workflow:
+
+### Branch Overview
+
+- **`main`**: Production branch - stable, deployed code only
+- **`develop`**: Integration branch - all completed features merge here first
+- **`feature/*`**: Feature branches - individual tasks/features
+
+### Workflow Diagram
+
+```
+main (production)
+  ↑ (manual merge after testing)
+develop (integration/staging)
+  ↑ (merge when feature complete)
+feature/my-feature (working branch)
+```
+
+### Working on a New Feature or Task
+
+**1. Start from develop:**
+
+```bash
+git checkout develop
+git pull origin develop
+```
+
+**2. Create a feature branch:**
+
+```bash
+# Use descriptive names
+git checkout -b feature/add-dark-mode
+git checkout -b fix/navigation-bug
+git checkout -b refactor/data-layer
+```
+
+**3. Work and commit:**
+
+```bash
+# Make changes
+git add .
+git commit -m "feat: add dark mode toggle"
+
+# Push to your feature branch
+git push -u origin feature/add-dark-mode
+```
+
+**4. Merge back to develop when complete:**
+
+```bash
+# Update develop first
+git checkout develop
+git pull origin develop
+
+# Merge your feature
+git merge feature/add-dark-mode
+
+# Push to develop
+git push origin develop
+
+# Delete feature branch (optional)
+git branch -d feature/add-dark-mode
+git push origin --delete feature/add-dark-mode
+```
+
+**5. Testing on develop:**
+
+- Developer tests changes on develop branch
+- CI/CD runs on develop (including Lighthouse performance audits)
+- Once stable, maintainer manually merges develop → main
+
+### Important Notes
+
+- **Always branch from `develop`**, never from `main`
+- **Always merge back to `develop`** when done
+- **Never push directly to `main`** - maintainer handles this
+- **Use `git push` without specifying branch** - it will push to the tracked remote branch
+- If you accidentally work on wrong branch: `git checkout -b feature/save-my-work` to save work
+
+### Quick Reference
+
+```bash
+# Start new feature
+git checkout develop && git pull
+git checkout -b feature/my-feature
+
+# Push feature branch
+git push -u origin feature/my-feature
+
+# Finish feature (merge to develop)
+git checkout develop && git pull
+git merge feature/my-feature
+git push origin develop
+```
 
 ---
 
