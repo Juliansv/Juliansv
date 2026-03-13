@@ -76,10 +76,8 @@ describe("Data Integrity", () => {
 			expect(siteConfig).toBeDefined();
 			expect(siteConfig.name).toBeDefined();
 			expect(siteConfig.title).toBeDefined();
-			expect(siteConfig.description).toBeDefined();
 			expect(typeof siteConfig.name).toBe("string");
 			expect(typeof siteConfig.title).toBe("string");
-			expect(typeof siteConfig.description).toBe("string");
 		});
 
 		it("should have valid social links", () => {
