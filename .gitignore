@@ -35,11 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Kanban watcher state
-.kanban-state.json
-
 # Claude Code
 .claudeignore
 claude.md
 **/claude.md
 USAGE.md
+.superpowers/
