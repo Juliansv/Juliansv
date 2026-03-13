@@ -17,7 +17,8 @@
 		"test:watch": "vitest --watch",
 		"validate": "pnpm lint && pnpm typecheck && pnpm format:check && pnpm test:ci && pnpm build",
 		"analyze": "ANALYZE=true pnpm build",
-		"prepare": "husky"
+		"prepare": "husky",
+		"kanban:watch": "tsx scripts/kanban-watcher.ts"
 	},
 	"engines": {
 		"node": ">=22.21.0",
