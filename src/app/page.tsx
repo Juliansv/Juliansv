@@ -1,5 +1,5 @@
 import Header from "@/features/front/components/Header";
-import AboutMe from "@/features/front/about-me/components/AboutMe";
+import { AboutMe } from "@/features/front/about-me/components/AboutMe";
 import Experience from "@/features/front/experience/components/Experience";
 import Projects from "@/features/front/projects/components/Projects";
 import MainContainerWrapper from "@/features/front/components/MainContainerWrapper";
