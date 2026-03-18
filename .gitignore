@@ -41,3 +41,6 @@ claude.md
 **/claude.md
 USAGE.md
 .superpowers/
+
+# Playwright MCP
+.playwright-mcp/
