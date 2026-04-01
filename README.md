@@ -1,8 +1,5 @@
 # Hi, I'm Julian.
 
-I'm a web developer.
-
----
 [tailorsift.io](https://www.tailorsift.io/) 🚀
 ---
 
