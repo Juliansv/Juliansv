@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { projects } from "@/data/projects";
+import {
+	projects,
+	heroProject,
+	featuredProjectsWithoutHero,
+} from "@/data/projects";
 import { experiences } from "@/data/experience";
 import { aboutContent } from "@/data/about";
 import { siteConfig } from "@/data/site";
@@ -109,23 +113,20 @@ describe("Data Integrity", () => {
 	});
 
 	describe("Project Helpers", () => {
-		it("heroProject returns the project marked hero", async () => {
-			const { heroProject } = await import("@/data/projects");
+		it("heroProject returns the project marked hero", () => {
 			expect(heroProject).toBeDefined();
 			expect(heroProject?.slug).toBe("tailorsift");
 			expect(heroProject?.hero).toBe(true);
 		});
 
-		it("featuredProjectsWithoutHero excludes the hero project", async () => {
-			const { featuredProjectsWithoutHero, heroProject } =
-				await import("@/data/projects");
+		it("featuredProjectsWithoutHero excludes the hero project", () => {
 			expect(
 				featuredProjectsWithoutHero.some((p) => p.slug === heroProject?.slug)
 			).toBe(false);
 		});
 
-		it("featuredProjectsWithoutHero contains only featured projects", async () => {
-			const { featuredProjectsWithoutHero } = await import("@/data/projects");
+		it("featuredProjectsWithoutHero contains only featured projects", () => {
+			expect(featuredProjectsWithoutHero.length).toBeGreaterThan(0);
 			featuredProjectsWithoutHero.forEach((p) => {
 				expect(p.featured).toBe(true);
 			});
