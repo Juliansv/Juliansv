@@ -86,9 +86,10 @@ const Header = () => {
 						href="https://github.com/juliansv"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="GitHub profile"
 						className="block hover:text-slate-200"
 					>
-						<Github />
+						<Github aria-hidden="true" />
 					</Link>
 				</li>
 				<li className="mr-5 shrink-0 text-xs">
@@ -96,9 +97,10 @@ const Header = () => {
 						href="https://www.linkedin.com/in/juliansuarezvivas/"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="LinkedIn profile"
 						className="block hover:text-slate-200"
 					>
-						<Linkedin />
+						<Linkedin aria-hidden="true" />
 					</Link>
 				</li>
 			</ul>
