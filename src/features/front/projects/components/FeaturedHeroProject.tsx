@@ -66,7 +66,7 @@ export const FeaturedHeroProject = ({ project }: FeaturedHeroProjectProps) => {
 							href={`/project/${project.slug}`}
 							className="text-sm font-medium text-slate-200 underline decoration-slate-500 underline-offset-4 transition hover:text-sky-400 hover:decoration-sky-400"
 						>
-							Read more
+							View {project.title} project
 						</ViewTransitionLink>
 					</div>
 				</div>

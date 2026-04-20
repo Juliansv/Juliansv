@@ -84,9 +84,9 @@ describe("FeaturedHeroProject", () => {
 		expect(link).toHaveAttribute("rel", "noopener noreferrer");
 	});
 
-	it("renders Read more link to the project detail page", () => {
+	it("renders project detail link with descriptive text", () => {
 		render(<FeaturedHeroProject project={project} />);
-		const link = screen.getByRole("link", { name: /read more/i });
+		const link = screen.getByRole("link", { name: /view tailorsift project/i });
 		expect(link).toHaveAttribute("href", "/project/tailorsift");
 	});
 });
