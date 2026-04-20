@@ -23,6 +23,12 @@ export const projects: Project[] = [
 // Helper functions
 export const featuredProjects = projects.filter((p) => p.featured);
 
+export const heroProject: Project | undefined = projects.find((p) => p.hero);
+
+export const featuredProjectsWithoutHero: Project[] = featuredProjects.filter(
+	(p) => !p.hero
+);
+
 export const sortedProjects = [...projects].sort((a, b) => b.year - a.year);
 
 export const getProjectBySlug = (slug: string): Project | undefined =>

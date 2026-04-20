@@ -107,4 +107,28 @@ describe("Data Integrity", () => {
 			expect(() => new URL(siteConfig.socialLinks.linkedin)).not.toThrow();
 		});
 	});
+
+	describe("Project Helpers", () => {
+		it("heroProject returns the project marked hero", async () => {
+			const { heroProject } = await import("@/data/projects");
+			expect(heroProject).toBeDefined();
+			expect(heroProject?.slug).toBe("tailorsift");
+			expect(heroProject?.hero).toBe(true);
+		});
+
+		it("featuredProjectsWithoutHero excludes the hero project", async () => {
+			const { featuredProjectsWithoutHero, heroProject } =
+				await import("@/data/projects");
+			expect(
+				featuredProjectsWithoutHero.some((p) => p.slug === heroProject?.slug)
+			).toBe(false);
+		});
+
+		it("featuredProjectsWithoutHero contains only featured projects", async () => {
+			const { featuredProjectsWithoutHero } = await import("@/data/projects");
+			featuredProjectsWithoutHero.forEach((p) => {
+				expect(p.featured).toBe(true);
+			});
+		});
+	});
 });
