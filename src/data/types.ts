@@ -12,6 +12,7 @@ export interface Project {
 	image: string;
 	url: string;
 	codeRepository?: string;
+	hero?: boolean;
 }
 
 export interface Experience {

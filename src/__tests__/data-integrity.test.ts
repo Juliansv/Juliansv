@@ -34,6 +34,25 @@ describe("Data Integrity", () => {
 			const uniqueIds = new Set(ids);
 			expect(ids.length).toBe(uniqueIds.size);
 		});
+
+		it("TailorSift project exists, is featured, and is marked as hero", () => {
+			const tailorsift = projects.find((p) => p.slug === "tailorsift");
+			expect(tailorsift).toBeDefined();
+			expect(tailorsift?.featured).toBe(true);
+			expect(tailorsift?.hero).toBe(true);
+			expect(tailorsift?.url).toBe("https://tailorsift.io");
+			expect(tailorsift?.title).toBe("TailorSift");
+			expect(tailorsift?.image).toBe("/images/projects/tailorsift.webp");
+		});
+
+		it("TailorSift is the first project in the array", () => {
+			expect(projects[0]?.slug).toBe("tailorsift");
+		});
+
+		it("at most one project is marked hero", () => {
+			const heroes = projects.filter((p) => p.hero);
+			expect(heroes.length).toBeLessThanOrEqual(1);
+		});
 	});
 
 	describe("Experience Data", () => {
