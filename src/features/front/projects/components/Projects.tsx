@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { featuredProjects } from "@/data";
+import { featuredProjectsWithoutHero, heroProject } from "@/data/projects";
 import { ViewTransitionLink } from "@/components/ViewTransitionLink";
+import { FeaturedHeroProject } from "./FeaturedHeroProject";
 
 const Projects = () => {
-	const projects = featuredProjects;
+	const projects = featuredProjectsWithoutHero;
 
 	return (
 		<>
@@ -15,6 +16,7 @@ const Projects = () => {
 				</h2>
 			</div>
 			<div>
+				{heroProject && <FeaturedHeroProject project={heroProject} />}
 				<ul className="group/list">
 					{projects.map((project, index) => (
 						<li key={index} className="mb-12">
