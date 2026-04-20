@@ -42,8 +42,8 @@ export const FeaturedHeroProject = ({ project }: FeaturedHeroProjectProps) => {
 					</p>
 					{project.stack && (
 						<ul className="mt-3 flex flex-wrap">
-							{project.stack.map((stackName, index) => (
-								<li key={index} className="mr-1.5 mt-2">
+							{project.stack.map((stackName) => (
+								<li key={stackName} className="mr-1.5 mt-2">
 									<div className="flex items-center rounded-full bg-sky-400/10 px-3 py-1 text-xs font-medium leading-5 text-sky-400">
 										{stackName}
 									</div>
