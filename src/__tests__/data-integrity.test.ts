@@ -49,9 +49,9 @@ describe("Data Integrity", () => {
 			expect(projects[0]?.slug).toBe("tailorsift");
 		});
 
-		it("at most one project is marked hero", () => {
+		it("exactly one project is marked hero", () => {
 			const heroes = projects.filter((p) => p.hero);
-			expect(heroes.length).toBeLessThanOrEqual(1);
+			expect(heroes.length).toBe(1);
 		});
 	});
 

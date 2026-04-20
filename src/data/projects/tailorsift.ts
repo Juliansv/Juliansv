@@ -1,7 +1,7 @@
 import { Project } from "../types";
 
 export const tailorsift: Project = {
-	id: "8",
+	id: "9",
 	slug: "tailorsift",
 	title: "TailorSift",
 	year: 2026,
