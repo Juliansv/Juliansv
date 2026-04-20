@@ -1,10 +1,15 @@
 # About Section Redesign Implementation Plan
 
-> **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development
+> (if subagents available) or superpowers:executing-plans to implement this
+> plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace the 6-card bento grid in the About section with a simpler intro paragraph + 3 compact cards + tech list layout.
+**Goal:** Replace the 6-card bento grid in the About section with a simpler
+intro paragraph + 3 compact cards + tech list layout.
 
-**Architecture:** Single component rewrite. The `AboutMe` component gets a full content and markup replacement. One import change in `page.tsx` to match the new named export.
+**Architecture:** Single component rewrite. The `AboutMe` component gets a full
+content and markup replacement. One import change in `page.tsx` to match the new
+named export.
 
 **Tech Stack:** React server component, Tailwind CSS, Next.js App Router
 
@@ -94,8 +99,8 @@ describe("AboutMe Component", () => {
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `pnpm vitest run src/__tests__/about-me.test.tsx`
-Expected: FAIL — current component uses default export, test imports named export
+Run: `pnpm vitest run src/__tests__/about-me.test.tsx` Expected: FAIL — current
+component uses default export, test imports named export
 
 ---
 
@@ -182,12 +187,12 @@ export const AboutMe = (): React.JSX.Element => {
 };
 ```
 
-Note: removes `"use client"` (no hooks/handlers), uses named export, removes `export const dynamic`.
+Note: removes `"use client"` (no hooks/handlers), uses named export, removes
+`export const dynamic`.
 
 - [ ] **Step 2: Run tests**
 
-Run: `pnpm vitest run src/__tests__/about-me.test.tsx`
-Expected: ALL PASS
+Run: `pnpm vitest run src/__tests__/about-me.test.tsx` Expected: ALL PASS
 
 ---
 
@@ -213,13 +218,11 @@ import { AboutMe } from "@/features/front/about-me/components/AboutMe";
 
 - [ ] **Step 2: Run full test suite**
 
-Run: `pnpm vitest run`
-Expected: ALL PASS (both test files)
+Run: `pnpm vitest run` Expected: ALL PASS (both test files)
 
 - [ ] **Step 3: Run dev server build check**
 
-Run: `pnpm build`
-Expected: Build succeeds with no errors
+Run: `pnpm build` Expected: Build succeeds with no errors
 
 - [ ] **Step 4: Commit all changes**
 

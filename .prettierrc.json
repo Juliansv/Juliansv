@@ -8,5 +8,6 @@
 	"useTabs": true,
 	"arrowParens": "always",
 	"endOfLine": "lf",
+	"proseWrap": "always",
 	"plugins": ["prettier-plugin-tailwindcss"]
 }
