@@ -20,9 +20,6 @@ const Header = () => {
 				<h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
 					Web Developer
 				</h2>
-				<p className="mt-4 max-w-sm leading-normal">
-					I build modern, user-focused web applications.
-				</p>
 				<nav className="nav hidden lg:block" aria-label="In-page jump links">
 					<ul className="mt-16 w-max">
 						<li>
@@ -89,9 +86,10 @@ const Header = () => {
 						href="https://github.com/juliansv"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="GitHub profile"
 						className="block hover:text-slate-200"
 					>
-						<Github />
+						<Github aria-hidden="true" />
 					</Link>
 				</li>
 				<li className="mr-5 shrink-0 text-xs">
@@ -99,9 +97,10 @@ const Header = () => {
 						href="https://www.linkedin.com/in/juliansuarezvivas/"
 						target="_blank"
 						rel="noopener noreferrer"
+						aria-label="LinkedIn profile"
 						className="block hover:text-slate-200"
 					>
-						<Linkedin />
+						<Linkedin aria-hidden="true" />
 					</Link>
 				</li>
 			</ul>

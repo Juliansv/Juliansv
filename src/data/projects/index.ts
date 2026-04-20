@@ -5,10 +5,12 @@ import { elTableroNoticias } from "./el-tablero-noticias";
 import { faveCocina } from "./fave-cocina";
 import { photoGallery } from "./photo-gallery";
 import { sallyPortSuites } from "./sally-port-suites";
+import { tailorsift } from "./tailorsift";
 import { theBagelHole } from "./the-bagel-hole";
 
 // Add all your projects here
 export const projects: Project[] = [
+	tailorsift,
 	faveCocina,
 	abogadaPrevisional,
 	sallyPortSuites,
@@ -20,6 +22,14 @@ export const projects: Project[] = [
 
 // Helper functions
 export const featuredProjects = projects.filter((p) => p.featured);
+
+export const heroProject: Project | undefined = featuredProjects.find(
+	(p) => p.hero
+);
+
+export const featuredProjectsWithoutHero: Project[] = featuredProjects.filter(
+	(p) => !p.hero
+);
 
 export const sortedProjects = [...projects].sort((a, b) => b.year - a.year);
 

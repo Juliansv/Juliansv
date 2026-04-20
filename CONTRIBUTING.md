@@ -1,6 +1,7 @@
 # Contributing Guide
 
-Thank you for considering contributing to this project! This guide will help you get started.
+Thank you for considering contributing to this project! This guide will help you
+get started.
 
 ---
 
@@ -135,8 +136,10 @@ git push origin --delete feature/add-dark-mode
 - **Always branch from `develop`**, never from `main`
 - **Always merge back to `develop`** when done
 - **Never push directly to `main`** - maintainer handles this
-- **Use `git push` without specifying branch** - it will push to the tracked remote branch
-- If you accidentally work on wrong branch: `git checkout -b feature/save-my-work` to save work
+- **Use `git push` without specifying branch** - it will push to the tracked
+  remote branch
+- If you accidentally work on wrong branch:
+  `git checkout -b feature/save-my-work` to save work
 
 ### Quick Reference
 
@@ -307,7 +310,8 @@ pnpm test:ci
 
 ## Commit Guidelines
 
-We follow [Conventional Commits](https://www.conventionalcommits.org/) specification.
+We follow [Conventional Commits](https://www.conventionalcommits.org/)
+specification.
 
 ### Format
 

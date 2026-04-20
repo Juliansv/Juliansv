@@ -4,7 +4,7 @@ export const sallyPortSuites: Project = {
 	id: "3",
 	slug: "sally-port-suites",
 	title: "Sally Port Suites",
-	year: 2023,
+	year: 2025,
 	featured: true,
 	description:
 		"Created a booking website for boutique apartments, integrating a booking system and focusing on SEO and performance.",

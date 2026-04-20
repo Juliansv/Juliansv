@@ -5,7 +5,8 @@ import { PostHogProvider } from "../providers/ph-provider";
 
 export const metadata: Metadata = {
 	title: "Julian Suarez Vivas",
-	description: "Portfolio website",
+	description:
+		"Full-stack web developer specializing in Next.js, React, and TypeScript. Building fast, accessible, and well-crafted web experiences.",
 };
 
 const montserrat = Montserrat({

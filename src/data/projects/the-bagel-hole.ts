@@ -4,7 +4,7 @@ export const theBagelHole: Project = {
 	id: "4",
 	slug: "the-bagel-hole",
 	title: "The Bagel Hole",
-	year: 2023,
+	year: 2025,
 	featured: true,
 	description:
 		"Modernized a WordPress site for a coffee shop by containerizing the stack, migrating the server, and improving the frontend.",

@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { projects } from "@/data/projects";
+import {
+	projects,
+	heroProject,
+	featuredProjectsWithoutHero,
+} from "@/data/projects";
 import { experiences } from "@/data/experience";
 import { aboutContent } from "@/data/about";
 import { siteConfig } from "@/data/site";
@@ -33,6 +37,25 @@ describe("Data Integrity", () => {
 			const ids = projects.map((p) => p.id);
 			const uniqueIds = new Set(ids);
 			expect(ids.length).toBe(uniqueIds.size);
+		});
+
+		it("TailorSift project exists, is featured, and is marked as hero", () => {
+			const tailorsift = projects.find((p) => p.slug === "tailorsift");
+			expect(tailorsift).toBeDefined();
+			expect(tailorsift?.featured).toBe(true);
+			expect(tailorsift?.hero).toBe(true);
+			expect(tailorsift?.url).toBe("https://tailorsift.io");
+			expect(tailorsift?.title).toBe("TailorSift");
+			expect(tailorsift?.image).toBe("/images/projects/tailorsift.webp");
+		});
+
+		it("TailorSift is the first project in the array", () => {
+			expect(projects[0]?.slug).toBe("tailorsift");
+		});
+
+		it("exactly one project is marked hero", () => {
+			const heroes = projects.filter((p) => p.hero);
+			expect(heroes.length).toBe(1);
 		});
 	});
 
@@ -76,10 +99,8 @@ describe("Data Integrity", () => {
 			expect(siteConfig).toBeDefined();
 			expect(siteConfig.name).toBeDefined();
 			expect(siteConfig.title).toBeDefined();
-			expect(siteConfig.description).toBeDefined();
 			expect(typeof siteConfig.name).toBe("string");
 			expect(typeof siteConfig.title).toBe("string");
-			expect(typeof siteConfig.description).toBe("string");
 		});
 
 		it("should have valid social links", () => {
@@ -88,6 +109,27 @@ describe("Data Integrity", () => {
 			expect(siteConfig.socialLinks.linkedin).toBeDefined();
 			expect(() => new URL(siteConfig.socialLinks.github)).not.toThrow();
 			expect(() => new URL(siteConfig.socialLinks.linkedin)).not.toThrow();
+		});
+	});
+
+	describe("Project Helpers", () => {
+		it("heroProject returns the project marked hero", () => {
+			expect(heroProject).toBeDefined();
+			expect(heroProject?.slug).toBe("tailorsift");
+			expect(heroProject?.hero).toBe(true);
+		});
+
+		it("featuredProjectsWithoutHero excludes the hero project", () => {
+			expect(
+				featuredProjectsWithoutHero.some((p) => p.slug === heroProject?.slug)
+			).toBe(false);
+		});
+
+		it("featuredProjectsWithoutHero contains only featured projects", () => {
+			expect(featuredProjectsWithoutHero.length).toBeGreaterThan(0);
+			featuredProjectsWithoutHero.forEach((p) => {
+				expect(p.featured).toBe(true);
+			});
 		});
 	});
 });

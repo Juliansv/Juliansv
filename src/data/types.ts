@@ -12,6 +12,7 @@ export interface Project {
 	image: string;
 	url: string;
 	codeRepository?: string;
+	hero?: boolean;
 }
 
 export interface Experience {
@@ -31,7 +32,6 @@ export interface SiteConfig {
 	name: string;
 	title: string;
 	subtitle: string;
-	description: string;
 	socialLinks: {
 		github: string;
 		linkedin: string;

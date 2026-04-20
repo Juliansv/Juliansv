@@ -4,7 +4,7 @@ export const ekomod: Project = {
 	id: "5",
 	slug: "ekomod",
 	title: "Ekomod",
-	year: 2023,
+	year: 2025,
 	featured: false,
 	description:
 		"Developed a fast, modern landing page for a construction company specializing in modular homes, using Astro and Tailwind CSS.",
