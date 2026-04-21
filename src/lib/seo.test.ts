@@ -93,6 +93,16 @@ describe("seo primitives", () => {
 			const { truncate } = await import("./seo");
 			expect(truncate("", 160)).toBe("");
 		});
+
+		it("hard-cuts mid-word when the last space is too far back", async () => {
+			const { truncate } = await import("./seo");
+			// Space only at index 2; with max=15 the threshold is 9, so lastSpace(2) < 9.
+			const out = truncate("ab cdefghijklmnopqrst", 15);
+			expect(out.length).toBeLessThanOrEqual(15);
+			expect(out.endsWith("…")).toBe(true);
+			// Confirms mid-word cut, not early-space cut.
+			expect(out).not.toBe("ab…");
+		});
 	});
 
 	describe("DEFAULT_OG_SIZE", () => {
