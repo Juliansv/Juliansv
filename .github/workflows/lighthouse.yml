@@ -35,10 +35,16 @@ jobs:
         run: npm install -g @lhci/cli@0.13.x
 
       - name: Run Lighthouse CI
-        run: |
-          lhci autorun --collect.url=${{ steps.vercel.outputs.url }} --collect.numberOfRuns=3
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REF_NAME: ${{ github.ref_name }}
+          DEPLOY_URL: ${{ steps.vercel.outputs.url }}
+        run: |
+          CONFIG="lighthouserc.json"
+          if [[ "$REF_NAME" == "main" ]]; then
+            CONFIG="lighthouserc.production.json"
+          fi
+          lhci autorun --config="$CONFIG" --collect.url="$DEPLOY_URL" --collect.numberOfRuns=3
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
