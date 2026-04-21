@@ -1,6 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { sortedProjects } from "@/data";
+
+const ARCHIVE_DESCRIPTION =
+	"The complete archive of projects I've built — websites, web apps, and experiments.";
+
+export const metadata: Metadata = {
+	title: "Archive",
+	description: ARCHIVE_DESCRIPTION,
+	alternates: { canonical: "/archive" },
+	openGraph: {
+		type: "website",
+		url: "/archive",
+		title: "Archive",
+		description: ARCHIVE_DESCRIPTION,
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Archive",
+		description: ARCHIVE_DESCRIPTION,
+	},
+};
 
 const Archive = async () => {
 	const projects = sortedProjects;
