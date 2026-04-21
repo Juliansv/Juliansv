@@ -35,4 +35,14 @@ describe("robots()", () => {
 		const result = robots();
 		expect(result.rules).toEqual([{ userAgent: "*", disallow: "/" }]);
 	});
+
+	it("allows crawling when neither env var is set (pure default fallback)", async () => {
+		delete process.env.NEXT_PUBLIC_SITE_URL;
+		delete process.env.VERCEL_URL;
+		const robots = (await import("./robots")).default;
+		const result = robots();
+		expect(result.rules).toEqual([{ userAgent: "*", allow: "/" }]);
+		expect(result.sitemap).toBe("https://www.julisv.com/sitemap.xml");
+		expect(result.host).toBe("www.julisv.com");
+	});
 });
