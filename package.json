@@ -5,6 +5,8 @@
 	"scripts": {
 		"kill": "bash -c 'for port in {3000..3003}; do lsof -i :$port -t | xargs -r kill; done'",
 		"dev": "npm run kill; next dev --turbopack",
+		"generate:placeholders": "tsx scripts/generate-image-placeholders.ts",
+		"prebuild": "pnpm generate:placeholders",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
