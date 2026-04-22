@@ -12,7 +12,13 @@ const OUTPUT_FILE = path.join(
 	"image-placeholders.ts"
 );
 
-async function generateFor(imagePath: string): Promise<[string, string]> {
+async function generateFor(
+	imagePath: string
+): Promise<[string, string] | null> {
+	if (!imagePath.startsWith("/")) {
+		// Remote URL (e.g. https://...) — the wrapper falls back to no blur.
+		return null;
+	}
 	const absolute = path.join(PUBLIC_DIR, imagePath);
 	let buffer: Buffer;
 	try {
@@ -28,7 +34,9 @@ async function generateFor(imagePath: string): Promise<[string, string]> {
 
 async function main(): Promise<void> {
 	const imagePaths = projects.map((p) => p.image);
-	const entries = await Promise.all(imagePaths.map(generateFor));
+	const entries = (await Promise.all(imagePaths.map(generateFor))).filter(
+		(entry): entry is [string, string] => entry !== null
+	);
 	entries.sort(([a], [b]) => a.localeCompare(b));
 
 	const body = entries
