@@ -84,9 +84,36 @@ describe("FeaturedHeroProject", () => {
 		expect(link).toHaveAttribute("rel", "noopener noreferrer");
 	});
 
-	it("renders project detail link with descriptive text", () => {
+	it("links the title to the project detail page", () => {
 		render(<FeaturedHeroProject project={project} />);
-		const link = screen.getByRole("link", { name: /view tailorsift project/i });
-		expect(link).toHaveAttribute("href", "/project/tailorsift");
+		const titleLink = screen.getByRole("link", { name: /^tailorsift$/i });
+		expect(titleLink).toHaveAttribute("href", "/project/tailorsift");
+	});
+
+	it('does not render the removed "View <title> project" link', () => {
+		render(<FeaturedHeroProject project={project} />);
+		expect(
+			screen.queryByRole("link", { name: /view tailorsift project/i })
+		).not.toBeInTheDocument();
+	});
+
+	it("renders exactly two links: the title link and the Visit site link", () => {
+		render(<FeaturedHeroProject project={project} />);
+		const links = screen.getAllByRole("link");
+		expect(links).toHaveLength(2);
+		const hrefs = links.map((l) => l.getAttribute("href")).sort();
+		expect(hrefs).toEqual(["/project/tailorsift", "https://tailorsift.io"]);
+	});
+
+	it("places the title link's full-card hit area in a wrapper that also contains the chips+CTA row", () => {
+		render(<FeaturedHeroProject project={project} />);
+		const titleLink = screen.getByRole("link", { name: /^tailorsift$/i });
+		// The wrapper containing both rows is the link's closest `.relative` ancestor — it must also contain the Visit site anchor.
+		const wrapper = titleLink.closest("div.relative");
+		expect(wrapper).not.toBeNull();
+		const visitLink = screen.getByRole("link", {
+			name: /visit tailorsift live site/i,
+		});
+		expect(wrapper).toContainElement(visitLink);
 	});
 });
