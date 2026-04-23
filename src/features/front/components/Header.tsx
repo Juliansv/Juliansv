@@ -18,7 +18,7 @@ const Header = () => {
 					<Link href="/">Julian Suarez Vivas</Link>
 				</h1>
 				<h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-					Web Developer
+					Full-Stack Developer
 				</h2>
 				<nav className="nav hidden lg:block" aria-label="In-page jump links">
 					<ul className="mt-16 w-max">
