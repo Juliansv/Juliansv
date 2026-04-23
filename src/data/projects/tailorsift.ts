@@ -8,7 +8,7 @@ export const tailorsift: Project = {
 	featured: true,
 	hero: true,
 	description:
-		"AI-powered job hunt platform that sifts roles and tailors CVs, cover letters, and interview prep to each listing.",
+		"AI-powered job hunt platform that helps individuals sift roles and tailor CVs, cover letters, and interview prep to each opportunity.",
 	longDescription: `
 		<p>TailorSift helps job hunters turn generic applications into role-specific, polished materials in minutes. Users submit a job listing URL and the platform automatically extracts the role details, scores candidate-job fit, identifies skill gaps, and generates tailored CVs, cover letters, and interview prep grounded in the specific company and position.</p>
 		<p>The landing page is live at tailorsift.io with a waitlist, while the SaaS app is under active development. It operates on a freemium model with Free and Pro tiers, and supports multiple professional profiles so users can maintain distinct narratives for different career tracks.</p>
