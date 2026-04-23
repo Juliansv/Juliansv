@@ -1,6 +1,6 @@
 import { getProjectBySlug, getAdjacentProjects } from "@/data";
 import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
+import { ProjectImage } from "@/components/ProjectImage";
 import Link from "next/link";
 import BackButton from "./BackButton";
 import Zoom from "react-medium-image-zoom";
@@ -68,14 +68,13 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 			<section className="mb-16">
 				<div style={{ viewTransitionName: `project-image-${project.slug}` }}>
 					<Zoom>
-						<Image
+						<ProjectImage
 							src={project.image}
 							alt={`Screenshot of ${project.title} showing the main interface and features`}
 							width={1200}
 							height={600}
 							className="h-auto w-full rounded-lg border border-slate-200/10"
 							priority
-							loading="eager"
 						/>
 					</Zoom>
 				</div>

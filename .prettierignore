@@ -53,3 +53,4 @@ public/**/*.ico
 # Generated files
 *.d.ts
 !src/**/*.d.ts
+src/data/generated/

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { ProjectImage } from "@/components/ProjectImage";
 import { ArrowRight } from "lucide-react";
 import { featuredProjectsWithoutHero, heroProject } from "@/data/projects";
 import { ViewTransitionLink } from "@/components/ViewTransitionLink";
@@ -29,7 +29,7 @@ const Projects = () => {
 										viewTransitionName: `project-image-${project.slug}`,
 									}}
 								>
-									<Image
+									<ProjectImage
 										src={project.image}
 										alt={`Screenshot of ${project.title} - ${project.description.slice(0, 100)}`}
 										width={150}

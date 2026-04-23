@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ProjectImage } from "@/components/ProjectImage";
 import { ArrowUpRight } from "lucide-react";
 import { ViewTransitionLink } from "@/components/ViewTransitionLink";
 import type { Project } from "@/data/types";
@@ -18,7 +18,7 @@ export const FeaturedHeroProject = ({ project }: FeaturedHeroProjectProps) => {
 					className="sm:col-span-2"
 					style={{ viewTransitionName: `project-image-${project.slug}` }}
 				>
-					<Image
+					<ProjectImage
 						src={project.image}
 						alt={`Screenshot of ${project.title} - ${project.description.slice(0, 100)}`}
 						width={400}
