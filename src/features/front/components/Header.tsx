@@ -1,7 +1,8 @@
 "use client";
 
-import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+
+import { GithubIcon, LinkedinIcon } from "./icons";
 
 const Header = () => {
 	const scrollToSection = (id: string) => {
@@ -18,7 +19,7 @@ const Header = () => {
 					<Link href="/">Julian Suarez Vivas</Link>
 				</h1>
 				<h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-					Web Developer
+					Full-Stack Developer
 				</h2>
 				<nav className="nav hidden lg:block" aria-label="In-page jump links">
 					<ul className="mt-16 w-max">
@@ -89,7 +90,7 @@ const Header = () => {
 						aria-label="GitHub profile"
 						className="block hover:text-slate-200"
 					>
-						<Github aria-hidden="true" />
+						<GithubIcon aria-hidden="true" />
 					</Link>
 				</li>
 				<li className="mr-5 shrink-0 text-xs">
@@ -100,7 +101,7 @@ const Header = () => {
 						aria-label="LinkedIn profile"
 						className="block hover:text-slate-200"
 					>
-						<Linkedin aria-hidden="true" />
+						<LinkedinIcon aria-hidden="true" />
 					</Link>
 				</li>
 			</ul>

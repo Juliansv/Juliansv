@@ -1,5 +1,6 @@
 import { getProjectBySlug, getAdjacentProjects } from "@/data";
-import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { GithubIcon } from "@/features/front/components/icons";
 import { ProjectImage } from "@/components/ProjectImage";
 import Link from "next/link";
 import BackButton from "./BackButton";
@@ -136,7 +137,7 @@ const SingleProject = async ({ slug }: SingleProjectProps) => {
 						rel="noopener noreferrer"
 						className="group inline-flex items-center gap-2 rounded-lg border border-slate-300/20 px-6 py-3 font-medium text-slate-200 transition-colors hover:border-sky-400/50 hover:text-sky-400"
 					>
-						<Github className="size-5" />
+						<GithubIcon className="size-5" />
 						View Code Repository
 					</Link>
 				)}
